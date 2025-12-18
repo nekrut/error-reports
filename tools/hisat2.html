@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hisat2 Errors - Galaxy Error Analysis</title>
+    <style>
+    :root { --bg: #1a1a2e; --card-bg: #16213e; --text: #eee; --text-muted: #888; --accent: #4a90d9; --border: #0f3460; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    h1 { color: var(--accent); margin-bottom: 10px; }
+    .back { color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 20px; }
+    .back:hover { text-decoration: underline; }
+    .stats { display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap; }
+    .stat { background: var(--card-bg); padding: 15px 25px; border-radius: 8px; border: 1px solid var(--border); }
+    .stat-value { font-size: 1.5em; font-weight: bold; color: var(--accent); }
+    .stat-label { color: var(--text-muted); font-size: 0.85em; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: rgba(74, 144, 217, 0.2); color: var(--accent); }
+    tr:hover { background: rgba(255,255,255,0.05); }
+    .error-msg { font-family: monospace; font-size: 0.85em; white-space: pre-wrap; word-break: break-all; background: rgba(0,0,0,0.3); padding: 8px; border-radius: 4px; display: block; margin: 5px 0; }
+</style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back">&larr; Back to Dashboard</a>
+        <h1>hisat2</h1>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">3,359</div>
+                <div class="stat-label">Total Errors</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">169</div>
+                <div class="stat-label">Unique Error Types</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">498</div>
+                <div class="stat-label">Affected Users</div>
+            </div>
+        </div>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">Exit Codes</h2>
+        <table>
+            <tr><th>Exit Code</th><th>Count</th></tr>
+            <tr><td>1</td><td>2,659</td></tr>
+            <tr><td>137</td><td>7</td></tr>
+            <tr><td>2</td><td>6</td></tr>
+            <tr><td>0</td><td>1</td></tr>
+            <tr><td>139</td><td>1</td></tr>
+        </table>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">Destinations</h2>
+        <table>
+            <tr><th>Destination</th><th>Count</th></tr>
+            <tr><td>jetstream2</td><td>1,336</td></tr>
+            <tr><td>anvil</td><td>937</td></tr>
+            <tr><td>expanse</td><td>825</td></tr>
+            <tr><td>bridges2</td><td>147</td></tr>
+            <tr><td>cyclone_small</td><td>40</td></tr>
+        </table>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">All Unique Error Messages</h2>
+        <table>
+            <tr><th style="width: 80px;">Count</th><th>Error Message</th></tr>
+            <tr><td>1,327</td><td><span class="error-msg">Settings:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Settings:
+    Output  files:  "genome.*.ht2"
+    Line  rate:  6  (line  is  64  bytes)
+    Lines  per  side:  1  (side  is  64  bytes)
+    Offset  rate:  4  (one  in  16)
+    FTable  chars:  10
+    Strings:  unpacked
+    Local  offset  rate:  3  (one  in  8)
+    Local  fTable  chars:  6
+    Local  sequence  length:  57344
+    Local  sequence  overlap  between  two  consecutive  indexes:  1024
+    Endianness:  little
+    Actual  local  endianness:  little
+    Sanity  checking:  disabled
+    Assertions:  disabled
+    Random  seed:  0
+    Sizeofs:  void*:8,  int:4,  long:8,  size_t:8
+Input  files  DNA,  FASTA:
+    genome.fa
+Reading  reference  sizes
+    Time  reading  reference  sizes:  00:00:00
+Calculating  joined  length
+Writing  header
+Reserving  space  for  joined  string
+Joining  reference  sequences
+    Time  to  join  reference  sequences:  00:00:00
+    Time  to  read  SNPs  and  splice  sites:  00:00:00
+Using  parameters  --bmax  2676465  --dcv  1024
+    Doing  ahead-of-time  memo</span></details></td></tr>
+            <tr><td>275</td><td><span class="error-msg">Error,  fewer  reads  in  file  specified  with  -2  than  in  file  specified  with  -1</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error,  fewer  reads  in  file  specified  with  -2  than  in  file  specified  with  -1
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)
+samtools  sort:  failed  to  read  header  from  "-"
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
+            <tr><td>248</td><td><span class="error-msg">(ERR):  mkfifo(/tmp/20.inpipe1)  failed.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">(ERR):  mkfifo(/tmp/20.inpipe1)  failed.
+Exiting  now  ...
+samtools  sort:  failed  to  read  header  from  "-"
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
+            <tr><td>153</td><td><span class="error-msg">Error,  fewer  reads  in  file  specified  with  -1  than  in  file  specified  with  -2</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error,  fewer  reads  in  file  specified  with  -1  than  in  file  specified  with  -2
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)</span></details></td></tr>
+            <tr><td>111</td><td><span class="error-msg">(ERR):  mkfifo(/tmp/19.unp)  failed.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">(ERR):  mkfifo(/tmp/19.unp)  failed.
+Exiting  now  ...
+samtools  sort:  failed  to  read  header  from  "-"
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
+            <tr><td>41</td><td><span class="error-msg">[E::bgzf_flush]  File  write  failed  (wrong  size)</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[E::bgzf_flush]  File  write  failed  (wrong  size)
+[E::bgzf_close]  File  write  failed
+samtools  sort:  failed  to  create  temporary  file  "/var/tmp/samtools.21.672.tmp.0000.bam":  No  space  left  on  device
+[main_samview]  fail  to  read  the  header  from  "-".
+(ERR):  hisat2-align  died  with  signal  13  (PIPE)</span></details></td></tr>
+            <tr><td>41</td><td><span class="error-msg">Error  reading  _ebwt[]  array:  8376348,  40735232</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  reading  _ebwt[]  array:  8376348,  40735232
+Error:  Encountered  internal  HISAT2  exception  (#1)
+Command:  /usr/local/bin/hisat2-align-s  --wrapper  basic-0  -p  14  -x  /cvmfs/data.galaxyproject.org/managed/hisat2_index/dm6/dm6  --read-lengths  37  -1  input_f.fastq  -2  input_r.fastq  
+(ERR):  hisat2-align  exited  with  value  1
+samtools  sort:  failed  to  read  header  from  "-"
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
+            <tr><td>34</td><td><span class="error-msg">(ERR):  hisat2-align  died  with  signal  11  (SEGV)</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">(ERR):  hisat2-align  died  with  signal  11  (SEGV)  
+samtools  sort:  failed  to  read  header  from  "-"
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
+            <tr><td>31</td><td><span class="error-msg">Error:  reads  file  does  not  look  like  a  FASTQ  file</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  reads  file  does  not  look  like  a  FASTQ  file
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)
+samtools  sort:  failed  to  read  header  from  "-"
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
+            <tr><td>24</td><td><span class="error-msg">(ERR):  hisat2-align  died  with  signal  9  (KILL)</span></td></tr>
+            <tr><td>20</td><td><span class="error-msg">gzip:  unexpected  end  of  file</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  unexpected  end  of  file
+Error,  fewer  reads  in  file  specified  with  -2  than  in  file  specified  with  -1
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  
+[bam_sort_core]  merging  from  11  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>14</td><td><span class="error-msg">gzip:  crc  error</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  crc  error
+Error:  Read  LH00659:365:22W7FMLT4:1:2113:4609:20561  1:N:0:TCGTCGCTAA+CACGTGTAAC  has  more  read  characters  than  quality  values.
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  
+[E::sam_parse1]  SEQ  and  QUAL  are  of  different  length
+[W::sam_read1_sam]  Parse  error  at  line  30303824
+samtools  sort:  truncated  file.  Aborting
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
+            <tr><td>12</td><td><span class="error-msg">HISAT2  summary  stats:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">HISAT2  summary  stats:
+	Total  reads:  20181066
+		Aligned  0  time:  2900939  (14.37%)
+		Aligned  1  time:  14821894  (73.44%)
+		Aligned  &gt;1  times:  2458233  (12.18%)
+	Overall  alignment  rate:  85.63%
+[bam_sort_core]  merging  from  9  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>12</td><td><span class="error-msg">Warning:  'utf-8'  codec  can't  decode  byte  0x8b  in  position  1:  invalid  start  byte</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  'utf-8'  codec  can't  decode  byte  0x8b  in  position  1:  invalid  start  byte
+Error:  reads  file  does  not  look  like  a  FASTQ  file
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)</span></details></td></tr>
+            <tr><td>12</td><td><span class="error-msg">gzip:  corrupted  data</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  corrupted  data
+Error:  Encountered  one  or  more  spaces  while  parsing  the  quality  string  for  read  LH00941:82:23CYLVLT4:7:1136:44443:7810_TAGACTGTCACGCA  1:N:0:0.    If  this  is  a  FASTQ  file  with  integer  (non-ASCII-encoded)  qualities,  try  re-running  with  the  --integer-quals  option.
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)</span></details></td></tr>
+            <tr><td>6</td><td><span class="error-msg">134088042  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">134088042  reads;  of  these:
+    134088042  (100.00%)  were  unpaired;  of  these:
+        5476979  (4.08%)  aligned  0  times
+        116379371  (86.79%)  aligned  exactly  1  time
+        12231692  (9.12%)  aligned  &gt;1  times
+95.92%  overall  alignment  rate
+[bam_sort_core]  merging  from  49  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/anvil/scratch/x-xcgalaxy/main/staging/72437559/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/anvil/scratch/x-xcgalaxy/main/staging/72437559/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">37460926  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">37460926  reads;  of  these:
+    37460926  (100.00%)  were  unpaired;  of  these:
+        36067989  (96.28%)  aligned  0  times
+        1153694  (3.08%)  aligned  exactly  1  time
+        239243  (0.64%)  aligned  &gt;1  times
+3.72%  overall  alignment  rate
+[bam_sort_core]  merging  from  10  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/anvil/scratch/x-xcgalaxy/main/staging/72437558/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/anvil/scratch/x-xcgalaxy/main/staging/72437558/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">114722740  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">114722740  reads;  of  these:
+    114722740  (100.00%)  were  unpaired;  of  these:
+        10448154  (9.11%)  aligned  0  times
+        88448682  (77.10%)  aligned  exactly  1  time
+        15825904  (13.79%)  aligned  &gt;1  times
+90.89%  overall  alignment  rate
+[bam_sort_core]  merging  from  47  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72544666/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72544666/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">104917914  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">104917914  reads;  of  these:
+    104917914  (100.00%)  were  unpaired;  of  these:
+        101928939  (97.15%)  aligned  0  times
+        2425684  (2.31%)  aligned  exactly  1  time
+        563291  (0.54%)  aligned  &gt;1  times
+2.85%  overall  alignment  rate
+[bam_sort_core]  merging  from  29  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72569186/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72569186/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">78095359  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">78095359  reads;  of  these:
+    78095359  (100.00%)  were  unpaired;  of  these:
+        12750420  (16.33%)  aligned  0  times
+        60186475  (77.07%)  aligned  exactly  1  time
+        5158464  (6.61%)  aligned  &gt;1  times
+83.67%  overall  alignment  rate
+[bam_sort_core]  merging  from  27  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72569187/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72569187/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">110645344  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">110645344  reads;  of  these:
+    110645344  (100.00%)  were  unpaired;  of  these:
+        16431476  (14.85%)  aligned  0  times
+        85780190  (77.53%)  aligned  exactly  1  time
+        8433678  (7.62%)  aligned  &gt;1  times
+85.15%  overall  alignment  rate
+[bam_sort_core]  merging  from  40  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569188/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569188/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">132120193  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">132120193  reads;  of  these:
+    132120193  (100.00%)  were  unpaired;  of  these:
+        4908985  (3.72%)  aligned  0  times
+        117731685  (89.11%)  aligned  exactly  1  time
+        9479523  (7.17%)  aligned  &gt;1  times
+96.28%  overall  alignment  rate
+[bam_sort_core]  merging  from  47  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569201/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569201/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">77228891  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">77228891  reads;  of  these:
+    77228891  (100.00%)  were  unpaired;  of  these:
+        2812396  (3.64%)  aligned  0  times
+        69263941  (89.69%)  aligned  exactly  1  time
+        5152554  (6.67%)  aligned  &gt;1  times
+96.36%  overall  alignment  rate
+[bam_sort_core]  merging  from  27  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569218/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569218/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">(ERR):  mkfifo(/tmp/21.inpipe1)  failed.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">(ERR):  mkfifo(/tmp/21.inpipe1)  failed.
+Exiting  now  ...
+samtools  sort:  failed  to  read  header  from  "-"
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR549357.100190811/1'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR549357.100190811/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.100190811/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.100245449/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.100245449/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.100262134/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.100262134/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.102514742/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.102514742/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.102767191/1'  because  length  (1)  &lt;=  #  seed  mismatches  </span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR549356.101230775/2'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR549356.101230775/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.101230775/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.104211909/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.104211909/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.105253161/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.105253161/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.11149564/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.11149564/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.113558125/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR549357.100190811/1'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR549357.100190811/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.100190811/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.100245449/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.100245449/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.100262134/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.100262134/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549358.41465780/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549358.41465780/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549358.45998613/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR044234.4406  61MA6AAXX100506:1:1:1340:6144/2'  because  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR044234.4406  61MA6AAXX100506:1:1:1340:6144/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.4406  61MA6AAXX100506:1:1:1340:6144/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.15460  61MA6AAXX100506:1:1:2087:4278/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.15460  61MA6AAXX100506:1:1:2087:4278/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.26384  61MA6AAXX100506:1:1:2786:2010/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.26384  61MA6AAXX100506:1:1:2786:2010/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.35135  61MA6AAXX100506:1:1:3336:19703/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  </span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">125115667  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">125115667  reads;  of  these:
+    125115667  (100.00%)  were  unpaired;  of  these:
+        5977222  (4.78%)  aligned  0  times
+        102460526  (81.89%)  aligned  exactly  1  time
+        16677919  (13.33%)  aligned  &gt;1  times
+95.22%  overall  alignment  rate
+[bam_sort_core]  merging  from  51  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/anvil/scratch/x-xcgalaxy/main/staging/72437556/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/anvil/scratch/x-xcgalaxy/main/staging/72437556/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">91166641  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">91166641  reads;  of  these:
+    91166641  (100.00%)  were  unpaired;  of  these:
+        34718393  (38.08%)  aligned  0  times
+        51677766  (56.68%)  aligned  exactly  1  time
+        4770482  (5.23%)  aligned  &gt;1  times
+61.92%  overall  alignment  rate
+[bam_sort_core]  merging  from  29  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">103991387  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">103991387  reads;  of  these:
+    103991387  (100.00%)  were  unpaired;  of  these:
+        10043394  (9.66%)  aligned  0  times
+        86783593  (83.45%)  aligned  exactly  1  time
+        7164400  (6.89%)  aligned  &gt;1  times
+90.34%  overall  alignment  rate
+[bam_sort_core]  merging  from  37  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569175/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569175/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">81501209  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">81501209  reads;  of  these:
+    81501209  (100.00%)  were  unpaired;  of  these:
+        2923824  (3.59%)  aligned  0  times
+        73285826  (89.92%)  aligned  exactly  1  time
+        5291559  (6.49%)  aligned  &gt;1  times
+96.41%  overall  alignment  rate
+[bam_sort_core]  merging  from  29  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">74707364  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">74707364  reads;  of  these:
+    74707364  (100.00%)  were  unpaired;  of  these:
+        2304432  (3.08%)  aligned  0  times
+        66783180  (89.39%)  aligned  exactly  1  time
+        5619752  (7.52%)  aligned  &gt;1  times
+96.92%  overall  alignment  rate
+[bam_sort_core]  merging  from  27  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569178/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569178/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">98812668  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">98812668  reads;  of  these:
+    98812668  (100.00%)  were  unpaired;  of  these:
+        10156658  (10.28%)  aligned  0  times
+        84006154  (85.02%)  aligned  exactly  1  time
+        4649856  (4.71%)  aligned  &gt;1  times
+89.72%  overall  alignment  rate
+[bam_sort_core]  merging  from  34  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569179/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569179/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">70790088  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">70790088  reads;  of  these:
+    70790088  (100.00%)  were  unpaired;  of  these:
+        2950482  (4.17%)  aligned  0  times
+        62491794  (88.28%)  aligned  exactly  1  time
+        5347812  (7.55%)  aligned  &gt;1  times
+95.83%  overall  alignment  rate
+[bam_sort_core]  merging  from  25  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569184/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569184/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">83321030  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">83321030  reads;  of  these:
+    83321030  (100.00%)  were  unpaired;  of  these:
+        9451015  (11.34%)  aligned  0  times
+        66118712  (79.35%)  aligned  exactly  1  time
+        7751303  (9.30%)  aligned  &gt;1  times
+88.66%  overall  alignment  rate
+[bam_sort_core]  merging  from  33  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569185/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569185/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">116544698  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">116544698  reads;  of  these:
+    116544698  (100.00%)  were  unpaired;  of  these:
+        17717364  (15.20%)  aligned  0  times
+        90050129  (77.27%)  aligned  exactly  1  time
+        8777205  (7.53%)  aligned  &gt;1  times
+84.80%  overall  alignment  rate
+[bam_sort_core]  merging  from  42  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">118458582  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">118458582  reads;  of  these:
+    118458582  (100.00%)  were  unpaired;  of  these:
+        11282892  (9.52%)  aligned  0  times
+        99679138  (84.15%)  aligned  exactly  1  time
+        7496552  (6.33%)  aligned  &gt;1  times
+90.48%  overall  alignment  rate
+[bam_sort_core]  merging  from  42  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569191/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569191/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">75906740  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">75906740  reads;  of  these:
+    75906740  (100.00%)  were  unpaired;  of  these:
+        3923784  (5.17%)  aligned  0  times
+        66750549  (87.94%)  aligned  exactly  1  time
+        5232407  (6.89%)  aligned  &gt;1  times
+94.83%  overall  alignment  rate
+[bam_sort_core]  merging  from  27  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569192/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569192/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">85103164  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">85103164  reads;  of  these:
+    85103164  (100.00%)  were  unpaired;  of  these:
+        2465934  (2.90%)  aligned  0  times
+        77698672  (91.30%)  aligned  exactly  1  time
+        4938558  (5.80%)  aligned  &gt;1  times
+97.10%  overall  alignment  rate
+[bam_sort_core]  merging  from  29  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569194/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569194/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">74107739  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">74107739  reads;  of  these:
+    74107739  (100.00%)  were  unpaired;  of  these:
+        5551244  (7.49%)  aligned  0  times
+        63291704  (85.40%)  aligned  exactly  1  time
+        5264791  (7.10%)  aligned  &gt;1  times
+92.51%  overall  alignment  rate
+[bam_sort_core]  merging  from  26  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569195/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569195/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">94863154  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">94863154  reads;  of  these:
+    94863154  (100.00%)  were  unpaired;  of  these:
+        3101598  (3.27%)  aligned  0  times
+        86458995  (91.14%)  aligned  exactly  1  time
+        5302561  (5.59%)  aligned  &gt;1  times
+96.73%  overall  alignment  rate
+[bam_sort_core]  merging  from  33  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569196/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569196/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">58102415  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">58102415  reads;  of  these:
+    58102415  (100.00%)  were  unpaired;  of  these:
+        1777567  (3.06%)  aligned  0  times
+        52569487  (90.48%)  aligned  exactly  1  time
+        3755361  (6.46%)  aligned  &gt;1  times
+96.94%  overall  alignment  rate
+[bam_sort_core]  merging  from  20  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569199/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569199/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">59926990  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">59926990  reads;  of  these:
+    59926990  (100.00%)  were  unpaired;  of  these:
+        24517088  (40.91%)  aligned  0  times
+        32396517  (54.06%)  aligned  exactly  1  time
+        3013385  (5.03%)  aligned  &gt;1  times
+59.09%  overall  alignment  rate
+[bam_sort_core]  merging  from  19  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569202/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569202/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">84140925  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">84140925  reads;  of  these:
+    84140925  (100.00%)  were  unpaired;  of  these:
+        3994198  (4.75%)  aligned  0  times
+        74368000  (88.39%)  aligned  exactly  1  time
+        5778727  (6.87%)  aligned  &gt;1  times
+95.25%  overall  alignment  rate
+[bam_sort_core]  merging  from  30  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569203/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569203/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">114641614  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">114641614  reads;  of  these:
+    114641614  (100.00%)  were  unpaired;  of  these:
+        9114441  (7.95%)  aligned  0  times
+        98546806  (85.96%)  aligned  exactly  1  time
+        6980367  (6.09%)  aligned  &gt;1  times
+92.05%  overall  alignment  rate
+[bam_sort_core]  merging  from  40  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72569204/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72569204/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">51230335  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">51230335  reads;  of  these:
+    51230335  (100.00%)  were  unpaired;  of  these:
+        19130653  (37.34%)  aligned  0  times
+        28319476  (55.28%)  aligned  exactly  1  time
+        3780206  (7.38%)  aligned  &gt;1  times
+62.66%  overall  alignment  rate
+[bam_sort_core]  merging  from  18  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72569205/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72569205/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">62734069  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">62734069  reads;  of  these:
+    62734069  (100.00%)  were  unpaired;  of  these:
+        2227107  (3.55%)  aligned  0  times
+        56316727  (89.77%)  aligned  exactly  1  time
+        4190235  (6.68%)  aligned  &gt;1  times
+96.45%  overall  alignment  rate
+[bam_sort_core]  merging  from  22  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">106095241  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">106095241  reads;  of  these:
+    106095241  (100.00%)  were  unpaired;  of  these:
+        3461788  (3.26%)  aligned  0  times
+        94033854  (88.63%)  aligned  exactly  1  time
+        8599599  (8.11%)  aligned  &gt;1  times
+96.74%  overall  alignment  rate
+[bam_sort_core]  merging  from  39  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">91459627  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">91459627  reads;  of  these:
+    91459627  (100.00%)  were  unpaired;  of  these:
+        2311275  (2.53%)  aligned  0  times
+        82689757  (90.41%)  aligned  exactly  1  time
+        6458595  (7.06%)  aligned  &gt;1  times
+97.47%  overall  alignment  rate
+[bam_sort_core]  merging  from  33  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569208/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569208/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">114029687  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">114029687  reads;  of  these:
+    114029687  (100.00%)  were  unpaired;  of  these:
+        18872890  (16.55%)  aligned  0  times
+        85630190  (75.09%)  aligned  exactly  1  time
+        9526607  (8.35%)  aligned  &gt;1  times
+83.45%  overall  alignment  rate
+[bam_sort_core]  merging  from  40  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569213/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569213/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">106388026  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">106388026  reads;  of  these:
+    106388026  (100.00%)  were  unpaired;  of  these:
+        8186292  (7.69%)  aligned  0  times
+        92215256  (86.68%)  aligned  exactly  1  time
+        5986478  (5.63%)  aligned  &gt;1  times
+92.31%  overall  alignment  rate
+[bam_sort_core]  merging  from  37  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569216/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569216/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">46394530  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">46394530  reads;  of  these:
+    46394530  (100.00%)  were  unpaired;  of  these:
+        3317009  (7.15%)  aligned  0  times
+        40211197  (86.67%)  aligned  exactly  1  time
+        2866324  (6.18%)  aligned  &gt;1  times
+92.85%  overall  alignment  rate
+[bam_sort_core]  merging  from  16  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72569217/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72569217/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:4682:40515/1'  becau</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:4682:40515/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:4682:40515/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:11989:41466/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:11989:41466/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:12834:41679/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:12834:41679/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:10517:56421/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+War</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:1491:3598/2'  becaus</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:1491:3598/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:1491:3598/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:5043:3600/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:5043:3600/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:7616:3973/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:7616:3973/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:5140:4380/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipp</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">Error:  Read  E250122364L1C036R00404579572/1  has  more  read  characters  than  quality  values.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  E250122364L1C036R00404579572/1  has  more  read  characters  than  quality  values.
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  
+[bam_sort_core]  merging  from  35  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR549355.100940713/1'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR549355.100940713/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.100940713/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.100955709/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.100955709/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.100996051/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.100996051/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.103763407/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.103763407/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.103933084/1'  because  length  (1)  &lt;=  #  seed  mismatches  </span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR044234.1631  61MA6AAXX100506:1:1:1128:5626/2'  because  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR044234.1631  61MA6AAXX100506:1:1:1128:5626/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.1631  61MA6AAXX100506:1:1:1128:5626/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.1974  61MA6AAXX100506:1:1:1155:15081/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.1974  61MA6AAXX100506:1:1:1155:15081/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.2047  61MA6AAXX100506:1:1:1161:1411/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.2047  61MA6AAXX100506:1:1:1161:1411/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.2235  61MA6AAXX100506:1:1:1174:19960/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of </span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR044234.4406  61MA6AAXX100506:1:1:1340:6144/2'  because  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR044234.4406  61MA6AAXX100506:1:1:1340:6144/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR044234.4406  61MA6AAXX100506:1:1:1340:6144/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR044234.15460  61MA6AAXX100506:1:1:2087:4278/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR044234.15460  61MA6AAXX100506:1:1:2087:4278/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR044234.26384  61MA6AAXX100506:1:1:2786:2010/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR044234.26384  61MA6AAXX100506:1:1:2786:2010/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR044234.35135  61MA6AAXX100506:1:1:3336:19703/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  </span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR549358.41465780/1'  because  length  (1)  &lt;=  #  seed  m</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR549358.41465780/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549358.41465780/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549358.45998613/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549358.45998613/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.104417617/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.104417617/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549358.96789947/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549358.96789947/1'  because  it  was  &lt;  2  characters  long
+Error,  fewer  reads  in  file  specified  with  -1  than  in  file  specified  with  -2
+terminate  called  after  thr</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">89435963  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">89435963  reads;  of  these:
+    89435963  (100.00%)  were  unpaired;  of  these:
+        6854649  (7.66%)  aligned  0  times
+        76347989  (85.37%)  aligned  exactly  1  time
+        6233325  (6.97%)  aligned  &gt;1  times
+92.34%  overall  alignment  rate
+[bam_sort_core]  merging  from  31  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72569177/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72569177/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">99250393  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">99250393  reads;  of  these:
+    99250393  (100.00%)  were  unpaired;  of  these:
+        9148383  (9.22%)  aligned  0  times
+        84436695  (85.07%)  aligned  exactly  1  time
+        5665315  (5.71%)  aligned  &gt;1  times
+90.78%  overall  alignment  rate
+[bam_sort_core]  merging  from  35  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569180/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569180/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">116697069  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">116697069  reads;  of  these:
+    116697069  (100.00%)  were  unpaired;  of  these:
+        11608560  (9.95%)  aligned  0  times
+        97631803  (83.66%)  aligned  exactly  1  time
+        7456706  (6.39%)  aligned  &gt;1  times
+90.05%  overall  alignment  rate
+[bam_sort_core]  merging  from  41  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569182/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569182/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">100719986  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">100719986  reads;  of  these:
+    100719986  (100.00%)  were  unpaired;  of  these:
+        22274192  (22.11%)  aligned  0  times
+        69983540  (69.48%)  aligned  exactly  1  time
+        8462254  (8.40%)  aligned  &gt;1  times
+77.89%  overall  alignment  rate
+[bam_sort_core]  merging  from  38  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569183/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569183/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">93560229  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">93560229  reads;  of  these:
+    93560229  (100.00%)  were  unpaired;  of  these:
+        4716981  (5.04%)  aligned  0  times
+        81501664  (87.11%)  aligned  exactly  1  time
+        7341584  (7.85%)  aligned  &gt;1  times
+94.96%  overall  alignment  rate
+[bam_sort_core]  merging  from  33  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569198/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569198/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">125235567  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">125235567  reads;  of  these:
+    125235567  (100.00%)  were  unpaired;  of  these:
+        6510481  (5.20%)  aligned  0  times
+        108993429  (87.03%)  aligned  exactly  1  time
+        9731657  (7.77%)  aligned  &gt;1  times
+94.80%  overall  alignment  rate
+[bam_sort_core]  merging  from  45  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569200/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569200/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">105403441  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">105403441  reads;  of  these:
+    105403441  (100.00%)  were  unpaired;  of  these:
+        4086657  (3.88%)  aligned  0  times
+        93793531  (88.99%)  aligned  exactly  1  time
+        7523253  (7.14%)  aligned  &gt;1  times
+96.12%  overall  alignment  rate
+[bam_sort_core]  merging  from  37  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72569209/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72569209/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">62585890  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">62585890  reads;  of  these:
+    62585890  (100.00%)  were  unpaired;  of  these:
+        3476001  (5.55%)  aligned  0  times
+        54789906  (87.54%)  aligned  exactly  1  time
+        4319983  (6.90%)  aligned  &gt;1  times
+94.45%  overall  alignment  rate
+[bam_sort_core]  merging  from  22  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569210/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569210/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">99647285  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">99647285  reads;  of  these:
+    99647285  (100.00%)  were  unpaired;  of  these:
+        4505487  (4.52%)  aligned  0  times
+        87255159  (87.56%)  aligned  exactly  1  time
+        7886639  (7.91%)  aligned  &gt;1  times
+95.48%  overall  alignment  rate
+[bam_sort_core]  merging  from  36  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72569211/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72569211/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">111756884  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">111756884  reads;  of  these:
+    111756884  (100.00%)  were  unpaired;  of  these:
+        12738217  (11.40%)  aligned  0  times
+        90468952  (80.95%)  aligned  exactly  1  time
+        8549715  (7.65%)  aligned  &gt;1  times
+88.60%  overall  alignment  rate
+[bam_sort_core]  merging  from  41  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569269/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569269/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">93808589  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">93808589  reads;  of  these:
+    93808589  (100.00%)  were  unpaired;  of  these:
+        4891238  (5.21%)  aligned  0  times
+        81595653  (86.98%)  aligned  exactly  1  time
+        7321698  (7.80%)  aligned  &gt;1  times
+94.79%  overall  alignment  rate
+[bam_sort_core]  merging  from  34  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569281/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569281/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">118251227  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">118251227  reads;  of  these:
+    118251227  (100.00%)  were  unpaired;  of  these:
+        5135192  (4.34%)  aligned  0  times
+        105573503  (89.28%)  aligned  exactly  1  time
+        7542532  (6.38%)  aligned  &gt;1  times
+95.66%  overall  alignment  rate
+[bam_sort_core]  merging  from  41  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72569285/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72569285/working/"  for  writing:  Is  a  directory</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Error:  reads  file  does  not  look  like  a  FASTA  file</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  reads  file  does  not  look  like  a  FASTA  file
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)
+samtools  sort:  failed  to  read  header  from  "-"
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">free():  invalid  pointer</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">free():  invalid  pointer
+Error:  Read  LH00941:103:23G3FHLT4:5:2332:32591:22985_TAATCCTGTGGACC  1:N:0:0  has  more  read  characters  than  quality  values.
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  
+[bam_sort_core]  merging  from  7  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1101:32334:11271_TAAACGGAA  3:N:0:AAG</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1101:32334:11271_TAAACGGAA  3:N:0:AAGGACAC+CCACAACA'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1101:32334:11271_TAAACGGAA  3:N:0:AAGGACAC+CCACAACA'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1101:8675:14920_AACTAATGA  3:N:0:AAGGACAC+CCACAACA'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1101:8675:14920_AACTAATGA  3:N:0:AAGGACAC+CCACAACA'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1101:26096:31970_CACTATCAA  3:N:0:AAGGACAC+CCACAACA'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1101:26096:31970_CACTATCAA  3:N:0:AAGGACAC+CCACAACA'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR549357.104417617/2'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR549357.104417617/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.104417617/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.12411456/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.12411456/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.19286628/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.19286628/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.26002835/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.26002835/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.53969638/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+War</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR549355.100940713/1'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR549355.100940713/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.100940713/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.100955709/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.100955709/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.100996051/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.100996051/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.103763407/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.103763407/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.103933084/1'  because  length  (1)  &lt;=  #  seed  mismatches  </span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR044234.6423  61MA6AAXX100506:1:1:1484:5850/2'  because  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR044234.6423  61MA6AAXX100506:1:1:1484:5850/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.6423  61MA6AAXX100506:1:1:1484:5850/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.8642  61MA6AAXX100506:1:1:1635:15352/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.8642  61MA6AAXX100506:1:1:1635:15352/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.9524  61MA6AAXX100506:1:1:1695:20046/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.9524  61MA6AAXX100506:1:1:1695:20046/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.10902  61MA6AAXX100506:1:1:1786:13202/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  </span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR788841.5562/2'  because  length  (1)  &lt;=  #  seed  misma</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR788841.5562/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR788841.5562/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR788841.45210/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR788841.45210/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR788841.683341/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR788841.683341/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR788841.1088200/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR788841.1088200/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR788841.1237160/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  </span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR788841.860920/1'  because  length  (1)  &lt;=  #  seed  mis</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR788841.860920/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR788841.860920/1'  because  it  was  &lt;  2  characters  long
+Error,  fewer  reads  in  file  specified  with  -2  than  in  file  specified  with  -1
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)
+[bam_sort_core]  merging  from  1  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Error:  Read  SRR031724.2685816  HWI-EAS299_4_30M2BAAXX:5:46:840:1794/1  has  more  read  characters</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  SRR031724.2685816  HWI-EAS299_4_30M2BAAXX:5:46:840:1794/1  has  more  read  characters  than  quality  values.
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Error:  Read  SRR549355.89418225/2  has  more  read  characters  than  quality  values.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  SRR549355.89418225/2  has  more  read  characters  than  quality  values.
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)
+[bam_sort_core]  merging  from  1  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">gzip:  invalid  magic</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  invalid  magic
+Error,  fewer  reads  in  file  specified  with  -2  than  in  file  specified  with  -1
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">29827196  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">29827196  reads;  of  these:
+    29827196  (100.00%)  were  paired;  of  these:
+        3690415  (12.37%)  aligned  concordantly  0  times
+        24161088  (81.00%)  aligned  concordantly  exactly  1  time
+        1975693  (6.62%)  aligned  concordantly  &gt;1  times
+        ----
+        3690415  pairs  aligned  concordantly  0  times;  of  these:
+            79834  (2.16%)  aligned  discordantly  1  time
+        ----
+        3610581  pairs  aligned  0  times  concordantly  or  discordantly;  of  these:
+            7221162  mates  make  up  the  pairs;  of  these:
+                4893107  (67.76%)  aligned  0  times
+                1948476  (26.98%)  aligned  exactly  1  time
+                379579  (5.26%)  aligned  &gt;1  times
+91.80%  overall  alignment  rate
+[bam_sort_core]  merging  from  28  files  and  1  in-memory  blocks...
+[E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72859909/working/"  :  Is  a  directory
+samtools  view:  failed  to  open  "/jetstr</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Error:  Read  IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII  has  more  read  characters  than  quality  values.
+Warning:  skipping  mate  #2  of  read  'GCTTGATCTCCTATTC'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'GCTTGATCTCCTATTC'  because  it  was  &lt;  2  characters  long
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)
+[bam_sort_core]  merging  from  23  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">40400539  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">40400539  reads;  of  these:
+    40400539  (100.00%)  were  unpaired;  of  these:
+        11447342  (28.33%)  aligned  0  times
+        16094850  (39.84%)  aligned  exactly  1  time
+        12858347  (31.83%)  aligned  &gt;1  times
+71.67%  overall  alignment  rate
+[bam_sort_core]  merging  from  19  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">41581542  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">41581542  reads;  of  these:
+    41581542  (100.00%)  were  unpaired;  of  these:
+        12441190  (29.92%)  aligned  0  times
+        16173394  (38.90%)  aligned  exactly  1  time
+        12966958  (31.18%)  aligned  &gt;1  times
+70.08%  overall  alignment  rate
+[bam_sort_core]  merging  from  20  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">(ERR):  hisat2-align  died  with  signal  11  (SEGV)  (core  dumped)</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">(ERR):  hisat2-align  died  with  signal  11  (SEGV)  (core  dumped)
+[W::sam_read1_sam]  Parse  error  at  line  2226975
+samtools  sort:  truncated  file.  Aborting
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Error:  Read  LH00309:509:22WK2HLT4:7:1448:47340:11453  1:N:0:TCACCAACTT+TCGTGGAGCG  has  more  read</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  LH00309:509:22WK2HLT4:7:1448:47340:11453  1:N:0:TCACCAACTT+TCGTGGAGCG  has  more  read  characters  than  quality  values.
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  
+[bam_sort_core]  merging  from  6  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Error:  Encountered  one  or  more  spaces  while  parsing  the  quality  string  for  read  LH00309</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Encountered  one  or  more  spaces  while  parsing  the  quality  string  for  read  LH00309:509:22WK2HLT4:7:1205:49354:10991  2:N:0:CACAGCGGTC+AACCATTCTC.    If  this  is  a  FASTQ  file  with  integer  (non-ASCII-encoded)  qualities,  try  re-running  with  the  --integer-quals  option.
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  
+[bam_sort_core]  merging  from  1  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR549356.102731646/1'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR549356.102731646/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.102731646/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549356.102731909/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549356.102731909/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.102745751/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.102745751/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549356.102786876/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549356.102786876/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549356.102916477/1'  because  length  (1)  &lt;=  #  seed  mismatches  </span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR549356.101230775/2'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR549356.101230775/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549356.101230775/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549356.114127963/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549356.114127963/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.118339166/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.118339166/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.17158033/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.17158033/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.25119820/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR549355.104211909/2'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR549355.104211909/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.104211909/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.105253161/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.105253161/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.11149564/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.11149564/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.113558125/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.113558125/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.129894338/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/jetstream2/scratch/main/jobs/72198858/tool_script.sh:  line  1:  html:  No  such  file  or  directo</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/jetstream2/scratch/main/jobs/72198858/tool_script.sh:  line  1:  html:  No  such  file  or  directory
+/jetstream2/scratch/main/jobs/72198858/tool_script.sh:  line  2:  syntax  error  near  unexpected  token  `&lt;'
+/jetstream2/scratch/main/jobs/72198858/tool_script.sh:  line  2:  `&lt;head&gt;&lt;title&gt;502  Bad  Gateway&lt;/title&gt;&lt;/head&gt;'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/anvil/scratch/x-xcgalaxy/main/staging/72198903/tool_script.sh:  line  1:  html:  No  such  file  or</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/anvil/scratch/x-xcgalaxy/main/staging/72198903/tool_script.sh:  line  1:  html:  No  such  file  or  directory
+/anvil/scratch/x-xcgalaxy/main/staging/72198903/tool_script.sh:  line  2:  syntax  error  near  unexpected  token  `&lt;'
+/anvil/scratch/x-xcgalaxy/main/staging/72198903/tool_script.sh:  line  2:  `&lt;head&gt;&lt;title&gt;502  Bad  Gateway&lt;/title&gt;&lt;/head&gt;'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/jetstream2/scratch/main/jobs/72199244/tool_script.sh:  line  1:  html:  No  such  file  or  directo</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/jetstream2/scratch/main/jobs/72199244/tool_script.sh:  line  1:  html:  No  such  file  or  directory
+/jetstream2/scratch/main/jobs/72199244/tool_script.sh:  line  2:  syntax  error  near  unexpected  token  `&lt;'
+/jetstream2/scratch/main/jobs/72199244/tool_script.sh:  line  2:  `&lt;head&gt;&lt;title&gt;502  Bad  Gateway&lt;/title&gt;&lt;/head&gt;'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR044234.8694  61MA6AAXX100506:1:1:1638:5474/2'  because  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR044234.8694  61MA6AAXX100506:1:1:1638:5474/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.8694  61MA6AAXX100506:1:1:1638:5474/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.10846  61MA6AAXX100506:1:1:1783:18546/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.10846  61MA6AAXX100506:1:1:1783:18546/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.18846  61MA6AAXX100506:1:1:2306:19596/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.18846  61MA6AAXX100506:1:1:2306:19596/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.23027  61MA6AAXX100506:1:1:2573:17475/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">37574288  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">37574288  reads;  of  these:
+    37574288  (100.00%)  were  unpaired;  of  these:
+        3088043  (8.22%)  aligned  0  times
+        31748295  (84.49%)  aligned  exactly  1  time
+        2737950  (7.29%)  aligned  &gt;1  times
+91.78%  overall  alignment  rate
+[bam_sort_core]  merging  from  15  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">45123898  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">45123898  reads;  of  these:
+    45123898  (100.00%)  were  unpaired;  of  these:
+        4097276  (9.08%)  aligned  0  times
+        37483933  (83.07%)  aligned  exactly  1  time
+        3542689  (7.85%)  aligned  &gt;1  times
+90.92%  overall  alignment  rate
+[bam_sort_core]  merging  from  19  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">53440398  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">53440398  reads;  of  these:
+    53440398  (100.00%)  were  paired;  of  these:
+        20724360  (38.78%)  aligned  concordantly  0  times
+        30298017  (56.69%)  aligned  concordantly  exactly  1  time
+        2418021  (4.52%)  aligned  concordantly  &gt;1  times
+        ----
+        20724360  pairs  aligned  concordantly  0  times;  of  these:
+            3071424  (14.82%)  aligned  discordantly  1  time
+        ----
+        17652936  pairs  aligned  0  times  concordantly  or  discordantly;  of  these:
+            35305872  mates  make  up  the  pairs;  of  these:
+                30467055  (86.29%)  aligned  0  times
+                4098301  (11.61%)  aligned  exactly  1  time
+                740516  (2.10%)  aligned  &gt;1  times
+71.49%  overall  alignment  rate
+[bam_sort_core]  merging  from  59  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">57406818  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">57406818  reads;  of  these:
+    57406818  (100.00%)  were  paired;  of  these:
+        20008953  (34.85%)  aligned  concordantly  0  times
+        34860371  (60.73%)  aligned  concordantly  exactly  1  time
+        2537494  (4.42%)  aligned  concordantly  &gt;1  times
+        ----
+        20008953  pairs  aligned  concordantly  0  times;  of  these:
+            3069760  (15.34%)  aligned  discordantly  1  time
+        ----
+        16939193  pairs  aligned  0  times  concordantly  or  discordantly;  of  these:
+            33878386  mates  make  up  the  pairs;  of  these:
+                28801283  (85.01%)  aligned  0  times
+                4376673  (12.92%)  aligned  exactly  1  time
+                700430  (2.07%)  aligned  &gt;1  times
+74.91%  overall  alignment  rate
+[bam_sort_core]  merging  from  64  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">33531886  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">33531886  reads;  of  these:
+    33531886  (100.00%)  were  unpaired;  of  these:
+        424820  (1.27%)  aligned  0  times
+        28880416  (86.13%)  aligned  exactly  1  time
+        4226650  (12.60%)  aligned  &gt;1  times
+98.73%  overall  alignment  rate
+[bam_sort_core]  merging  from  15  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">27691636  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">27691636  reads;  of  these:
+    27691636  (100.00%)  were  unpaired;  of  these:
+        377303  (1.36%)  aligned  0  times
+        23953993  (86.50%)  aligned  exactly  1  time
+        3360340  (12.13%)  aligned  &gt;1  times
+98.64%  overall  alignment  rate
+[bam_sort_core]  merging  from  12  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">(ERR):  mkfifo(/tmp/20.unp)  failed.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">(ERR):  mkfifo(/tmp/20.unp)  failed.
+Exiting  now  ...
+samtools  sort:  failed  to  read  header  from  "-"
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  read  'SRR1552449.421  DCV4KXP1:223:C2CTUACXX:1:1101:10552:2326  length=100'  be</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  read  'SRR1552449.421  DCV4KXP1:223:C2CTUACXX:1:1101:10552:2326  length=100'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  read  'SRR1552449.421  DCV4KXP1:223:C2CTUACXX:1:1101:10552:2326  length=100'  because  it  was  &lt;  2  characters  long
+HISAT2  summary  stats:
+	Total  reads:  1000
+		Aligned  0  time:  64  (6.40%)
+		Aligned  1  time:  877  (87.70%)
+		Aligned  &gt;1  times:  59  (5.90%)
+	Overall  alignment  rate:  93.60%</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1155:11140/1'  because  lengt</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1155:11140/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1155:11140/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1202:21155/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1202:21155/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1232:4666/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1232:4666/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1347:17220/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:13</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">20874107  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">20874107  reads;  of  these:
+    20874107  (100.00%)  were  paired;  of  these:
+        2955564  (14.16%)  aligned  concordantly  0  times
+        16358743  (78.37%)  aligned  concordantly  exactly  1  time
+        1559800  (7.47%)  aligned  concordantly  &gt;1  times
+        ----
+        2955564  pairs  aligned  concordantly  0  times;  of  these:
+            230210  (7.79%)  aligned  discordantly  1  time
+        ----
+        2725354  pairs  aligned  0  times  concordantly  or  discordantly;  of  these:
+            5450708  mates  make  up  the  pairs;  of  these:
+                3669390  (67.32%)  aligned  0  times
+                1486830  (27.28%)  aligned  exactly  1  time
+                294488  (5.40%)  aligned  &gt;1  times
+91.21%  overall  alignment  rate
+[bam_sort_core]  merging  from  24  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'LH00935:96:22Y7LVLT4:7:1101:49017:1573  1:N:0:CCTCCTACTG+TG</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'LH00935:96:22Y7LVLT4:7:1101:49017:1573  1:N:0:CCTCCTACTG+TGCGGTTGAC'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00935:96:22Y7LVLT4:7:1101:49017:1573  1:N:0:CCTCCTACTG+TGCGGTTGAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LVLT4:7:1101:9263:12867  2:N:0:CATCCTCCTG+TGTGGTTGAC'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LVLT4:7:1101:9263:12867  2:N:0:CATCCTCCTG+TGTGGTTGAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LVLT4:7:1101:3203:25436  2:N:0:CATCCTACTG+TGTGGTTGAC'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LVLT4:7:1101:3203:25436  2:N:0:CATCCTACTG+TGTGGTTGAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LV</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error:  Read  E250090592L1C004R02802464815/2  has  more  read  characters  than  quality  values.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  E250090592L1C004R02802464815/2  has  more  read  characters  than  quality  values.
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)
+[bam_sort_core]  merging  from  4  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error:  Read  LH00935:114:2323KNLT4:6:1111:14033:4153  2:N:0:GTAAGATGCC+GATGTGAAGC  has  more  quali</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  LH00935:114:2323KNLT4:6:1111:14033:4153  2:N:0:GTAAGATGCC+GATGTGAAGC  has  more  quality  values  than  read  characters.
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Only  read  218365952  bytes  (out  of  663195875)  from  reference  index  file  /cvmfs/data.galaxy</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Only  read  218365952  bytes  (out  of  663195875)  from  reference  index  file  /cvmfs/data.galaxyproject.org/managed/hisat2_index/mm10/mm10.4.ht2
+Error:  Encountered  internal  HISAT2  exception  (#1)
+Command:  /usr/local/bin/hisat2-align-s  --wrapper  basic-0  -p  14  -x  /cvmfs/data.galaxyproject.org/managed/hisat2_index/mm10/mm10  --read-lengths  150  -1  /tmp/20.inpipe1  -2  /tmp/20.inpipe2  
+(ERR):  hisat2-align  exited  with  value  1
+samtools  sort:  failed  to  read  header  from  "-"
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error:  Read  SRR12815963.60897472/1  has  more  read  characters  than  quality  values.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  SRR12815963.60897472/1  has  more  read  characters  than  quality  values.
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  
+[bam_sort_core]  merging  from  24  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">-k  arg  must  be  at  least  1</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">-k  arg  must  be  at  least  1
+HISAT2  version  2.2.1  by  Daehwan  Kim  [EMAIL]  www.ccb.jhu.edu/people/infphilo)
+Usage:  
+    hisat2  [options]*  -x  &lt;ht2-idx&gt;  {-1  &lt;m1&gt;  -2  &lt;m2&gt;  |  -U  &lt;r&gt;}  [-S  &lt;sam&gt;]
+
+    &lt;ht2-idx&gt;    Index  filename  prefix  (minus  trailing  .X.ht2).
+    &lt;m1&gt;              Files  with  #1  mates,  paired  with  files  in  &lt;m2&gt;.
+                          Could  be  gzip'ed  (extension:  .gz)  or  bzip2'ed  (extension:  .bz2).
+    &lt;m2&gt;              Files  with  #2  mates,  paired  with  files  in  &lt;m1&gt;.
+                          Could  be  gzip'ed  (extension:  .gz)  or  bzip2'ed  (extension:  .bz2).
+    &lt;r&gt;                Files  with  unpaired  reads.
+                          Could  be  gzip'ed  (extension:  .gz)  or  bzip2'ed  (extension:  .bz2).
+    &lt;sam&gt;            File  for  SAM  output  (default:  stdout)
+
+    &lt;m1&gt;,  &lt;m2&gt;,  &lt;r&gt;  can  be  comma-separated  lists  (no  whitespace)  and  can  be
+    specified  many  times.    E.g.  '-U  file1.fq,file2.fq  -</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Argument  "A00783:781:H5WWVDSX2:1:2426:223"  isn't  numeric  in  bitwise  and  (&)  at  /usr/local/b</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Argument  "A00783:781:H5WWVDSX2:1:2426:223"  isn't  numeric  in  bitwise  and  (&)  at  /usr/local/bin/hisat2  line  593,  &lt;HT&gt;  line  137459074.
+Use  of  uninitialized  value  $l  in  scalar  chomp  at  /usr/local/bin/hisat2  line  607,  &lt;HT&gt;  line  137459074.
+Use  of  uninitialized  value  $l  in  substitution  (s///)  at  /usr/local/bin/hisat2  line  608,  &lt;HT&gt;  line  137459074.
+[W::sam_read1_sam]  (ERR):  hisat2-align  died  with  signal  9  (KILL)  
+Parse  error  at  line  68729547
+samtools  sort:  truncated  file.  Aborting
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  write  error:  Input/output  error</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  write  error:  Input/output  error
+[W::sam_read1_sam]  Parse  error  at  line  5048911
+samtools  sort:  truncated  file.  Aborting
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Use  of  uninitialized  value  $l  in  scalar  chomp  at  /usr/local/bin/hisat2  line  607,  &lt;HT&gt;  l</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Use  of  uninitialized  value  $l  in  scalar  chomp  at  /usr/local/bin/hisat2  line  607,  &lt;HT&gt;  line  32276782.
+Use  of  uninitialized  value  $l  in  substitution  (s///)  at  /usr/local/bin/hisat2  line  608,  &lt;HT&gt;  line  32276782.
+Use  of  uninitialized  value  $l  in  print  at  /usr/local/bin/hisat2  line  622,  &lt;HT&gt;  line  32276782.
+[W::sam_read1_sam]  Parse  error  at  line  16138401
+(ERR):  hisat2-align  died  with  signal  9  (KILL)  
+samtools  sort:  truncated  file.  Aborting
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[main_samview]  fail  to  read  the  header  from  "-".</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[main_samview]  fail  to  read  the  header  from  "-".
+Use  of  uninitialized  value  $l  in  scalar  chomp  at  /usr/local/bin/hisat2  line  607,  &lt;HT&gt;  line  100987870.
+Use  of  uninitialized  value  $l  in  substitution  (s///)  at  /usr/local/bin/hisat2  line  608,  &lt;HT&gt;  line  100987870.</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:3230:12910/1'  becau</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:3230:12910/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:3230:12910/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:6966:21444/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:6966:21444/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:19910:26823/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:19910:26823/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:11563:3677/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warnin</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:5145:2158/2'  becaus</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:5145:2158/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:5145:2158/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:3434:2326/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:3434:2326/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1105:5420:62549/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1105:5420:62549/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:2716:2539/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  ski</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:3498:2597/1'  becaus</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:3498:2597/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:3498:2597/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:8989:3847/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:8989:3847/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:8612:4285/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:8612:4285/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:15428:4523/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skip</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:20445:49341/2'  beca</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:20445:49341/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:20445:49341/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:8406:66644/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:8406:66644/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:3036:100579/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:3036:100579/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1105:21044:85562/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+War</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:10446:3992/1'  becau</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:10446:3992/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:10446:3992/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:17714:18715/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:17714:18715/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:10047:19324/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:10047:19324/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:5963:27245/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warn</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:9731:2238/2'  becaus</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:9731:2238/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:9843:2225/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:9843:2225/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:9731:2238/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:11079:2138/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:11079:2138/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:5641:43985/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  sk</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:18990:79059/1'  beca</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:18990:79059/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:18990:79059/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:12227:9681/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:12227:9681/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1108:20496:53419/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1108:20496:53419/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1108:19426:64987/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+War</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:7377:56132/2'  becau</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:7377:56132/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:7377:56132/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:20220:2181/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:20220:2181/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1101:15755:6920/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1101:15755:6920/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1111:19328:34293/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:19935:29007/1'  beca</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:19935:29007/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:19935:29007/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:17727:26719/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:17727:26719/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:8918:26897/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:8918:26897/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1111:1091:42684/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warn</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:6360:78849/2'  becau</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:6360:78849/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:6360:78849/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1105:19924:10800/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1105:19924:10800/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1115:8525:69463/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1115:8525:69463/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:16049:2930/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warnin</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR9036345.114  114/2'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR9036345.114  114/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036345.114  114/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR9036345.487  487/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR9036345.487  487/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR9036345.1069  1069/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR9036345.1069  1069/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036345.1537  1537/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036345.1537  1537/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036345.1898  1898/2'  because  length  (1)  &lt;=  #  seed  mi</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR9036379.85  85/2'  because  length  (1)  &lt;=  #  seed  mi</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR9036379.85  85/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.85  85/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.2316  2316/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.2316  2316/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.3405  3405/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.3405  3405/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.5716  5716/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.5716  5716/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.9116  9116/2'  because  length  (1)  &lt;=  #  seed  mi</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">27956757  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">27956757  reads;  of  these:
+    27956757  (100.00%)  were  paired;  of  these:
+        6430981  (23.00%)  aligned  concordantly  0  times
+        20431009  (73.08%)  aligned  concordantly  exactly  1  time
+        1094767  (3.92%)  aligned  concordantly  &gt;1  times
+        ----
+        6430981  pairs  aligned  concordantly  0  times;  of  these:
+            1713311  (26.64%)  aligned  discordantly  1  time
+        ----
+        4717670  pairs  aligned  0  times  concordantly  or  discordantly;  of  these:
+            9435340  mates  make  up  the  pairs;  of  these:
+                7601833  (80.57%)  aligned  0  times
+                1632120  (17.30%)  aligned  exactly  1  time
+                201387  (2.13%)  aligned  &gt;1  times
+86.40%  overall  alignment  rate
+[bam_sort_core]  merging  from  29  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72802440/tool_script.sh:  /expanse/lustre/</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72802440/tool_script.sh:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72802440/tool_script.sh:  Cannot  send  after  transport  endpoint  shutdown</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:11363:10856/2'  because  le</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:11363:10856/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:11363:10856/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:7827:11233/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:7827:11233/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:13725:11674/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:13725:11674/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:12218:16436/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  Invalid  file  format</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  Invalid  file  format
+Error:  reads  file  does  not  look  like  a  FASTQ  file
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error:  Read  Warning:  skipping  mate  #2  of  read  'GCTTGATCTCCTATTC'  because  length  (0)  &lt;=  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  Warning:  skipping  mate  #2  of  read  'GCTTGATCTCCTATTC'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII  has  more  read  characters  than  quality  values.Warning:  skipping  mate  #2  of  read  'GCTTGATCTCCTATTC'  because  it  was  &lt;  2  characters  long
+
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  
+[bam_sort_core]  merging  from  23  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error:  Read  Warning:  skipping  mate  #1  of  read  'TCTATCTCGCAGAAGTACTACIIIIII1_Hepa1_6CAGACTCCA</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  Warning:  skipping  mate  #1  of  read  'TCTATCTCGCAGAAGTACTACIIIIII1_Hepa1_6CAGACTCCATTAACTTCCTGGACCACATTAATGGAAAGAAACATCAGCGAAACCTGGGTATG'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'TCTATCTCGCAGAAGTACTACIIIIII1_Hepa1_6CAGACTCCATTAACTTCCTGGACCACATTAATGGAAAGAAACATCAGCGAAACCTGGGTATG'  because  it  was  &lt;  2  characters  long
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIGGAAC:0:None  has  more  quality  values  than  read  characters.
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  
+[bam_sort_core]  merging  from  8  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">18941853  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">18941853  reads;  of  these:
+    18941853  (100.00%)  were  paired;  of  these:
+        2216786  (11.70%)  aligned  concordantly  0  times
+        15823973  (83.54%)  aligned  concordantly  exactly  1  time
+        901094  (4.76%)  aligned  concordantly  &gt;1  times
+        ----
+        2216786  pairs  aligned  concordantly  0  times;  of  these:
+            691227  (31.18%)  aligned  discordantly  1  time
+        ----
+        1525559  pairs  aligned  0  times  concordantly  or  discordantly;  of  these:
+            3051118  mates  make  up  the  pairs;  of  these:
+                1800892  (59.02%)  aligned  0  times
+                1062681  (34.83%)  aligned  exactly  1  time
+                187545  (6.15%)  aligned  &gt;1  times
+95.25%  overall  alignment  rate
+[bam_sort_core]  merging  from  21  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">21114339  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">21114339  reads;  of  these:
+    21114339  (100.00%)  were  paired;  of  these:
+        2483297  (11.76%)  aligned  concordantly  0  times
+        17645165  (83.57%)  aligned  concordantly  exactly  1  time
+        985877  (4.67%)  aligned  concordantly  &gt;1  times
+        ----
+        2483297  pairs  aligned  concordantly  0  times;  of  these:
+            727777  (29.31%)  aligned  discordantly  1  time
+        ----
+        1755520  pairs  aligned  0  times  concordantly  or  discordantly;  of  these:
+            3511040  mates  make  up  the  pairs;  of  these:
+                2140659  (60.97%)  aligned  0  times
+                1170305  (33.33%)  aligned  exactly  1  time
+                200076  (5.70%)  aligned  &gt;1  times
+94.93%  overall  alignment  rate
+[bam_sort_core]  merging  from  23  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">19849229  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">19849229  reads;  of  these:
+    19849229  (100.00%)  were  paired;  of  these:
+        2394192  (12.06%)  aligned  concordantly  0  times
+        16526708  (83.26%)  aligned  concordantly  exactly  1  time
+        928329  (4.68%)  aligned  concordantly  &gt;1  times
+        ----
+        2394192  pairs  aligned  concordantly  0  times;  of  these:
+            734868  (30.69%)  aligned  discordantly  1  time
+        ----
+        1659324  pairs  aligned  0  times  concordantly  or  discordantly;  of  these:
+            3318648  mates  make  up  the  pairs;  of  these:
+                1961640  (59.11%)  aligned  0  times
+                1156377  (34.84%)  aligned  exactly  1  time
+                200631  (6.05%)  aligned  &gt;1  times
+95.06%  overall  alignment  rate
+[bam_sort_core]  merging  from  22  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">20186544  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">20186544  reads;  of  these:
+    20186544  (100.00%)  were  paired;  of  these:
+        2611043  (12.93%)  aligned  concordantly  0  times
+        16645964  (82.46%)  aligned  concordantly  exactly  1  time
+        929537  (4.60%)  aligned  concordantly  &gt;1  times
+        ----
+        2611043  pairs  aligned  concordantly  0  times;  of  these:
+            772880  (29.60%)  aligned  discordantly  1  time
+        ----
+        1838163  pairs  aligned  0  times  concordantly  or  discordantly;  of  these:
+            3676326  mates  make  up  the  pairs;  of  these:
+                2401360  (65.32%)  aligned  0  times
+                1082228  (29.44%)  aligned  exactly  1  time
+                192738  (5.24%)  aligned  &gt;1  times
+94.05%  overall  alignment  rate
+[bam_sort_core]  merging  from  22  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">20134541  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">20134541  reads;  of  these:
+    20134541  (100.00%)  were  paired;  of  these:
+        2382174  (11.83%)  aligned  concordantly  0  times
+        16802440  (83.45%)  aligned  concordantly  exactly  1  time
+        949927  (4.72%)  aligned  concordantly  &gt;1  times
+        ----
+        2382174  pairs  aligned  concordantly  0  times;  of  these:
+            751710  (31.56%)  aligned  discordantly  1  time
+        ----
+        1630464  pairs  aligned  0  times  concordantly  or  discordantly;  of  these:
+            3260928  mates  make  up  the  pairs;  of  these:
+                1963311  (60.21%)  aligned  0  times
+                1106353  (33.93%)  aligned  exactly  1  time
+                191264  (5.87%)  aligned  &gt;1  times
+95.12%  overall  alignment  rate
+[bam_sort_core]  merging  from  22  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">41646535  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">41646535  reads;  of  these:
+    41646535  (100.00%)  were  unpaired;  of  these:
+        12517302  (30.06%)  aligned  0  times
+        16161793  (38.81%)  aligned  exactly  1  time
+        12967440  (31.14%)  aligned  &gt;1  times
+69.94%  overall  alignment  rate
+[bam_sort_core]  merging  from  20  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">39982307  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">39982307  reads;  of  these:
+    39982307  (100.00%)  were  unpaired;  of  these:
+        10867073  (27.18%)  aligned  0  times
+        16164447  (40.43%)  aligned  exactly  1  time
+        12950787  (32.39%)  aligned  &gt;1  times
+72.82%  overall  alignment  rate
+[bam_sort_core]  merging  from  19  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">34901740  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">34901740  reads;  of  these:
+    34901740  (100.00%)  were  unpaired;  of  these:
+        15464678  (44.31%)  aligned  0  times
+        13325705  (38.18%)  aligned  exactly  1  time
+        6111357  (17.51%)  aligned  &gt;1  times
+55.69%  overall  alignment  rate
+[bam_sort_core]  merging  from  13  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">38908121  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">38908121  reads;  of  these:
+    38908121  (100.00%)  were  unpaired;  of  these:
+        19348688  (49.73%)  aligned  0  times
+        13409047  (34.46%)  aligned  exactly  1  time
+        6150386  (15.81%)  aligned  &gt;1  times
+50.27%  overall  alignment  rate
+[bam_sort_core]  merging  from  14  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">38946757  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">38946757  reads;  of  these:
+    38946757  (100.00%)  were  unpaired;  of  these:
+        19174051  (49.23%)  aligned  0  times
+        13545659  (34.78%)  aligned  exactly  1  time
+        6227047  (15.99%)  aligned  &gt;1  times
+50.77%  overall  alignment  rate
+[bam_sort_core]  merging  from  14  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">37273455  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">37273455  reads;  of  these:
+    37273455  (100.00%)  were  unpaired;  of  these:
+        17370051  (46.60%)  aligned  0  times
+        13639488  (36.59%)  aligned  exactly  1  time
+        6263916  (16.81%)  aligned  &gt;1  times
+53.40%  overall  alignment  rate
+[bam_sort_core]  merging  from  14  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">18792078  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">18792078  reads;  of  these:
+    18792078  (100.00%)  were  unpaired;  of  these:
+        7315754  (38.93%)  aligned  0  times
+        6139791  (32.67%)  aligned  exactly  1  time
+        5336533  (28.40%)  aligned  &gt;1  times
+61.07%  overall  alignment  rate
+[bam_sort_core]  merging  from  8  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">21675997  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">21675997  reads;  of  these:
+    21675997  (100.00%)  were  unpaired;  of  these:
+        10184092  (46.98%)  aligned  0  times
+        6150910  (28.38%)  aligned  exactly  1  time
+        5340995  (24.64%)  aligned  &gt;1  times
+53.02%  overall  alignment  rate
+[bam_sort_core]  merging  from  9  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">19830379  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">19830379  reads;  of  these:
+    19830379  (100.00%)  were  unpaired;  of  these:
+        8317979  (41.95%)  aligned  0  times
+        6163729  (31.08%)  aligned  exactly  1  time
+        5348671  (26.97%)  aligned  &gt;1  times
+58.05%  overall  alignment  rate
+[bam_sort_core]  merging  from  9  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">26460570  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">26460570  reads;  of  these:
+    26460570  (100.00%)  were  unpaired;  of  these:
+        10181932  (38.48%)  aligned  0  times
+        8496451  (32.11%)  aligned  exactly  1  time
+        7782187  (29.41%)  aligned  &gt;1  times
+61.52%  overall  alignment  rate
+[bam_sort_core]  merging  from  12  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C001R0131247270_reverse/2'  becau</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C001R0131247270_reverse/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C001R0131247270_reverse/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C002R0520549151_reverse/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C002R0520549151_reverse/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C004R0030185482_reverse/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C004R0030185482_reverse/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C005R0151013592_reverse/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C003R0571054237/2'  because  leng</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C003R0571054237/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C003R0571054237/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C003R0621294129/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C003R0621294129/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C004R0250485423/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C004R0250485423/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C005R0151286969/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error:  Read  NB501830:463:HGTN7AFXY:2:21109:17982:16988  1:N:0:ACAGTG  has  more  quality  values  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  NB501830:463:HGTN7AFXY:2:21109:17982:16988  1:N:0:ACAGTG  has  more  quality  values  than  read  characters.
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  
+[bam_sort_core]  merging  from  2  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error:  Read  Warning:  skipping  mate  #2  of  read  'LH00543:438:23757'  because  length  (0)  &lt;= </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  Warning:  skipping  mate  #2  of  read  'LH00543:438:23757'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'LH00543:438:23757'  because  it  was  &lt;  2  characters  long
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII  has  more  quality  values  than  read  characters.
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error:  Read  Warning:  skipping  mate  #1  of  read  'LH00543:438:23757'  because  length  (0)  &lt;= </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  Warning:  skipping  mate  #1  of  read  'LH00543:438:23757'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII  has  more  quality  values  than  read  characters.
+Warning:  skipping  mate  #1  of  read  'LH00543:438:23757'  because  it  was  &lt;  2  characters  long
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error:  Read  LH00309:509:22WK2HLT4:7:1256:41232:4713  1:N:0:AGTACAACTC+CCTTACTATG  has  more  quali</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  LH00309:509:22WK2HLT4:7:1256:41232:4713  1:N:0:AGTACAACTC+CCTTACTATG  has  more  quality  values  than  read  characters.
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  
+[bam_sort_core]  merging  from  3  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/anvil/scratch/x-xcgalaxy/main/staging/73101917/tool_script.sh:  line  1:  html:  No  such  file  or</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/anvil/scratch/x-xcgalaxy/main/staging/73101917/tool_script.sh:  line  1:  html:  No  such  file  or  directory
+/anvil/scratch/x-xcgalaxy/main/staging/73101917/tool_script.sh:  line  2:  syntax  error  near  unexpected  token  `&lt;'
+/anvil/scratch/x-xcgalaxy/main/staging/73101917/tool_script.sh:  line  2:  `&lt;head&gt;&lt;title&gt;500  Internal  Server  Error&lt;/title&gt;&lt;/head&gt;'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/anvil/scratch/x-xcgalaxy/main/staging/73101949/tool_script.sh:  line  1:  html:  No  such  file  or</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/anvil/scratch/x-xcgalaxy/main/staging/73101949/tool_script.sh:  line  1:  html:  No  such  file  or  directory
+/anvil/scratch/x-xcgalaxy/main/staging/73101949/tool_script.sh:  line  2:  syntax  error  near  unexpected  token  `&lt;'
+/anvil/scratch/x-xcgalaxy/main/staging/73101949/tool_script.sh:  line  2:  `&lt;head&gt;&lt;title&gt;500  Internal  Server  Error&lt;/title&gt;&lt;/head&gt;'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">19570017  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">19570017  reads;  of  these:
+    19570017  (100.00%)  were  paired;  of  these:
+        1517779  (7.76%)  aligned  concordantly  0  times
+        16901319  (86.36%)  aligned  concordantly  exactly  1  time
+        1150919  (5.88%)  aligned  concordantly  &gt;1  times
+        ----
+        1517779  pairs  aligned  concordantly  0  times;  of  these:
+            170972  (11.26%)  aligned  discordantly  1  time
+        ----
+        1346807  pairs  aligned  0  times  concordantly  or  discordantly;  of  these:
+            2693614  mates  make  up  the  pairs;  of  these:
+                1464133  (54.36%)  aligned  0  times
+                1107835  (41.13%)  aligned  exactly  1  time
+                121646  (4.52%)  aligned  &gt;1  times
+96.26%  overall  alignment  rate
+[bam_sort_core]  merging  from  21  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">19585554  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">19585554  reads;  of  these:
+    19585554  (100.00%)  were  paired;  of  these:
+        1962942  (10.02%)  aligned  concordantly  0  times
+        16515358  (84.32%)  aligned  concordantly  exactly  1  time
+        1107254  (5.65%)  aligned  concordantly  &gt;1  times
+        ----
+        1962942  pairs  aligned  concordantly  0  times;  of  these:
+            310881  (15.84%)  aligned  discordantly  1  time
+        ----
+        1652061  pairs  aligned  0  times  concordantly  or  discordantly;  of  these:
+            3304122  mates  make  up  the  pairs;  of  these:
+                1999494  (60.52%)  aligned  0  times
+                1172996  (35.50%)  aligned  exactly  1  time
+                131632  (3.98%)  aligned  &gt;1  times
+94.90%  overall  alignment  rate
+[bam_sort_core]  merging  from  21  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:40652:1144  1:N:0:CCACAACA+TGT</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:40652:1144  1:N:0:CCACAACA+TGTGGTAG'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:40652:1144  1:N:0:CCACAACA+TGTGGTAG'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:26257:1320  1:N:0:CCACAACA+TGTGGTAC'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:26257:1320  1:N:0:CCACAACA+TGTGGTAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:21829:1336  1:N:0:CCACAACA+TGTGGTAC'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:21829:1336  1:N:0:CCACAACA+TGTGGTAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:37610:</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:4409:2248/1'  bec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:4409:2248/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:4409:2248/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:12717:2399/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:12717:2399/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:8174:2927/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:8174:2927/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:8530:2860/1'  because  length  (1)  &lt;=  #  seed  mismatch</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:5262:2492/1'  bec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:5262:2492/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:5262:2492/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:8180:2307/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:8180:2307/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:17121:2493/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:17121:2493/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:7624:2561/1'  because  length  (1)  &lt;=  #  seed  mismatch</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:16101:2583/1'  be</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:16101:2583/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:16101:2583/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:8710:2882/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:8710:2882/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:9017:2965/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:9017:2965/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:13097:2836/1'  because  length  (1)  &lt;=  #  seed  mismatc</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:19761:2236/1'  be</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:19761:2236/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:19761:2236/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:6890:2359/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:6890:2359/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:15943:2319/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:15943:2319/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:1865:2655/1'  because  length  (1)  &lt;=  #  seed  mismat</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">FATAL:      While  checking  container  encryption:  could  not  open  image  /scratch/xgalaxy/job_4</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">FATAL:      While  checking  container  encryption:  could  not  open  image  /scratch/xgalaxy/job_45448922/.cvmfsexec/dist/cvmfs/singularity.galaxyproject.org/all/mulled-v2-b570fc8a7b25c6a733660cda7e105007b53ac501:f7f35d8f4102a5de392cc02fbba2d8fb67efcd8d-0:  failed  to  retrieve  path  for  /scratch/xgalaxy/job_45448922/.cvmfsexec/dist/cvmfs/singularity.galaxyproject.org/all/mulled-v2-b570fc8a7b25c6a733660cda7e105007b53ac501:f7f35d8f4102a5de392cc02fbba2d8fb67efcd8d-0:  lstat  /scratch/xgalaxy/job_45448922/.cvmfsexec/dist/cvmfs/singularity.galaxyproject.org/all:  no  such  file  or  directory</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">40362307  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">40362307  reads;  of  these:
+    40362307  (100.00%)  were  paired;  of  these:
+        2121377  (5.26%)  aligned  concordantly  0  times
+        36456403  (90.32%)  aligned  concordantly  exactly  1  time
+        1784527  (4.42%)  aligned  concordantly  &gt;1  times
+        ----
+        2121377  pairs  aligned  concordantly  0  times;  of  these:
+            174151  (8.21%)  aligned  discordantly  1  time
+        ----
+        1947226  pairs  aligned  0  times  concordantly  or  discordantly;  of  these:
+            3894452  mates  make  up  the  pairs;  of  these:
+                2290699  (58.82%)  aligned  0  times
+                1386864  (35.61%)  aligned  exactly  1  time
+                216889  (5.57%)  aligned  &gt;1  times
+97.16%  overall  alignment  rate
+[bam_sort_core]  merging  from  43  files  and  1  in-memory  blocks...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR27104170.A01477:76:HTWWKDSX2:1:1107:26530:35634/1'  beca</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR27104170.A01477:76:HTWWKDSX2:1:1107:26530:35634/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR27104170.A01477:76:HTWWKDSX2:1:1107:26530:35634/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR27104170.A01477:76:HTWWKDSX2:1:1108:12463:18912/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR27104170.A01477:76:HTWWKDSX2:1:1108:12463:18912/1'  because  it  was  &lt;  2  characters  long
+[E::bgzf_flush]  File  write  failed  (wrong  size)
+[E::bgzf_close]  File  write  failed
+samtools  sort:  failed  to  create  temporary  file  "/var/tmp/samtools.21.3632.tmp.0000.bam":  No  space  left  on  device
+[main_samview]  fail  to  read  the  header  from  "-".
+(ERR):  hisat2-align  died  with  signal  13  (PIPE)</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/anvil/scratch/x-xcgalaxy/main/staging/73427242/tool_script.sh:  line  1:  {err_msg::  command  not </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/anvil/scratch/x-xcgalaxy/main/staging/73427242/tool_script.sh:  line  1:  {err_msg::  command  not  found
+/anvil/scratch/x-xcgalaxy/main/staging/73427242/tool_script.sh:  line  19:  /jetstream2/scratch/main/jobs/73427242/outputs/COMMAND_VERSION:  No  such  file  or  directory
+Warning:  [Errno  2]  No  such  file  or  directory:  'input_f.fastq.gz'
+(ERR):  Read  file  'input_f.fastq.gz'  doesn't  exist
+Exiting  now  ...
+samtools  sort:  failed  to  read  header  from  "-"
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
+        </table>
+    </div>
+</body>
+</html>

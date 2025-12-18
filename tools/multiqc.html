@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multiqc Errors - Galaxy Error Analysis</title>
+    <style>
+    :root { --bg: #1a1a2e; --card-bg: #16213e; --text: #eee; --text-muted: #888; --accent: #4a90d9; --border: #0f3460; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    h1 { color: var(--accent); margin-bottom: 10px; }
+    .back { color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 20px; }
+    .back:hover { text-decoration: underline; }
+    .stats { display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap; }
+    .stat { background: var(--card-bg); padding: 15px 25px; border-radius: 8px; border: 1px solid var(--border); }
+    .stat-value { font-size: 1.5em; font-weight: bold; color: var(--accent); }
+    .stat-label { color: var(--text-muted); font-size: 0.85em; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: rgba(74, 144, 217, 0.2); color: var(--accent); }
+    tr:hover { background: rgba(255,255,255,0.05); }
+    .error-msg { font-family: monospace; font-size: 0.85em; white-space: pre-wrap; word-break: break-all; background: rgba(0,0,0,0.3); padding: 8px; border-radius: 4px; display: block; margin: 5px 0; }
+</style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back">&larr; Back to Dashboard</a>
+        <h1>multiqc</h1>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">2,124</div>
+                <div class="stat-label">Total Errors</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">116</div>
+                <div class="stat-label">Unique Error Types</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">688</div>
+                <div class="stat-label">Affected Users</div>
+            </div>
+        </div>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">Exit Codes</h2>
+        <table>
+            <tr><th>Exit Code</th><th>Count</th></tr>
+            <tr><td>1</td><td>1,595</td></tr>
+            <tr><td>2</td><td>491</td></tr>
+            <tr><td>0</td><td>4</td></tr>
+            <tr><td>127</td><td>2</td></tr>
+        </table>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">Destinations</h2>
+        <table>
+            <tr><th>Destination</th><th>Count</th></tr>
+            <tr><td>cyclone_small</td><td>1,858</td></tr>
+            <tr><td>jetstream2</td><td>263</td></tr>
+            <tr><td>jetstream2_vgp</td><td>1</td></tr>
+        </table>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">All Unique Error Messages</h2>
+        <table>
+            <tr><th style="width: 80px;">Count</th><th>Error Message</th></tr>
+            <tr><td>545</td><td><span class="error-msg">///  MultiQC  🔍  v1.27</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">///  MultiQC  🔍  v1.27
+
+          version_check  |  MultiQC  Version  v1.32  now  available!
+              file_search  |  Search  path:  /jetstream2/scratch/main/jobs/72117732/working/multiqc_WDir
+
+╭─────────────────  Oops!  The  'fastqc'  MultiQC  module  broke...  ─────────────────╮
+│  Please  copy  this  log  and  report  it  at                                                                                │
+│  https://github.com/MultiQC/MultiQC/issues                                                                        │
+│  Please  attach  a  file  that  triggers  the  error.  The  last  file  found  was:              │
+│  multiqc_WDir/fastqc_0/data_0/file_1/fastqc_data.txt                                                    │
+│                                                                                                                                                            │
+│  Traceback  (most  recent  call  last):                                                         </span></details></td></tr>
+            <tr><td>246</td><td><span class="error-msg">///  MultiQC  🔍  v1.24.1</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">///  MultiQC  🔍  v1.24.1
+
+          version_check  |  MultiQC  Version  v1.32  now  available!
+              file_search  |  Search  path:  /corral4/main/jobs/072/433/72433406/working/multiqc_WDir
+
+                      multiqc  |  No  analysis  results  found.  Cleaning  up…
+ls:  cannot  access  './report_data/':  No  such  file  or  directory</span></details></td></tr>
+            <tr><td>131</td><td><span class="error-msg">'This  is  cutadapt'  or  'You  are  running  cutadapt'  not  found  in  the  file</span></td></tr>
+            <tr><td>17</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/star_0/log_0/RNA  STAR  on  dataset  13_  14_</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ln:  failed  to  create  symbolic  link  'multiqc_WDir/star_0/log_0/RNA  STAR  on  dataset  13_  14_  and  others_  log_Log.final.out':  File  exists</span></details></td></tr>
+            <tr><td>7</td><td><span class="error-msg">'Fraction  of  reads  explained  by'  not  found  in  the  file</span></td></tr>
+            <tr><td>6</td><td><span class="error-msg">///  MultiQC  🎄  v1.27</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">///  MultiQC  🎄  v1.27
+
+          version_check  |  MultiQC  Version  v1.33  now  available!
+              file_search  |  Search  path:  /corral4/main/jobs/073/394/73394311/working/multiqc_WDir
+
+╭─────────────────  Oops!  The  'fastqc'  MultiQC  module  broke...  ─────────────────╮
+│  Please  copy  this  log  and  report  it  at                                                                                │
+│  https://github.com/MultiQC/MultiQC/issues                                                                        │
+│  Please  attach  a  file  that  triggers  the  error.  The  last  file  found  was:              │
+│  multiqc_WDir/fastqc_0/data_0/file_14/fastqc_data.txt                                                  │
+│                                                                                                                                                            │
+│  Traceback  (most  recent  call  last):                                                             </span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">Module  'rseqc:  'Proper-paired  reads  map  to  different  chrom:'  not  found  in  the  file  'MCL</span></td></tr>
+            <tr><td>5</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'FastQC  on  dataset  4_  RawData'</span></td></tr>
+            <tr><td>5</td><td><span class="error-msg">Module  'snpeff:  'SnpEff_version'  not  found  in  the  file  'SnpEff  eff_  on  dataset  39'</span></td></tr>
+            <tr><td>5</td><td><span class="error-msg">Module  'pairtools:  'total_single_sided_mapped'  not  found  in  the  file  'Hi-C  alignement  on  </span></td></tr>
+            <tr><td>5</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'SRR358715'</span></td></tr>
+            <tr><td>4</td><td><span class="error-msg">Module  'megahit:  '  -  MEGAHIT  v'  not  found  in  the  file  'Lalo__Valle'</span></td></tr>
+            <tr><td>4</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/cutadapt_0/forward.txt':  File  exists</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ln:  failed  to  create  symbolic  link  'multiqc_WDir/cutadapt_0/forward.txt':  File  exists
+'This  is  cutadapt'  or  'You  are  running  cutadapt'  not  found  in  the  file</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Module  'samtools:  'This  file  was  produced  by  samtools  stats'  not  found  in  the  file  'Sa</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'samtools:  'This  file  was  produced  by  samtools  stats'  not  found  in  the  file  'Samtools  view  on  dataset  130_  Counts'</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Module  'rseqc:  'Group                              Total_bases                  Tag_count         </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'rseqc:  'Group                              Total_bases                  Tag_count                      Tags/Kb'  not  found  in  the  file  'Infer  Experiment  on  dataset  44  and  62_  RNA-seq  experiment  configuration'</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">///  MultiQC  🔍  |  v1.11</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">///  MultiQC  🔍  |  v1.11
+
+|                      multiqc  |  MultiQC  Version  v1.32  now  available!
+|                      multiqc  |  Search  path  :  /corral4/main/jobs/072/359/72359442/working/multiqc_WDir
+╭─────────────────  Oops!  The  'fastqc'  MultiQC  module  broke...  ─────────────────╮
+│  Please  copy  this  log  and  report  it  at                                                                                │
+│  https://github.com/ewels/MultiQC/issues                                                                            │
+│  Please  attach  a  file  that  triggers  the  error.  The  last  file  found  was:              │
+│  multiqc_WDir/fastqc_0/data_0/file_1/fastqc_data.txt                                                    │
+│                                                                                                                                                            │
+│  Traceback  (most  recent  call  last):                                          </span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Module  'picard:  'picard.analysis.AlignmentSummaryMetrics'  not  found  in  the  file  'tratado'</span></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Module  'rseqc:  'Proper-paired  reads  map  to  different  chrom:'  not  found  in  the  file  'tra</span></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Module  'snpeff:  'SnpEff_version'  not  found  in  the  file  'SnpEff  eff_  on  dataset  38'</span></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'SRR358714'</span></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  GSM461180_2_treat</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  GSM461180_2_treated_fastqsanger  _R2  paired_'</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/star_0/log_0/GSM461180_subsampled_Log.final.o</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'MultiQC  on  dataset  97_  99_  an</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'samtools:  'This  file  was  produced  by  samtools  stats'  not  found  in  the  file  'Mu</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'samtools:  'This  file  was  produced  by  samtools  stats'  not  found  in  the  file  'MultiQC  on  dataset  109_  111_  and  others  and  collection  107_  Stats'</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/star_0/log_0/GSM461180_Log.final.out':  File </span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trim  Galore_  on  data  18  and  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trim  Galore_  on  data  18  and  data  17_  trimmed  reads  pair  1  uncompressed'</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'picard:  'picard.analysis.AlignmentSummaryMetrics'  not  found  in  the  file  'control'</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'hisat2:  'HISAT2  summary  stats:'  not  found  in  the  file  'HISAT2  on  dataset  1  and</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'hisat2:  'HISAT2  summary  stats:'  not  found  in  the  file  'HISAT2  on  dataset  1  and  2_  Mapping  summary'</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'hisat2:  'HISAT2  summary  stats:'  not  found  in  the  file  'HISAT2  on  dataset  5  and</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'hisat2:  'HISAT2  summary  stats:'  not  found  in  the  file  'HISAT2  on  dataset  5  and  9_  Mapping  summary'</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Falco  on  dataset  1_  RawData'</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'samtools:  'This  file  was  produced  by  samtools  stats'  not  found  in  the  file  'MC</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'picard:  'picard.analysis.AlignmentSummaryMetrics'  not  found  in  the  file  'tratado_for</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'hisat2:  'HISAT2  summary  stats:'  not  found  in  the  file  'SRR31896486'</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  dataset  564  and</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  dataset  564  and  565  _trimlog  file_'</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'bowtie2:  '%  overall  alignment  rate'  not  found  in  the  file  'Cutadapt  on  dataset </span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">'report_title'  or  'report_title'  not  found  in  the  file</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'samtools:  'This  file  was  produced  by  samtools  stats'  not  found  in  the  file  'SR</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'bamtools:  'Stats  for  BAM  file(s)'  not  found  in  the  file  'MultiQC  on  dataset  56</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'bamtools:  'Stats  for  BAM  file(s)'  not  found  in  the  file  'MultiQC  on  dataset  56_  58_  and  others  and  collection  54_  Stats'</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/star_0/log_0/hcc1395_normal_rep1_Log.final.ou</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/star_0/log_0/GSM461177_untreat_paired_Log.fin</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ln:  failed  to  create  symbolic  link  'multiqc_WDir/star_0/log_0/GSM461177_untreat_paired_Log.final.out':  File  exists</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/featureCounts_1/featureCounts  on  dataset  1</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ln:  failed  to  create  symbolic  link  'multiqc_WDir/featureCounts_1/featureCounts  on  dataset  15  and  16_  Summary.summary':  File  exists</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'L23CY2'</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  ADP_ac_MKDL250016</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  ADP_ac_MKDL250016040-1A_23CTGKLT4_L8_2_fq_gz  _R2  paired_  uncompressed'</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  FLT2  R1  _R1  pa</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'bamtools:  'Stats  for  BAM  file(s)'  not  found  in  the  file  'FastQC  on  dataset  1_ </span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'bcftools:  'This  file  was  produced  by  bcftools  stats'  not  found  in  the  file  'Sa</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'bcftools:  'This  file  was  produced  by  bcftools  stats'  not  found  in  the  file  'Samtools  sort  on  dataset  9  _as  BED_'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/diamond_0/diamond.log':  File  exists</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'prokka:  'contigs:'  not  found  in  the  file  'Prokka  on  Copper_  log'</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  FASTQ  Groomer  o</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  FASTQ  Groomer  on  dataset  14  _R2  paired_'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  MARP_3_R2_fastq_g</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  MARP_3_R2_fastq_gz  _R2  paired_  uncompressed'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'MARP_2'</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'bowtie2:  '%  overall  alignment  rate'  not  found  in  the  file  'FastQC  on  dataset  4</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'SRR7300567_forward'</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/jetstream2/scratch/main/jobs/72208130/tool_script.sh:  line  1:  html:  No  such  file  or  directo</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/jetstream2/scratch/main/jobs/72208130/tool_script.sh:  line  1:  html:  No  such  file  or  directory
+/jetstream2/scratch/main/jobs/72208130/tool_script.sh:  line  2:  syntax  error  near  unexpected  token  `&lt;'
+/jetstream2/scratch/main/jobs/72208130/tool_script.sh:  line  2:  `&lt;head&gt;&lt;title&gt;500  Internal  Server  Error&lt;/title&gt;&lt;/head&gt;'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  SRR1552455_fastq </span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/star_0/genecounts_0/R2D0_001_ReadsPerGene.out</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">'#  This  file  is  generated  by  MACS'  not  found  in  the  file</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/featureCounts_0/WT_rep2_fastq_gz.summary':  F</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'pairtools:  'total_single_sided_mapped'  not  found  in  the  file  'Hi-C  duplication  sta</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'FastQC  on  dataset  4_  Webpage'</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'hisat2:  'HISAT2  summary  stats:'  not  found  in  the  file  'MultiQC  on  dataset  138_ </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'hisat2:  'HISAT2  summary  stats:'  not  found  in  the  file  'MultiQC  on  dataset  138_  140_  and  others  and  collection  136_  Stats'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'picard:  'MarkDuplicates'  not  found  in  the  file  'MultiQC  on  dataset  179-190  and  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'picard:  'MarkDuplicates'  not  found  in  the  file  'MultiQC  on  dataset  179-190  and  collection  178_  Stats'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/star_0/log_0/RNA  STAR  on  dataset  75_  76_</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ln:  failed  to  create  symbolic  link  'multiqc_WDir/star_0/log_0/RNA  STAR  on  dataset  75_  76_  and  others_  log_Log.final.out':  File  exists</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'fasterq-dump  log'</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  SRR2939466_2_fast</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/featureCounts_0/Scer-t0060-b4-L001.summary': </span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  NS_X0201_004_NEBN</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  NS_X0201_004_NEBNext_dual_i7_249---NEBNext_dual_i5_201_Rockwell_MHPP_2_R1_fastq_gz  _R1  paired_  uncompressed'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'picard:  'picard.analysis.directed.TargetedPcrMetrics'  not  found  in  the  file  'MultiQC</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'picard:  'picard.analysis.directed.TargetedPcrMetrics'  not  found  in  the  file  'MultiQC  on  dataset  66  and  74  and  collection  58_  Stats'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'picard:  'picard.analysis.directed.TargetedPcrMetrics'  not  found  in  the  file  'tratado</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'samtools:  'This  file  was  produced  by  samtools  stats'  not  found  in  the  file  'be</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'samtools:  'This  file  was  produced  by  samtools  stats'  not  found  in  the  file  'bedtools  Multiple  Intersect  on  dataset  43-45'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/corral4/main/jobs/072/611/72611627/tool_script.sh:  line  9:  multiqc:  not  found</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/star_0/log_0/RNA  STARSolo  on  dataset  5_  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ln:  failed  to  create  symbolic  link  'multiqc_WDir/star_0/log_0/RNA  STARSolo  on  dataset  5_  8_  and  others_  log_Log.final.out':  File  exists</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  SRR35733876_forwa</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  SRR35733876_forward  _R1  paired_  uncompressed'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/featureCounts_0/RNA  STAR  on  dataset  1_  2</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ln:  failed  to  create  symbolic  link  'multiqc_WDir/featureCounts_0/RNA  STAR  on  dataset  1_  2_  and  others_  mapped.summary':  File  exists</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/star_0/genecounts_0/RNA  STAR  on  dataset  1</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ln:  failed  to  create  symbolic  link  'multiqc_WDir/star_0/genecounts_0/RNA  STAR  on  dataset  1_  2_  and  others_  mapped_ReadsPerGene.out.tab':  File  exists</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/featureCounts_0/8_001.summary':  File  exists</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'hisat2:  'HISAT2  summary  stats:'  not  found  in  the  file  'featureCounts  on  dataset </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'hisat2:  'HISAT2  summary  stats:'  not  found  in  the  file  'featureCounts  on  dataset  239  and  254_  Summary'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  Arabidopsis_BRBse</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  Arabidopsis_BRBseq_1M_R1_fastq  _R1  paired_'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'bamtools:  'Stats  for  BAM  file(s)'  not  found  in  the  file  'Drosophila_melanogaster_</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'bamtools:  'Stats  for  BAM  file(s)'  not  found  in  the  file  'Drosophila_melanogaster_BDGP6_32_109_UCSC_gtf  uncompressed'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'picard:  'MarkDuplicates'  not  found  in  the  file  'MultiQC  on  dataset  392-403_  Stat</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'bowtie2:  '%  overall  alignment  rate'  not  found  in  the  file  'FASTQ  de-interlacer  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'bowtie2:  '%  overall  alignment  rate'  not  found  in  the  file  'FASTQ  de-interlacer  right  singles  from  data  1  uncompressed'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  dataset  566  and</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  dataset  566  and  567  _trimlog  file_'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'bowtie2:  '%  overall  alignment  rate'  not  found  in  the  file  'Trimmomatic  on  SER-2</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'bowtie2:  '%  overall  alignment  rate'  not  found  in  the  file  'Trimmomatic  on  SER-279-BPRL_S197_L002_R1_001_fastq'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/star_0/log_0/RNA  STAR  on  dataset  3_  58_ </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ln:  failed  to  create  symbolic  link  'multiqc_WDir/star_0/log_0/RNA  STAR  on  dataset  3_  58_  and  59_  mapped_Log.final.out':  File  exists</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'hisat2:  'HISAT2  summary  stats:'  not  found  in  the  file  'MCL1-DL'</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'prokka:  'contigs:'  not  found  in  the  file  'Prokka  on  dataset  9_  log'</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'hisat2:  'HISAT2  summary  stats:'  not  found  in  the  file  'MultiQC  on  dataset  254_ </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'hisat2:  'HISAT2  summary  stats:'  not  found  in  the  file  'MultiQC  on  dataset  254_  257_  and  others  and  collection  251_  Stats'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'fastqc  40'</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'trim  1  r2  8-paired  uncompresse</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  SRR358714  uncomp</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  SRR358715  uncomp</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/forward_mqc.txt':  File  exists</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'snpeff:  'SnpEff_version'  not  found  in  the  file  'SnpSift  Extract  Fields  on  datase</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  SRR33540834_forwa</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  SRR33540834_forward  _R1  paired_  uncompressed'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'hisat2:  'HISAT2  summary  stats:'  not  found  in  the  file  'MultiQC  on  dataset  29_  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'hisat2:  'HISAT2  summary  stats:'  not  found  in  the  file  'MultiQC  on  dataset  29_  31_  and  others  and  collection  27_  Stats'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trim  Galore_  on  dataset  10_  t</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trim  Galore_  on  dataset  10_  trimmed  reads  uncompressed'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'hisat2:  'HISAT2  summary  stats:'  not  found  in  the  file  'MultiQC  on  dataset  26_  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'hisat2:  'HISAT2  summary  stats:'  not  found  in  the  file  'MultiQC  on  dataset  26_  30_  and  others  and  collection  24_  28_  and  others_  Stats'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'SRR358719'</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/corral4/main/jobs/073/188/73188976/tool_script.sh:  line  23:  multiqc_WDir/featureCounts_0/MCL1-DL</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/corral4/main/jobs/073/188/73188976/tool_script.sh:  line  23:  multiqc_WDir/featureCounts_0/MCL1-DL.summary:  Read-only  file  system
+/corral4/main/jobs/073/188/73188976/tool_script.sh:  line  23:  multiqc_WDir/featureCounts_0/MCL1-DL.summary:  Read-only  file  system</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/featureCounts_0/hcc1395_normal_rep1.summary':</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'multiqc_WDir/featureCounts_1/featureCounts  on  dataset  S</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ln:  failed  to  create  symbolic  link  'multiqc_WDir/featureCounts_1/featureCounts  on  dataset  SRR1501368_  Summary.summary':  File  exists</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  1_S1_L001_R2_001_</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  1_S1_L001_R2_001_fastq_gz  _R1  paired_  uncompressed'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'rseqc:  'Proper-paired  reads  map  to  different  chrom:'  not  found  in  the  file  'Inf</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'rseqc:  'Proper-paired  reads  map  to  different  chrom:'  not  found  in  the  file  'Infer  Experiment  on  dataset  130  and  134_  RNA-seq  experiment  configuration'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'samtools:  'This  file  was  produced  by  samtools  stats'  not  found  in  the  file  'ge</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  Selinexor3_fastq </span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/jetstream2/scratch/main/jobs/73305783/tool_script.sh:  line  9:  multiqc:  not  found</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[WARNING]                  multiqc  :  MultiQC  Version  v1.33  now  available!</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[WARNING]                  multiqc  :  MultiQC  Version  v1.33  now  available!
+[INFO      ]                  multiqc  :  This  is  MultiQC  v1.3
+[INFO      ]                  multiqc  :  Template        :  default
+[INFO      ]                  multiqc  :  Searching  'multiqc_WDir'
+[ERROR    ]                  multiqc  :  Oops!  The  'fastqc'  MultiQC  module  broke...  
+                                        Please  copy  the  following  traceback  and  report  it  at  https://github.com/ewels/MultiQC/issues  
+                                        (if  possible,  include  a  log  file  that  triggers  the  error)  
+============================================================
+Module  fastqc  raised  an  exception:  Traceback  (most  recent  call  last):
+    File  "/usr/local/bin/multiqc",  line  412,  in  multiqc
+        output  =  mod()
+    File  "/usr/local/lib/python3.6/site-packages/multiqc/modules/fastqc/fastqc.py",  line  44,  in  __init__
+        self.parse_fastqc_report(f['f</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'DESeq2  result  file  on  dataset </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'DESeq2  result  file  on  dataset  125-131  _modified_'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  SRR358717  uncomp</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'CTRL'</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'SRR8521732'</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'SRR8521656'</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'rseqc:  'Proper-paired  reads  map  to  different  chrom:'  not  found  in  the  file  'SRR</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  GSM461176_untreat</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  dataset  11  and </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  dataset  11  and  12  _trimlog  file_'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'FastQC  on  dataset  91  Drug  Tre</span></td></tr>
+        </table>
+    </div>
+</body>
+</html>

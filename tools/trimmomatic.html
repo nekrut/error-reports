@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trimmomatic Errors - Galaxy Error Analysis</title>
+    <style>
+    :root { --bg: #1a1a2e; --card-bg: #16213e; --text: #eee; --text-muted: #888; --accent: #4a90d9; --border: #0f3460; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    h1 { color: var(--accent); margin-bottom: 10px; }
+    .back { color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 20px; }
+    .back:hover { text-decoration: underline; }
+    .stats { display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap; }
+    .stat { background: var(--card-bg); padding: 15px 25px; border-radius: 8px; border: 1px solid var(--border); }
+    .stat-value { font-size: 1.5em; font-weight: bold; color: var(--accent); }
+    .stat-label { color: var(--text-muted); font-size: 0.85em; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: rgba(74, 144, 217, 0.2); color: var(--accent); }
+    tr:hover { background: rgba(255,255,255,0.05); }
+    .error-msg { font-family: monospace; font-size: 0.85em; white-space: pre-wrap; word-break: break-all; background: rgba(0,0,0,0.3); padding: 8px; border-radius: 4px; display: block; margin: 5px 0; }
+</style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back">&larr; Back to Dashboard</a>
+        <h1>trimmomatic</h1>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">2,004</div>
+                <div class="stat-label">Total Errors</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">24</div>
+                <div class="stat-label">Unique Error Types</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">317</div>
+                <div class="stat-label">Affected Users</div>
+            </div>
+        </div>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">Exit Codes</h2>
+        <table>
+            <tr><th>Exit Code</th><th>Count</th></tr>
+            <tr><td>1</td><td>1,241</td></tr>
+            <tr><td>0</td><td>234</td></tr>
+        </table>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">Destinations</h2>
+        <table>
+            <tr><th>Destination</th><th>Count</th></tr>
+            <tr><td>cyclone</td><td>1,518</td></tr>
+            <tr><td>jetstream2</td><td>382</td></tr>
+        </table>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">All Unique Error Messages</h2>
+        <table>
+            <tr><th style="width: 80px;">Count</th><th>Error Message</th></tr>
+            <tr><td>1,220</td><td><span class="error-msg">Trimmomatic  did  not  finish  successfully</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger.gz'  and  '/jetstream2/scratch/main/jobs/72304057/working/fa</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger.gz'  and  '/jetstream2/scratch/main/jobs/72304057/working/fastq_out_r1_unpaired.fastqsanger.gz'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger.gz'  and  '/jetstream2/scratch/main/jobs/72304059/working/fa</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger.gz'  and  '/jetstream2/scratch/main/jobs/72304059/working/fastq_out_r1_unpaired.fastqsanger.gz'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger.gz'  and  '/jetstream2/scratch/main/jobs/72304060/working/fa</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger.gz'  and  '/jetstream2/scratch/main/jobs/72304060/working/fastq_out_r1_unpaired.fastqsanger.gz'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger.gz'  and  '/jetstream2/scratch/main/jobs/72304061/working/fa</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger.gz'  and  '/jetstream2/scratch/main/jobs/72304061/working/fastq_out_r1_unpaired.fastqsanger.gz'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r2_unpaired.fastqsanger.gz'  and  '/jetstream2/scratch/main/jobs/72304062/working/fa</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r2_unpaired.fastqsanger.gz'  and  '/jetstream2/scratch/main/jobs/72304062/working/fastq_out_r2_unpaired.fastqsanger.gz'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger.gz'  and  '/jetstream2/scratch/main/jobs/72304063/working/fa</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger.gz'  and  '/jetstream2/scratch/main/jobs/72304063/working/fastq_out_r1_unpaired.fastqsanger.gz'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891357/working/fastq</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891357/working/fastq_out_r1_unpaired.fastqsanger'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891358/working/fastq</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891358/working/fastq_out_r1_unpaired.fastqsanger'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891359/working/fastq</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891359/working/fastq_out_r1_unpaired.fastqsanger'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891360/working/fastq</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891360/working/fastq_out_r1_unpaired.fastqsanger'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891361/working/fastq</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891361/working/fastq_out_r1_unpaired.fastqsanger'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891362/working/fastq</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891362/working/fastq_out_r1_unpaired.fastqsanger'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891363/working/fastq</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891363/working/fastq_out_r1_unpaired.fastqsanger'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891364/working/fastq</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891364/working/fastq_out_r1_unpaired.fastqsanger'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891365/working/fastq</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891365/working/fastq_out_r1_unpaired.fastqsanger'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891366/working/fastq</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891366/working/fastq_out_r1_unpaired.fastqsanger'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891367/working/fastq</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891367/working/fastq_out_r1_unpaired.fastqsanger'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891368/working/fastq</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891368/working/fastq_out_r1_unpaired.fastqsanger'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891369/working/fastq</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_unpaired.fastqsanger'  and  '/jetstream2/scratch/main/jobs/72891369/working/fastq_out_r1_unpaired.fastqsanger'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  'fastq_out_r1_paired.fastqsanger.gz'  and  '/jetstream2/scratch/main/jobs/73001340/working/fast</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  'fastq_out_r1_paired.fastqsanger.gz'  and  '/jetstream2/scratch/main/jobs/73001340/working/fastq_out_r1_paired.fastqsanger.gz'  are  the  same  file</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  failed  to  close  '/corral4/main/jobs/073/021/73021842/outputs/dataset_f07ea1aa-189e-4805-a609</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  failed  to  close  '/corral4/main/jobs/073/021/73021842/outputs/dataset_f07ea1aa-189e-4805-a609-d70ec1a9a0be.dat':  Disk  quota  exceeded</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ln:  failed  to  create  symbolic  link  'fastq_r1.fastqsanger.gz':  Disk  quota  exceeded</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">mv:  failed  to  close  '/corral4/main/jobs/073/206/73206522/outputs/dataset_2241b5df-15e6-4962-bdd1</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">mv:  failed  to  close  '/corral4/main/jobs/073/206/73206522/outputs/dataset_2241b5df-15e6-4962-bdd1-8e3705d75c3a.dat':  Disk  quota  exceeded</span></details></td></tr>
+        </table>
+    </div>
+</body>
+</html>

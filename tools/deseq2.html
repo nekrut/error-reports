@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deseq2 Errors - Galaxy Error Analysis</title>
+    <style>
+    :root { --bg: #1a1a2e; --card-bg: #16213e; --text: #eee; --text-muted: #888; --accent: #4a90d9; --border: #0f3460; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    h1 { color: var(--accent); margin-bottom: 10px; }
+    .back { color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 20px; }
+    .back:hover { text-decoration: underline; }
+    .stats { display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap; }
+    .stat { background: var(--card-bg); padding: 15px 25px; border-radius: 8px; border: 1px solid var(--border); }
+    .stat-value { font-size: 1.5em; font-weight: bold; color: var(--accent); }
+    .stat-label { color: var(--text-muted); font-size: 0.85em; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: rgba(74, 144, 217, 0.2); color: var(--accent); }
+    tr:hover { background: rgba(255,255,255,0.05); }
+    .error-msg { font-family: monospace; font-size: 0.85em; white-space: pre-wrap; word-break: break-all; background: rgba(0,0,0,0.3); padding: 8px; border-radius: 4px; display: block; margin: 5px 0; }
+</style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back">&larr; Back to Dashboard</a>
+        <h1>deseq2</h1>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">2,598</div>
+                <div class="stat-label">Total Errors</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">104</div>
+                <div class="stat-label">Unique Error Types</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">737</div>
+                <div class="stat-label">Affected Users</div>
+            </div>
+        </div>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">Exit Codes</h2>
+        <table>
+            <tr><th>Exit Code</th><th>Count</th></tr>
+            <tr><td>1</td><td>2,538</td></tr>
+        </table>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">Destinations</h2>
+        <table>
+            <tr><th>Destination</th><th>Count</th></tr>
+            <tr><td>cyclone_small</td><td>2,236</td></tr>
+            <tr><td>jetstream2</td><td>361</td></tr>
+        </table>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">All Unique Error Messages</h2>
+        <table>
+            <tr><th style="width: 80px;">Count</th><th>Error Message</th></tr>
+            <tr><td>630</td><td><span class="error-msg">Error  in  data.frame(sample  =  basename(filenames_in),  filename  =  filenames_in,    :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  data.frame(sample  =  basename(filenames_in),  filename  =  filenames_in,    :  
+    duplicate  row.names:  /jetstream2/scratch/main/jobs/72113794/inputs/dataset_b4f59e68-8962-414f-ae46-51928636dcd5.dat</span></details></td></tr>
+            <tr><td>294</td><td><span class="error-msg">Error  in  `levels&lt;-`(`*tmp*`,  value  =  as.character(levels))  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `levels&lt;-`(`*tmp*`,  value  =  as.character(levels))  :  
+    factor  level  [2]  is  duplicated
+Calls:  factor</span></details></td></tr>
+            <tr><td>231</td><td><span class="error-msg">estimating  size  factors</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>229</td><td><span class="error-msg">Error  in  DESeqDataSetFromMatrix(countData  =  tbl,  colData  =  subset(sample_table,    :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  DESeqDataSetFromMatrix(countData  =  tbl,  colData  =  subset(sample_table,    :  
+    ncol(countData)  ==  nrow(colData)  is  not  TRUE
+Calls:  get_deseq_dataset  -&gt;  DESeqDataSetFromMatrix  -&gt;  stopifnot</span></details></td></tr>
+            <tr><td>211</td><td><span class="error-msg">Error  in  read.table(file  =  file,  header  =  header,  sep  =  sep,  quote  =  quote,    :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  read.table(file  =  file,  header  =  header,  sep  =  sep,  quote  =  quote,    :  
+    duplicate  'row.names'  are  not  allowed
+Calls:  get_deseq_dataset  -&gt;  lapply  -&gt;  lapply  -&gt;  FUN  -&gt;  read.table</span></details></td></tr>
+            <tr><td>171</td><td><span class="error-msg">Error  in  DESeqDataSet(se,  design  =  design,  ignoreRank)  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  DESeqDataSet(se,  design  =  design,  ignoreRank)  :  
+    all  samples  have  0  counts  for  all  genes.  check  the  counting  script.
+Calls:  get_deseq_dataset  -&gt;  DESeqDataSetFromMatrix  -&gt;  DESeqDataSet</span></details></td></tr>
+            <tr><td>159</td><td><span class="error-msg">Error  in  data.frame(...,  check.names  =  FALSE)  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  data.frame(...,  check.names  =  FALSE)  :  
+    arguments  imply  differing  number  of  rows:  28394,  28395
+Calls:  get_deseq_dataset  ...  eval  -&gt;  eval  -&gt;  eval  -&gt;  cbind  -&gt;  cbind  -&gt;  data.frame</span></details></td></tr>
+            <tr><td>84</td><td><span class="error-msg">Error  in  `.rowNamesDF&lt;-`(x,  value  =  value)  :  invalid  'row.names'  length</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `.rowNamesDF&lt;-`(x,  value  =  value)  :  invalid  'row.names'  length
+Calls:  rownames&lt;-  ...  row.names&lt;-  -&gt;  row.names&lt;-.data.frame  -&gt;  .rowNamesDF&lt;-</span></details></td></tr>
+            <tr><td>78</td><td><span class="error-msg">Error  in  `.rowNamesDF&lt;-`(x,  value  =  value)  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `.rowNamesDF&lt;-`(x,  value  =  value)  :  
+    duplicate  'row.names'  are  not  allowed
+Calls:  rownames&lt;-  ...  row.names&lt;-  -&gt;  row.names&lt;-.data.frame  -&gt;  .rowNamesDF&lt;-
+Warning  message:
+non-unique  values  when  setting  'row.names':  'featureCounts    control  ',  'featureCounts  Infected'</span></details></td></tr>
+            <tr><td>68</td><td><span class="error-msg">Import  genomic  features  from  the  file  as  a  GRanges  object  ...  OK</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Import  genomic  features  from  the  file  as  a  GRanges  object  ...  OK
+Prepare  the  'metadata'  data  frame  ...  OK
+Make  the  TxDb  object  ...  OK
+'select()'  returned  1:1  mapping  between  keys  and  columns
+Note:  importing  `abundance.h5`  is  typically  faster  than  `abundance.tsv`
+reading  in  files  with  read.delim  (install  'readr'  package  for  speed  up)
+1  Note:  importing  `abundance.h5`  is  typically  faster  than  `abundance.tsv`
+reading  in  files  with  read.delim  (install  'readr'  package  for  speed  up)
+1  Error  in  tximport(txi_files,  type  =  txtype,  tx2gene  =  tx2gene,  ignoreTxVersion  =  TRUE)  :  
+    all(c(abundanceCol,  countsCol,  lengthCol)  %in%  names(raw))  is  not  TRUE
+Calls:  get_deseq_dataset  -&gt;  tximport  -&gt;  stopifnot
+Warning  message:
+In  .get_cds_IDX(mcols0$type,  mcols0$phase)  :
+    The  "phase"  metadata  column  contains  non-NA  values  for  features  of  type
+    stop_codon.  This  information  was  ignored.</span></details></td></tr>
+            <tr><td>58</td><td><span class="error-msg">Error  in  eval(substitute(select),  nl,  parent.frame())  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  eval(substitute(select),  nl,  parent.frame())  :  
+    object  'identifier'  not  found
+Calls:  apply_batch_factors  ...  subset  -&gt;  subset  -&gt;  subset.data.frame  -&gt;  eval  -&gt;  eval</span></details></td></tr>
+            <tr><td>24</td><td><span class="error-msg">Error  in  DESeqDataSetFromHTSeqCount(sampleTable  =  sample_table,  directory  =  dir,    :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  DESeqDataSetFromHTSeqCount(sampleTable  =  sample_table,  directory  =  dir,    :  
+    Gene  IDs  (first  column)  differ  between  files.
+Calls:  get_deseq_dataset  -&gt;  DESeqDataSetFromHTSeqCount</span></details></td></tr>
+            <tr><td>19</td><td><span class="error-msg">Error  in  str2lang(x)  :  &lt;text&gt;:1:5:  unexpected  symbol</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  str2lang(x)  :  &lt;text&gt;:1:5:  unexpected  symbol
+1:  ~  10KInfectedEVs_vs_10kNaiveEVs
+                ^
+Calls:  as.formula  -&gt;  formula  -&gt;  formula.character  -&gt;  str2lang</span></details></td></tr>
+            <tr><td>19</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "WT")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "WT")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>16</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'Treatment',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'Treatment',
+    has  a  factor  level,  'control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+Error  in  eval(substitute(select),  nl,  parent.frame())  :  
+    object  'identifier'  not  found
+Calls:  apply_batch_factors  ...  subset  -&gt;  subset  -&gt;  subset.data.frame  -&gt;  eval  -&gt;  eval</span></details></td></tr>
+            <tr><td>14</td><td><span class="error-msg">Error  in  checkFullRank(modelMatrix)  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  checkFullRank(modelMatrix)  :  
+    the  model  matrix  is  not  full  rank,  so  the  model  cannot  be  fit  as  specified.
+    One  or  more  variables  or  interaction  terms  in  the  design  formula  are  linear
+    combinations  of  the  others  and  must  be  removed.
+
+    Please  read  the  vignette  section  'Model  matrix  not  full  rank':
+
+    vignette('DESeq2')
+Calls:  get_deseq_dataset  ...  DESeqDataSetFromMatrix  -&gt;  DESeqDataSet  -&gt;  checkFullRank</span></details></td></tr>
+            <tr><td>13</td><td><span class="error-msg">Error  in  str2lang(x)  :  &lt;text&gt;:1:4:  unexpected  symbol</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  str2lang(x)  :  &lt;text&gt;:1:4:  unexpected  symbol
+1:  ~  1v1
+              ^
+Calls:  as.formula  -&gt;  formula  -&gt;  formula.character  -&gt;  str2lang</span></details></td></tr>
+            <tr><td>13</td><td><span class="error-msg">converting  counts  to  integer  mode</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">converting  counts  to  integer  mode
+Warning  message:
+In  DESeqDataSet(se,  design  =  design,  ignoreRank)  :
+    150  duplicate  rownames  were  renamed  by  adding  numbers
+Error  in  `[[&lt;-`(`*tmp*`,  name,  value  =  numeric(0))  :  
+    0  elements  in  value  to  replace  6  elements
+Calls:  sizeFactors&lt;-  ...  sizeFactors&lt;-  -&gt;  .local  -&gt;  $&lt;-  -&gt;  $&lt;-  -&gt;  [[&lt;-  -&gt;  [[&lt;-</span></details></td></tr>
+            <tr><td>10</td><td><span class="error-msg">Warning  message:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning  message:
+In  Sys.setlocale("LC_MESSAGES",  "en_US.UTF-8")  :
+    OS  reports  request  to  set  locale  to  "en_US.UTF-8"  cannot  be  honored
+Error  in  read.table(file  =  file,  header  =  header,  sep  =  sep,  quote  =  quote,    :  
+    duplicate  'row.names'  are  not  allowed
+Calls:  get_deseq_dataset  ...  lapply  -&gt;  lapply  -&gt;  FUN  -&gt;  read.delim  -&gt;  read.table</span></details></td></tr>
+            <tr><td>9</td><td><span class="error-msg">Note:  importing  `abundance.h5`  is  typically  faster  than  `abundance.tsv`</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Note:  importing  `abundance.h5`  is  typically  faster  than  `abundance.tsv`
+reading  in  files  with  read.delim  (install  'readr'  package  for  speed  up)
+1  Error  in  `$&lt;-.data.frame`(`*tmp*`,  "TXNAME",  value  =  character(0))  :  
+    replacement  has  0  rows,  data  has  45745
+Calls:  get_deseq_dataset  -&gt;  $&lt;-  -&gt;  $&lt;-.data.frame</span></details></td></tr>
+            <tr><td>9</td><td><span class="error-msg">Error  in  h(simpleError(msg,  call))  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  h(simpleError(msg,  call))  :  
+    error  in  evaluating  the  argument  'obj'  in  selecting  a  method  for  function  'unname':  a  character  vector  argument  expected
+Calls:  unname  ...  basename  -&gt;  basename  -&gt;  &lt;Anonymous&gt;  -&gt;  .handleSimpleError  -&gt;  h</span></details></td></tr>
+            <tr><td>9</td><td><span class="error-msg">Error  in  names(x)  &lt;-  value  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  names(x)  &lt;-  value  :  
+    'names'  attribute  [2]  must  be  the  same  length  as  the  vector  [0]
+Calls:  get_deseq_dataset  -&gt;  colnames&lt;-  -&gt;  colnames&lt;-
+Warning  messages:
+1:  In  read.table(file  =  file,  header  =  header,  sep  =  sep,  quote  =  quote,    :
+    incomplete  final  line  found  by  readTableHeader  on  '/corral4/main/objects/f/8/0/dataset_f8010b88-ce5c-4eea-9536-4a31f4b9a3e4.dat'
+2:  In  read.table(file  =  file,  header  =  header,  sep  =  sep,  quote  =  quote,    :
+    incomplete  final  line  found  by  readTableHeader  on  '/corral4/main/objects/f/c/f/dataset_fcf2a545-c039-4c85-b6aa-3109d28d5bd5.dat'</span></details></td></tr>
+            <tr><td>8</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'FactorName',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'FactorName',
+    has  a  factor  level,  'Control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+Error  in  estimateSizeFactorsForMatrix(counts(object),  locfunc  =  locfunc,    :  
+    every  gene  contains  at  least  one  zero,  cannot  compute  log  geometric  means
+Calls:  DESeq  ...  estimateSizeFactors  -&gt;  .local  -&gt;  estimateSizeFactorsForMatrix</span></details></td></tr>
+            <tr><td>8</td><td><span class="error-msg">using  pre-existing  size  factors</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">using  pre-existing  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>6</td><td><span class="error-msg">Error  in  terms.formula(object,  data  =  data)  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  terms.formula(object,  data  =  data)  :  
+    invalid  model  formula  in  ExtractVars
+Calls:  get_deseq_dataset  ...  DESeqDataSet  -&gt;  &lt;Anonymous&gt;  -&gt;  terms  -&gt;  terms.formula</span></details></td></tr>
+            <tr><td>6</td><td><span class="error-msg">reading  in  files  with  read.delim  (install  'readr'  package  for  speed  up)</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">reading  in  files  with  read.delim  (install  'readr'  package  for  speed  up)
+1  Error  in  `$&lt;-.data.frame`(`*tmp*`,  "TXNAME",  value  =  character(0))  :  
+    replacement  has  0  rows,  data  has  45745
+Calls:  get_deseq_dataset  -&gt;  $&lt;-  -&gt;  $&lt;-.data.frame</span></details></td></tr>
+            <tr><td>6</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'NAFLD',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'NAFLD',
+    has  a  factor  level,  'CONTROL',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>6</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'Condition',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'Condition',
+    has  a  factor  level,  'Control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "Mega")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "Mega")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">Error  in  .local(object,  ...,  value)  :  all(!is.na(value))  is  not  TRUE</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  .local(object,  ...,  value)  :  all(!is.na(value))  is  not  TRUE
+Calls:  estimateSizeFactors  ...  sizeFactors&lt;-  -&gt;  sizeFactors&lt;-  -&gt;  .local  -&gt;  stopifnot</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'condition',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'condition',
+    has  a  factor  level,  'control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">Import  genomic  features  from  the  file  as  a  GRanges  object  ...  Error  in  readGFF(filepath</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Import  genomic  features  from  the  file  as  a  GRanges  object  ...  Error  in  readGFF(filepath,  version  =  version,  columns  =  columns,  tags  =  tags,    :  
+    reading  GFF  file:  line  1019167  has  more  than  9  tab-separated  columns
+Calls:  get_deseq_dataset  ...  import  -&gt;  import  -&gt;  .local  -&gt;  readGFFAsGRanges  -&gt;  readGFF</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'Experiment',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'Experiment',
+    has  a  factor  level,  'Control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+Error  in  estimateSizeFactorsForMatrix(counts(object),  locfunc  =  locfunc,    :  
+    every  gene  contains  at  least  one  zero,  cannot  compute  log  geometric  means
+Calls:  DESeq  ...  estimateSizeFactors  -&gt;  .local  -&gt;  estimateSizeFactorsForMatrix</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "5Xhr")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "5Xhr")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "control")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "control")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "RXLZ019")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "RXLZ019")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">Error  in  scan(file  =  file,  what  =  what,  sep  =  sep,  quote  =  quote,  dec  =  dec,    :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  scan(file  =  file,  what  =  what,  sep  =  sep,  quote  =  quote,  dec  =  dec,    :  
+    line  1  did  not  have  5  elements
+Calls:  read.table  -&gt;  scan</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Error  in  str2lang(x)  :  &lt;text&gt;:1:6:  unexpected  symbol</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  str2lang(x)  :  &lt;text&gt;:1:6:  unexpected  symbol
+1:  ~  100X_vs_Old_Tcell
+                  ^
+Calls:  as.formula  -&gt;  formula  -&gt;  formula.character  -&gt;  str2lang</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "Tram")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "Tram")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Note:  levels  of  factors  in  the  design  contain  characters  other  than</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Note:  levels  of  factors  in  the  design  contain  characters  other  than
+    letters,  numbers,  '_'  and  '.'.  It  is  recommended  (but  not  required)  to  use
+    only  letters,  numbers,  and  delimiters  '_'  or  '.',  as  these  are  safe  characters
+    for  column  names  in  R.  [This  is  a  message,  not  a  warning  or  an  error]
+estimating  size  factors
+Error  in  estimateSizeFactorsForMatrix(counts(object),  locfunc  =  locfunc,    :  
+    every  gene  contains  at  least  one  zero,  cannot  compute  log  geometric  means
+Calls:  DESeq  ...  estimateSizeFactors  -&gt;  .local  -&gt;  estimateSizeFactorsForMatrix</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'infection',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'infection',
+    has  a  factor  level,  'control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "wt")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "wt")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Error  in  make.names(col.names,  unique  =  TRUE)  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  make.names(col.names,  unique  =  TRUE)  :  
+    invalid  multibyte  string  at  '&lt;ff&gt;&lt;fe&gt;i'
+Calls:  get_deseq_dataset  ...  lapply  -&gt;  lapply  -&gt;  FUN  -&gt;  read.table  -&gt;  make.names
+Warning  messages:
+1:  In  read.table(file  =  file,  header  =  header,  sep  =  sep,  quote  =  quote,    :
+    line  1  appears  to  contain  embedded  nulls
+2:  In  read.table(file  =  file,  header  =  header,  sep  =  sep,  quote  =  quote,    :
+    line  2  appears  to  contain  embedded  nulls
+3:  In  read.table(file  =  file,  header  =  header,  sep  =  sep,  quote  =  quote,    :
+    line  3  appears  to  contain  embedded  nulls
+4:  In  read.table(file  =  file,  header  =  header,  sep  =  sep,  quote  =  quote,    :
+    line  4  appears  to  contain  embedded  nulls
+5:  In  read.table(file  =  file,  header  =  header,  sep  =  sep,  quote  =  quote,    :
+    line  5  appears  to  contain  embedded  nulls</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "FactorLevel")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "FactorLevel")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "5hr")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "5hr")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Error  in  type.convert.default(data[[i]],  as.is  =  as.is[i],  dec  =  dec,    :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  type.convert.default(data[[i]],  as.is  =  as.is[i],  dec  =  dec,    :  
+    invalid  multibyte  string  at  '&lt;ff&gt;&lt;fe&gt;X'
+Calls:  get_deseq_dataset  ...  FUN  -&gt;  read.table  -&gt;  type.convert  -&gt;  type.convert.default
+Warning  messages:
+1:  In  read.table(file.path(directory,  fn),  fill  =  TRUE)  :
+    line  1  appears  to  contain  embedded  nulls
+2:  In  read.table(file.path(directory,  fn),  fill  =  TRUE)  :
+    line  2  appears  to  contain  embedded  nulls
+3:  In  read.table(file.path(directory,  fn),  fill  =  TRUE)  :
+    line  3  appears  to  contain  embedded  nulls
+4:  In  read.table(file.path(directory,  fn),  fill  =  TRUE)  :
+    line  4  appears  to  contain  embedded  nulls
+5:  In  read.table(file.path(directory,  fn),  fill  =  TRUE)  :
+    line  5  appears  to  contain  embedded  nulls
+6:  In  scan(file  =  file,  what  =  what,  sep  =  sep,  quote  =  quote,  dec  =  dec,    :
+    embedded  nul(s)  found  in  input</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Error  in  estimateDispersionsFit(object,  fitType  =  fitType,  quiet  =  quiet)  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  estimateDispersionsFit(object,  fitType  =  fitType,  quiet  =  quiet)  :  
+    all  gene-wise  dispersion  estimates  are  within  2  orders  of  magnitude
+    from  the  minimum  value,  and  so  the  standard  curve  fitting  techniques  will  not  work.
+    One  can  instead  use  the  gene-wise  estimates  as  final  estimates:
+    dds  &lt;-  estimateDispersionsGeneEst(dds)
+    dispersions(dds)  &lt;-  mcols(dds)$dispGeneEst
+    ...then  continue  with  testing  using  nbinomWaldTest  or  nbinomLRT
+Calls:  estimateSizeFactors  ...  estimateDispersions  -&gt;  .local  -&gt;  estimateDispersionsFit</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Error  in  `[[&lt;-`(`*tmp*`,  name,  value  =  numeric(0))  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[[&lt;-`(`*tmp*`,  name,  value  =  numeric(0))  :  
+    0  elements  in  value  to  replace  6  elements
+Calls:  sizeFactors&lt;-  ...  sizeFactors&lt;-  -&gt;  .local  -&gt;  $&lt;-  -&gt;  $&lt;-  -&gt;  [[&lt;-  -&gt;  [[&lt;-</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'infected',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'infected',
+    has  a  factor  level,  'control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "test")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "test")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Warning  messages:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning  messages:
+1:  In  DESeqDataSet(se,  design  =  design,  ignoreRank)  :
+    all  genes  have  equal  values  for  all  samples.  will  not  be  able  to  perform  differential  analysis
+2:  In  DESeqDataSet(se,  design  =  design,  ignoreRank)  :
+    2  duplicate  rownames  were  renamed  by  adding  numbers
+estimating  size  factors
+estimating  dispersions
+Error  in  .local(object,  ...)  :  
+    all  genes  have  equal  values  for  all  samples.  will  not  be  able  to  perform  differential  analysis
+Calls:  DESeq  ...  estimateDispersions  -&gt;  estimateDispersions  -&gt;  .local</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "day1test")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "day1test")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "treated_B")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "treated_B")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "Infected")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "Infected")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'GoGeneBio',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'GoGeneBio',
+    has  a  factor  level,  'Control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "Trp")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "Trp")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "SE")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "SE")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "vehicle")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "vehicle")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'experiment',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'experiment',
+    has  a  factor  level,  'control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+Error  in  estimateSizeFactorsForMatrix(counts(object),  locfunc  =  locfunc,    :  
+    every  gene  contains  at  least  one  zero,  cannot  compute  log  geometric  means
+Calls:  DESeq  ...  estimateSizeFactors  -&gt;  .local  -&gt;  estimateSizeFactorsForMatrix</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'BudXstage',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'BudXstage',
+    has  a  factor  level,  'Control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+Error  in  estimateSizeFactorsForMatrix(counts(object),  locfunc  =  locfunc,    :  
+    every  gene  contains  at  least  one  zero,  cannot  compute  log  geometric  means
+Calls:  DESeq  ...  estimateSizeFactors  -&gt;  .local  -&gt;  estimateSizeFactorsForMatrix</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "PE")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "PE")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'Nematodes',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'Nematodes',
+    has  a  factor  level,  'Control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "5hrX")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "5hrX")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'group',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'group',
+    has  a  factor  level,  'control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+gene-wise  dispersion  estimates
+mean-dispersion  relationship
+Error  in  estimateDispersionsFit(object,  fitType  =  fitType,  quiet  =  quiet)  :  
+    all  gene-wise  dispersion  estimates  are  within  2  orders  of  magnitude
+    from  the  minimum  value,  and  so  the  standard  curve  fitting  techniques  will  not  work.
+    One  can  instead  use  the  gene-wise  estimates  as  final  estimates:
+    dds  &lt;-  estimateDispersionsGeneEst(dds)
+    dispersions(dds)  &lt;-  mcols(dds)$dispGeneEst
+    ...then  continue  with  testing  using  nbinomWaldTest  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "NonXSmokers")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "NonXSmokers")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "normalX")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "normalX")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'diet',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'diet',
+    has  a  factor  level,  'control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "SMN")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "SMN")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "RXLZ019X")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "RXLZ019X")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "VXLZ003")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "VXLZ003")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "5XhourX")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "5XhourX")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "Atopic")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "Atopic")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "Sham")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "Sham")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'effects_drug',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'effects_drug',
+    has  a  factor  level,  'Control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "Treated")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "Treated")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'Xeffects_drug_x',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'Xeffects_drug_x',
+    has  a  factor  level,  'control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "CXXInsecticola")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "CXXInsecticola")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "RLZ019")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "RLZ019")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "0056XMCB")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "0056XMCB")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "10Xdpi")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "10Xdpi")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "Wt")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "Wt")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "mycelial_solid")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "mycelial_solid")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "mycelial_sd")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "mycelial_sd")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "solid")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "solid")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "yeast")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "yeast")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  estimateSizeFactorsForMatrix(counts(dds))  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  estimateSizeFactorsForMatrix(counts(dds))  :  
+    every  gene  contains  at  least  one  zero,  cannot  compute  log  geometric  means</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'CA17',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'CA17',
+    has  a  factor  level,  'control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'Hicaz_10days',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'Hicaz_10days',
+    has  a  factor  level,  'Control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "VaccineXDayX3")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "VaccineXDayX3")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'controlXvsXTGFB2Xtreatment',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'controlXvsXTGFB2Xtreatment',
+    has  a  factor  level,  'control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'control_treated',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'control_treated',
+    has  a  factor  level,  'control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  str2lang(x)  :  &lt;text&gt;:1:4:  unexpected  input</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  str2lang(x)  :  &lt;text&gt;:1:4:  unexpected  input
+1:  ~  1_
+              ^
+Calls:  as.formula  -&gt;  formula  -&gt;  formula.character  -&gt;  str2lang</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "1vs3")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "1vs3")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'factorXlevel',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'factorXlevel',
+    has  a  factor  level,  'control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'ControlXvsXTGFB2',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'ControlXvsXTGFB2',
+    has  a  factor  level,  'Control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'treatment_effects',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'treatment_effects',
+    has  a  factor  level,  'control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'controlXvsXTGFB2',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'controlXvsXTGFB2',
+    has  a  factor  level,  'Control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "case")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "case")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "XResistantXXXXSusceptibleX") </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "XResistantXXXXSusceptibleX")  :  
+    column  name  ""  cannot  match  any  column
+Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'Group',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'Group',
+    has  a  factor  level,  'Control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'aid',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'aid',
+    has  a  factor  level,  'control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+estimating  size  factors
+estimating  dispersions
+Error  in  checkForExperimentalReplicates(object,  modelMatrix)  :  
+
+    The  design  matrix  has  the  same  number  of  samples  and  coefficients  to  fit,
+    so  estimation  of  dispersion  is  not  possible.  Treating  samples
+    as  replicates  was  deprecated  in  v1.20  and  no  longer  supported  since  v1.22.
+
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  checkForExperimentalReplicates</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Error  in  read.table(tx2gene,  header  =  has_header)  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  read.table(tx2gene,  header  =  has_header)  :  
+    more  columns  than  column  names
+Calls:  get_deseq_dataset  -&gt;  read.table</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">it  appears  that  the  last  variable  in  the  design  formula,  'Treated_Control',</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">it  appears  that  the  last  variable  in  the  design  formula,  'Treated_Control',
+    has  a  factor  level,  'control',  which  is  not  the  reference  level.  we  recommend
+    to  use  factor(...,levels=...)  or  relevel()  to  set  this  as  the  reference  level
+    before  proceeding.  for  more  information,  please  see  the  'Note  on  factor  levels'
+    in  vignette('DESeq2').
+Error  in  eval(substitute(select),  nl,  parent.frame())  :  
+    object  'identifier'  not  found
+Calls:  apply_batch_factors  ...  subset  -&gt;  subset  -&gt;  subset.data.frame  -&gt;  eval  -&gt;  eval</span></details></td></tr>
+        </table>
+    </div>
+</body>
+</html>

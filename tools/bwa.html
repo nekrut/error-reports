@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bwa Errors - Galaxy Error Analysis</title>
+    <style>
+    :root { --bg: #1a1a2e; --card-bg: #16213e; --text: #eee; --text-muted: #888; --accent: #4a90d9; --border: #0f3460; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    h1 { color: var(--accent); margin-bottom: 10px; }
+    .back { color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 20px; }
+    .back:hover { text-decoration: underline; }
+    .stats { display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap; }
+    .stat { background: var(--card-bg); padding: 15px 25px; border-radius: 8px; border: 1px solid var(--border); }
+    .stat-value { font-size: 1.5em; font-weight: bold; color: var(--accent); }
+    .stat-label { color: var(--text-muted); font-size: 0.85em; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: rgba(74, 144, 217, 0.2); color: var(--accent); }
+    tr:hover { background: rgba(255,255,255,0.05); }
+    .error-msg { font-family: monospace; font-size: 0.85em; white-space: pre-wrap; word-break: break-all; background: rgba(0,0,0,0.3); padding: 8px; border-radius: 4px; display: block; margin: 5px 0; }
+</style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back">&larr; Back to Dashboard</a>
+        <h1>bwa</h1>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">1,464</div>
+                <div class="stat-label">Total Errors</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">110</div>
+                <div class="stat-label">Unique Error Types</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">233</div>
+                <div class="stat-label">Affected Users</div>
+            </div>
+        </div>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">Exit Codes</h2>
+        <table>
+            <tr><th>Exit Code</th><th>Count</th></tr>
+            <tr><td>1</td><td>885</td></tr>
+            <tr><td>137</td><td>9</td></tr>
+            <tr><td>139</td><td>2</td></tr>
+        </table>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">Destinations</h2>
+        <table>
+            <tr><th>Destination</th><th>Count</th></tr>
+            <tr><td>cyclone_small</td><td>605</td></tr>
+            <tr><td>cyclone</td><td>534</td></tr>
+            <tr><td>jetstream2</td><td>178</td></tr>
+            <tr><td>expanse</td><td>103</td></tr>
+            <tr><td>anvil</td><td>38</td></tr>
+        </table>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">All Unique Error Messages</h2>
+        <table>
+            <tr><th style="width: 80px;">Count</th><th>Error Message</th></tr>
+            <tr><td>269</td><td><span class="error-msg">[E::bwa_idx_load_from_disk]  fail  to  locate  the  index  files</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[E::bwa_idx_load_from_disk]  fail  to  locate  the  index  files
+[W::hts_set_opt]  Cannot  change  block  size  for  this  format
+samtools  sort:  failed  to  read  header  from  "-"</span></details></td></tr>
+            <tr><td>122</td><td><span class="error-msg">[bwa_aln]  17bp  reads:  max_diff  =  2</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_aln]  17bp  reads:  max_diff  =  2
+[bwa_aln]  38bp  reads:  max_diff  =  3
+[bwa_aln]  64bp  reads:  max_diff  =  4
+[bwa_aln]  93bp  reads:  max_diff  =  5
+[bwa_aln]  124bp  reads:  max_diff  =  6
+[bwa_aln]  157bp  reads:  max_diff  =  7
+[bwa_aln]  190bp  reads:  max_diff  =  8
+[bwa_aln]  225bp  reads:  max_diff  =  9
+[bwa_aln_core]  calculate  SA  coordinate...  13.66  sec
+[bwa_aln_core]  write  to  the  disk...  0.02  sec
+[bwa_aln_core]  262144  sequences  have  been  processed.
+[bwa_aln_core]  calculate  SA  coordinate...  13.22  sec
+[bwa_aln_core]  write  to  the  disk...  0.02  sec
+[bwa_aln_core]  524288  sequences  have  been  processed.
+[bwa_aln_core]  calculate  SA  coordinate...  12.93  sec
+[bwa_aln_core]  write  to  the  disk...  0.02  sec
+[bwa_aln_core]  786432  sequences  have  been  processed.
+[bwa_aln_core]  calculate  SA  coordinate...  12.71  sec
+[bwa_aln_core]  write  to  the  disk...  0.02  sec
+[bwa_aln_core]  1048576  sequences  have  been  processed.
+[bwa_aln_co</span></details></td></tr>
+            <tr><td>89</td><td><span class="error-msg">[M::mem_pestat]  skip  orientation  FF  as  there  are  not  enough  pairs</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[M::mem_pestat]  skip  orientation  FF  as  there  are  not  enough  pairs
+[M::mem_pestat]  skip  orientation  FR  as  there  are  not  enough  pairs
+[M::mem_pestat]  skip  orientation  RF  as  there  are  not  enough  pairs
+[M::mem_pestat]  skip  orientation  RR  as  there  are  not  enough  pairs
+[mem_sam_pe]  paired  reads  have  different  names:  "SRR044234.1185",  "SRR044234.1187"
+
+[mem_sam_pe]</span></details></td></tr>
+            <tr><td>69</td><td><span class="error-msg">[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FF...</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FF...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (58,  109,  207)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and  std.dev:  (1,  505)
+[M::mem_pestat]  mean  and  std.dev:  (107.82,  77.75)
+[M::mem_pestat]  low  and  high  boundaries  for  proper  pairs:  (1,  654)
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FR...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (206,  228,  709)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and  std.dev:  (1,  1715)
+[M::mem_pestat]  mean  and  std.dev:  (319.46,  325.03)
+[M::mem_pestat]  low  and  high  boundaries  for  proper  pairs:  (1,  2218)
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  RF...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (40,  111,  2122)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and  std.dev:  (1,  6286)
+[M::mem_pestat]  mean  and </span></details></td></tr>
+            <tr><td>63</td><td><span class="error-msg">[W::bseq_read]  the  2nd  file  has  fewer  sequences.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[W::bseq_read]  the  2nd  file  has  fewer  sequences.
+[M::mem_pestat]  skip  orientation  FF  as  there  are  not  enough  pairs
+[M::mem_pestat]  skip  orientation  FR  as  there  are  not  enough  pairs
+[M::mem_pestat]  skip  orientation  RF  as  there  are  not  enough  pairs
+[M::mem_pestat]  skip  orientation  RR  as  there  are  not  enough  pairs
+[mem_sam_pe]  paired  reads  have  different  names:  "SRR044234.1194",  "SRR044234.1416"</span></details></td></tr>
+            <tr><td>36</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.03  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.03  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[bwa_index]  0.46  seconds  elapse.
+[bwa_index]  Update  BWT...  0.01  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.01  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  0.19  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  0.838  sec;  CPU:  0.712  sec
+[bwa_aln]  17bp  reads:  max_diff  =  2
+[bwa_aln]  38bp  reads:  max_diff  =  3
+[bwa_aln]  64bp  reads:  max_diff  =  4
+[bwa_aln]  93bp  reads:  max_diff  =  5
+[bwa_aln]  124bp  reads:  max_diff  =  6
+[bwa_aln]  157bp  reads:  max_diff  =  7
+[bwa_aln]  190bp  reads:  max_diff  =  8
+[bwa_aln]  225bp  reads:  max_diff  =  9
+[bwa_aln_core]  calculate  SA  coordinate...  5.86  sec
+[bwa_aln_core]  write  to  the  disk...  0.07  sec
+[bwa_aln_core]  262144  sequences  have  been  processed.
+[bwa_aln_core]  calculate  SA  coordinate...  5.56  sec
+[bwa_aln_core]  write  to  the  disk...  0.07  </span></details></td></tr>
+            <tr><td>31</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.00  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.00  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[bwa_index]  0.01  seconds  elapse.
+[bwa_index]  Update  BWT...  0.00  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.00  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  0.00  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  0.072  sec;  CPU:  0.018  sec
+[bwa_aln]  17bp  reads:  max_diff  =  2
+[bwa_aln]  38bp  reads:  max_diff  =  3
+[bwa_aln]  64bp  reads:  max_diff  =  4
+[bwa_aln]  93bp  reads:  max_diff  =  5
+[bwa_aln]  124bp  reads:  max_diff  =  6
+[bwa_aln]  157bp  reads:  max_diff  =  7
+[bwa_aln]  190bp  reads:  max_diff  =  8
+[bwa_aln]  225bp  reads:  max_diff  =  9
+[bwa_aln_core]  calculate  SA  coordinate...  10.10  sec
+[bwa_aln_core]  write  to  the  disk...  0.03  sec
+[bwa_aln_core]  262144  sequences  have  been  processed.
+[bwa_aln_core]  calculate  SA  coordinate...  10.02  sec
+[bwa_aln_core]  write  to  the  disk...  0.03</span></details></td></tr>
+            <tr><td>31</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.05  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.05  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[bwa_index]  2.64  seconds  elapse.
+[bwa_index]  Update  BWT...  0.03  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.04  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  0.76  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  3.588  sec;  CPU:  3.521  sec
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FF...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (2903,  5535,  7889)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and  std.dev:  (1,  17861)
+[M::mem_pestat]  mean  and  std.dev:  (5261.23,  2980.90)
+[M::mem_pestat]  low  and  high  boundaries  for  proper  pairs:  (1,  22847)
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FR...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (142,  221,  357)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and </span></details></td></tr>
+            <tr><td>20</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.04  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.04  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[bwa_index]  1.16  seconds  elapse.
+[bwa_index]  Update  BWT...  0.02  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.02  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  0.36  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  1.764  sec;  CPU:  1.606  sec
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FF...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (1986,  4857,  7095)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and  std.dev:  (1,  17313)
+[M::mem_pestat]  mean  and  std.dev:  (4684.16,  2903.48)
+[M::mem_pestat]  low  and  high  boundaries  for  proper  pairs:  (1,  22422)
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FR...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (136,  196,  288)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and </span></details></td></tr>
+            <tr><td>20</td><td><span class="error-msg">[W::bseq_read]  the  1st  file  has  fewer  sequences.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[W::bseq_read]  the  1st  file  has  fewer  sequences.
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FF...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (1415,  4129,  7254)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and  std.dev:  (1,  18932)
+[M::mem_pestat]  mean  and  std.dev:  (4310.03,  3132.14)
+[M::mem_pestat]  low  and  high  boundaries  for  proper  pairs:  (1,  24771)
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FR...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (1537,  4086,  7568)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and  std.dev:  (1,  19630)
+[M::mem_pestat]  mean  and  std.dev:  (4470.86,  3195.11)
+[M::mem_pestat]  low  and  high  boundaries  for  proper  pairs:  (1,  25661)
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  RF...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (1108,  2627,  6526)
+[M::mem_pestat]  low  and  high  boundaries </span></details></td></tr>
+            <tr><td>13</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  [fsync]  Disk  quota  exceeded</span></td></tr>
+            <tr><td>8</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.01  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.01  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[bwa_index]  0.01  seconds  elapse.
+[bwa_index]  Update  BWT...  0.00  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.01  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  0.00  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  0.071  sec;  CPU:  0.032  sec
+[bns_restore_core]  Parse  error  reading  localref.fa.amb
+
+[W::hts_set_opt]  Cannot  change  block  size  for  this  format
+samtools  sort:  failed  to  read  header  from  "-"</span></details></td></tr>
+            <tr><td>8</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.02  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.02  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[bwa_index]  0.50  seconds  elapse.
+[bwa_index]  Update  BWT...  0.01  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.01  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  0.19  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  0.826  sec;  CPU:  0.745  sec
+[bwa_aln]  17bp  reads:  max_diff  =  2
+[bwa_aln]  38bp  reads:  max_diff  =  3
+[bwa_aln]  64bp  reads:  max_diff  =  4
+[bwa_aln]  93bp  reads:  max_diff  =  5
+[bwa_aln]  124bp  reads:  max_diff  =  6
+[bwa_aln]  157bp  reads:  max_diff  =  7
+[bwa_aln]  190bp  reads:  max_diff  =  8
+[bwa_aln]  225bp  reads:  max_diff  =  9
+[bwa_aln_core]  calculate  SA  coordinate...  5.67  sec
+[bwa_aln_core]  write  to  the  disk...  0.04  sec
+[bwa_aln_core]  262144  sequences  have  been  processed.
+[bwa_aln_core]  calculate  SA  coordinate...  5.33  sec
+[bwa_aln_core]  write  to  the  disk...  0.04  </span></details></td></tr>
+            <tr><td>6</td><td><span class="error-msg">[bwt_restore_sa]  fail  to  open  file  '/cvmfs/data.galaxyproject.org/byhand/hg38/hg38female/bwa_in</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwt_restore_sa]  fail  to  open  file  '/cvmfs/data.galaxyproject.org/byhand/hg38/hg38female/bwa_index_v0.7.10-r789/hg38female.fa.sa'  :  No  such  file  or  directory
+[W::hts_set_opt]  Cannot  change  block  size  for  this  format
+samtools  sort:  failed  to  read  header  from  "-"</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.06  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.06  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[bwa_index]  2.67  seconds  elapse.
+[bwa_index]  Update  BWT...  0.03  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.03  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  1.12  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  3.986  sec;  CPU:  3.922  sec
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FF...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (2007,  4860,  7868)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and  std.dev:  (1,  19590)
+[M::mem_pestat]  mean  and  std.dev:  (4927.90,  3115.47)
+[M::mem_pestat]  low  and  high  boundaries  for  proper  pairs:  (1,  25451)
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FR...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (239,  333,  522)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and </span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">[main]  Version:  0.7.19-r1273</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  mem  -t  7  -v  1  /cvmfs/data.galaxyproject.org/byhand/hg38/hg38canon/bwa_index_v0.7.10-r789/hg38canon.fa  /corral4/main/objects/5/f/0/dataset_5f079d61-89c4-406b-8f30-f10a788a34b2.dat
+[main]  Real  time:  1554.527  sec;  CPU:  10082.587  sec
+[bam_sort_core]  merging  from  2  files  and  7  in-memory  blocks...
+samtools  sort:  failed  writing  to  "/corral4/main/jobs/072/964/72964861/outputs/dataset_3e0c7158-0c16-4a70-a739-c7af4fe76b4c.dat":  Inappropriate  ioctl  for  device</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.07  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.07  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[bwa_index]  3.17  seconds  elapse.
+[bwa_index]  Update  BWT...  0.03  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.03  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  1.27  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  4.652  sec;  CPU:  4.582  sec
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FF...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (2380,  5176,  8218)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and  std.dev:  (1,  19894)
+[M::mem_pestat]  mean  and  std.dev:  (5094.02,  3073.13)
+[M::mem_pestat]  low  and  high  boundaries  for  proper  pairs:  (1,  25732)
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FR...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (202,  286,  502)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and </span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  [add1]  Failed  to  allocate  18446744039349813248  bytes  at  bntseq.c</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  [add1]  Failed  to  allocate  18446744039349813248  bytes  at  bntseq.c  line  254:  Cannot  allocate  memory</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.08  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.08  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[bwa_index]  2.77  seconds  elapse.
+[bwa_index]  Update  BWT...  0.03  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.03  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  0.88  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  3.882  sec;  CPU:  3.799  sec
+[bwa_aln]  17bp  reads:  max_diff  =  2
+[bwa_aln]  38bp  reads:  max_diff  =  3
+[bwa_aln]  64bp  reads:  max_diff  =  4
+[bwa_aln]  93bp  reads:  max_diff  =  5
+[bwa_aln]  124bp  reads:  max_diff  =  6
+[bwa_aln]  157bp  reads:  max_diff  =  7
+[bwa_aln]  190bp  reads:  max_diff  =  8
+[bwa_aln]  225bp  reads:  max_diff  =  9
+[bwa_aln_core]  calculate  SA  coordinate...  0.07  sec
+[bwa_aln_core]  write  to  the  disk...  0.00  sec
+[bwa_aln_core]  1777  sequences  have  been  processed.
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  aln  -t  2  localref.fa  /corral4/main/objects/f/0/6/da</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.53  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.53  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=200572802,  availableWord=26113028
+[BWTIncConstructFromPacked]  10  iterations  done.  43074434  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  79575970  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  112014578  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  140842098  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  166460034  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  189225266  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  66  iterations.
+[bwa_index]  42.18  seconds  elapse.
+[bwa_index]  Update  BWT...  0.37  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.33  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  21.91  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.09  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.09  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[bwa_index]  4.09  seconds  elapse.
+[bwa_index]  Update  BWT...  0.05  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.03  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  1.97  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  6.390  sec;  CPU:  6.239  sec
+[bwa_aln]  17bp  reads:  max_diff  =  2
+[bwa_aln]  38bp  reads:  max_diff  =  3
+[bwa_aln]  64bp  reads:  max_diff  =  4
+[bwa_aln]  93bp  reads:  max_diff  =  5
+[bwa_aln]  124bp  reads:  max_diff  =  6
+[bwa_aln]  157bp  reads:  max_diff  =  7
+[bwa_aln]  190bp  reads:  max_diff  =  8
+[bwa_aln]  225bp  reads:  max_diff  =  9
+[bwa_aln_core]  calculate  SA  coordinate...  16.70  sec
+[bwa_aln_core]  write  to  the  disk...  0.04  sec
+[bwa_aln_core]  262144  sequences  have  been  processed.
+[bwa_aln_core]  calculate  SA  coordinate...  17.68  sec
+[bwa_aln_core]  write  to  the  disk...  0.06</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">[mem_sam_pe]  paired  reads  have  different  names:  "HWI-D00119:50:H7AP8ADXX:1:1212:10369:36657", </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[mem_sam_pe]  paired  reads  have  different  names:  "HWI-D00119:50:H7AP8ADXX:1:1212:10369:36657",  "HWI-D00119:50:H7AP8ADXX:1:2214:14618:38520"</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.42  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.42  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=94350946,  availableWord=18638672
+[BWTIncConstructFromPacked]  10  iterations  done.  30744754  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  56796866  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  79948018  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  37  iterations.
+[bwa_index]  22.97  seconds  elapse.
+[bwa_index]  Update  BWT...  0.25  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.22  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  8.60  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  33.946  sec;  CPU:  32.460  sec
+[W::bseq_read]  the  1st  file  has  fewer  sequences.
+[M::mem_pestat]  skip  orientation  FF  as  there  are  not  enough  pairs
+[M::mem_pestat]  skip  orientation  FR  as  there  are  not  enough  pairs
+[M::mem_</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.39  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.39  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=94350946,  availableWord=18638672
+[BWTIncConstructFromPacked]  10  iterations  done.  30744754  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  56796866  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  79948018  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  37  iterations.
+[bwa_index]  36.83  seconds  elapse.
+[bwa_index]  Update  BWT...  0.29  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.24  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  14.93  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  54.253  sec;  CPU:  52.680  sec
+[M::mem_pestat]  skip  orientation  FF  as  there  are  not  enough  pairs
+[M::mem_pestat]  skip  orientation  FR  as  there  are  not  enough  pairs
+[M::mem_pestat]  skip  orientation  RF  as  there  are  not  e</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.51  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.51  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  445579540  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  510020340  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  567291508  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  618190196  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  663425092  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  703625956  cha</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.13  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.13  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[bwa_index]  3.19  seconds  elapse.
+[bwa_index]  Update  BWT...  0.07  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.06  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  1.37  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  5.236  sec;  CPU:  4.820  sec
+[bwa_aln]  17bp  reads:  max_diff  =  2
+[bwa_aln]  38bp  reads:  max_diff  =  3
+[bwa_aln]  64bp  reads:  max_diff  =  4
+[bwa_aln]  93bp  reads:  max_diff  =  5
+[bwa_aln]  124bp  reads:  max_diff  =  6
+[bwa_aln]  157bp  reads:  max_diff  =  7
+[bwa_aln]  190bp  reads:  max_diff  =  8
+[bwa_aln]  225bp  reads:  max_diff  =  9
+[bwa_aln_core]  calculate  SA  coordinate...  6.80  sec
+[bwa_aln_core]  write  to  the  disk...  0.04  sec
+[bwa_aln_core]  262144  sequences  have  been  processed.
+[bwa_aln_core]  calculate  SA  coordinate...  6.55  sec
+[bwa_aln_core]  write  to  the  disk...  0.03  </span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.11  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.11  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[fsync]  Disk  quota  exceeded</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.10  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.10  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[bwa_index]  3.56  seconds  elapse.
+[bwa_index]  Update  BWT...  0.07  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.06  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  1.60  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  5.766  sec;  CPU:  5.401  sec
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FF...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (1288,  4266,  6996)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and  std.dev:  (1,  18412)
+[M::mem_pestat]  mean  and  std.dev:  (4314.26,  2971.97)
+[M::mem_pestat]  low  and  high  boundaries  for  proper  pairs:  (1,  24120)
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FR...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (293,  321,  354)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.55  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.55  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=200572802,  availableWord=26113028
+[BWTIncConstructFromPacked]  10  iterations  done.  43074434  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  79575970  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  112014578  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  140842098  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  166460034  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  189225266  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  66  iterations.
+[bwa_index]  44.96  seconds  elapse.
+[bwa_index]  Update  BWT...  0.39  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.33  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  21.96  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.51  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.51  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=200572802,  availableWord=26113028
+[BWTIncConstructFromPacked]  10  iterations  done.  43074434  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  79575970  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  112014578  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  140842098  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  166460034  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  189225266  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  66  iterations.
+[bwa_index]  42.31  seconds  elapse.
+[bwa_index]  Update  BWT...  0.38  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.33  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  21.96  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  8.89  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  8.89  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=1979056354,  availableWord=151253268
+[BWTIncConstructFromPacked]  10  iterations  done.  99999986  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999986  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999986  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999986  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999986  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999986  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999986  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999986  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999986  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999986  c</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  8.53  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  8.53  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=1979056354,  availableWord=151253268
+[BWTIncConstructFromPacked]  10  iterations  done.  99999986  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999986  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999986  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999986  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999986  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999986  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999986  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999986  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999986  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999986  c</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/jetstream2/scratch/main/jobs/72481336/tool_script.sh:  line  23:        18  Killed                 </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/jetstream2/scratch/main/jobs/72481336/tool_script.sh:  line  23:        18  Killed                                    bwa  mem  -t  "${GALAXY_SLOTS:-1}"  -v  1  '/cvmfs/data.galaxyproject.org/byhand/hg38/hg38full/bwa_index_v0.7.10-r789/hg38full.fa'  '/jetstream2/scratch/main/jobs/72481336/inputs/dataset_85e29d23-0c1f-4861-872a-fed7b9ccb9f3.dat'  '/jetstream2/scratch/main/jobs/72481336/inputs/dataset_85e29d23-0c1f-4861-872a-fed7b9ccb9f3.dat'
+                19  Done                                        |  samtools  sort  -@${GALAXY_SLOTS:-2}  -T  "${TMPDIR:-.}"  -O  bam  -o  '/jetstream2/scratch/main/jobs/72481336/outputs/dataset_a1a1aecd-be6f-425f-bf23-8ff6a4d05731.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  13.13  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  13.13  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=3303900342,  availableWord=244474460
+[BWTIncConstructFromPacked]  10  iterations  done.  99999990  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999990  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999990  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999990  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999990  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999990  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999990  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999990  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999990  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999990  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  7.28  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  7.28  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=1666750082,  availableWord=129278368
+[BWTIncConstructFromPacked]  10  iterations  done.  99999986  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999986  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999986  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999986  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999986  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999986  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999986  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999986  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999986  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999940626  c</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  6.32  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  6.32  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=1666750082,  availableWord=129278368
+[BWTIncConstructFromPacked]  10  iterations  done.  99999986  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999986  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999986  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999986  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999986  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999986  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999986  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999986  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999986  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999940626  c</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.57  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.57  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=791924730,  availableWord=67722660
+[BWTIncConstructFromPacked]  10  iterations  done.  99999994  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  195872586  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  281183674  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  357004378  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  424390026  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  484278522  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  537503562  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  584806074  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  626844650  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  664204634  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/jetstream2/scratch/main/jobs/72647292/tool_script.sh:  line  23:        18  Killed                 </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/jetstream2/scratch/main/jobs/72647292/tool_script.sh:  line  23:        18  Killed                                    bwa  mem  -t  "${GALAXY_SLOTS:-1}"  -v  1  '/cvmfs/data.galaxyproject.org/byhand/hg38/hg38full/bwa_index_v0.7.10-r789/hg38full.fa'  '/jetstream2/scratch/main/jobs/72647292/inputs/dataset_da3f37aa-b532-4307-a4bc-038af6ceeb98.dat'  '/jetstream2/scratch/main/jobs/72647292/inputs/dataset_229fe423-8080-4fb6-9d10-de5e3367bedf.dat'
+                19  Done                                        |  samtools  sort  -@${GALAXY_SLOTS:-2}  -T  "${TMPDIR:-.}"  -O  bam  -o  '/jetstream2/scratch/main/jobs/72647292/outputs/dataset_4e63d4e7-67c2-4ab9-9d92-b6c59fe120f3.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/jetstream2/scratch/main/jobs/72647734/tool_script.sh:  line  23:        18  Killed                 </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/jetstream2/scratch/main/jobs/72647734/tool_script.sh:  line  23:        18  Killed                                    bwa  mem  -t  "${GALAXY_SLOTS:-1}"  -v  1  '/cvmfs/data.galaxyproject.org/byhand/hg38/hg38full/bwa_index_v0.7.10-r789/hg38full.fa'  '/jetstream2/scratch/main/jobs/72647734/inputs/dataset_229fe423-8080-4fb6-9d10-de5e3367bedf.dat'  '/jetstream2/scratch/main/jobs/72647734/inputs/dataset_da3f37aa-b532-4307-a4bc-038af6ceeb98.dat'
+                19  Done                                        |  samtools  sort  -@${GALAXY_SLOTS:-2}  -T  "${TMPDIR:-.}"  -O  bam  -o  '/jetstream2/scratch/main/jobs/72647734/outputs/dataset_3607e105-83f7-44be-99e8-3ef4df75bb67.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/jetstream2/scratch/main/jobs/72677755/tool_script.sh:  line  23:        18  Killed                 </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/jetstream2/scratch/main/jobs/72677755/tool_script.sh:  line  23:        18  Killed                                    bwa  mem  -t  "${GALAXY_SLOTS:-1}"  -v  1  -R  [EMAIL]  -I  '25050'  '/cvmfs/data.galaxyproject.org/byhand/hg19/hg19full/bwa_index_v0.7.10-r789/hg19full.fa'  '/jetstream2/scratch/main/jobs/72677755/inputs/dataset_4cbce742-e8a5-4e64-8956-dd78095adf94.dat'  '/jetstream2/scratch/main/jobs/72677755/inputs/dataset_d6743b27-ff60-4454-bdef-b28df19fdbd4.dat'
+                19  Done                                        |  samtools  sort  -@${GALAXY_SLOTS:-2}  -T  "${TMPDIR:-.}"  -O  bam  -o  '/jetstream2/scratch/main/jobs/72677755/outputs/dataset_027d1369-3a90-4b3e-94a2-d8343241c411.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[mem_sam_pe]  paired  reads  have  different  names:  "HWI-D00119:50:H7AP8ADXX:1:2105:15124:80812", </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[mem_sam_pe]  paired  reads  have  different  names:  "HWI-D00119:50:H7AP8ADXX:1:2105:15124:80812",  "HWI-D00119:50:H7AP8ADXX:1:1116:17979:7698"</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[mem_sam_pe]  paired  reads  have  different  names:  "HWI-D00119:50:H7AP8ADXX:1:1116:17979:7698",  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[mem_sam_pe]  paired  reads  have  different  names:  "HWI-D00119:50:H7AP8ADXX:1:1116:17979:7698",  "HWI-D00119:50:H7AP8ADXX:1:1205:14745:45915"
+
+[mem_sam_pe]</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.28  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.28  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  445579540  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  510020340  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  567291508  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  618190196  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  663425092  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  703625956  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.42  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.42  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  445579540  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  510020340  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  567291508  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  618190196  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  663425092  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  703625956  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.22  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.22  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  445579540  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  510020340  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  567291508  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  618190196  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  663425092  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  703625956  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  4.12  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  4.12  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  445579540  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  510020340  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  567291508  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  618190196  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  663425092  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  703625956  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.33  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.33  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  445579540  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  510020340  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  567291508  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  618190196  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  663425092  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  703625956  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.58  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.58  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  445579540  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  510020340  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  567291508  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  618190196  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  663425092  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  703625956  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.54  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.54  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.71  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.71  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  445579540  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  510020340  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  567291508  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  618190196  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  663425092  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  703625956  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.78  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.78  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  445579540  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  510020340  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  567291508  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  618190196  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  663425092  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  703625956  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.90  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.90  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  445579540  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  510020340  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  567291508  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  618190196  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  663425092  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  703625956  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.55  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.55  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  445579540  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  510020340  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  567291508  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  618190196  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  663425092  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  703625956  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.96  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.96  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  445579540  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  510020340  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  567291508  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  618190196  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  663425092  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  703625956  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.70  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.70  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  445579540  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  510020340  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  567291508  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  618190196  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  663425092  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  703625956  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.99  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.99  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  445579540  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  510020340  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  567291508  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  618190196  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  663425092  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  703625956  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  4.38  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  4.38  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  445579540  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  510020340  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  567291508  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  618190196  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  663425092  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  703625956  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.85  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.85  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=854009780,  availableWord=72091092
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199694020  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  291488692  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  373072036  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  445579540  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  510020340  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  567291508  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  618190196  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  663425092  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  703625956  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  363.71  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  363.71  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=129025888070,  availableWord=9090738596
+[BWTIncConstructFromPacked]  10  iterations  done.  99999990  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999990  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999990  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999990  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999990  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999990  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999990  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999990  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999990  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  9999999</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  1.29  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  1.29  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=222310830,  availableWord=27642504
+[BWTIncConstructFromPacked]  10  iterations  done.  45597454  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  84237262  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  118576398  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  149093070  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  176212318  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  200311966  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  221727726  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  71  iterations.
+[bwa_index]  92.79  seconds  elapse.
+[bwa_index]  Update  BWT...  0.64  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.73  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ... </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/anvil/scratch/x-xcgalaxy/main/staging/72950873/tool_script.sh:  line  1:  {err_msg::  command  not </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/anvil/scratch/x-xcgalaxy/main/staging/72950873/tool_script.sh:  line  1:  {err_msg::  command  not  found
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FF...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (135,  185,  254)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and  std.dev:  (1,  492)
+[M::mem_pestat]  mean  and  std.dev:  (175.75,  60.16)
+[M::mem_pestat]  low  and  high  boundaries  for  proper  pairs:  (1,  611)
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FR...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (233,  258,  288)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and  std.dev:  (123,  398)
+[M::mem_pestat]  mean  and  std.dev:  (260.12,  38.25)
+[M::mem_pestat]  low  and  high  boundaries  for  proper  pairs:  (68,  453)
+[M::mem_pestat]  skip  orientation  RF  as  there  are  not  enough  pairs
+[M::mem_pestat]  skip  orientation  RR  as  there  are  not  enough  pairs
+[M::me</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  19.44  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  19.44  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=4914156542,  availableWord=357778028
+[BWTIncConstructFromPacked]  10  iterations  done.  99999998  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999998  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999998  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999998  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999998  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999998  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999998  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999998  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999998  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999998  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">samtools  sort:  failed  writing  to  "/corral4/main/jobs/072/964/72964781/tmp/samtools.18.4243.tmp.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">samtools  sort:  failed  writing  to  "/corral4/main/jobs/072/964/72964781/tmp/samtools.18.4243.tmp.0000.bam":  Inappropriate  ioctl  for  device</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.94  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.94  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=222310830,  availableWord=27642504
+[BWTIncConstructFromPacked]  10  iterations  done.  45597454  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  84237262  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  118576398  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  149093070  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  176212318  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  200311966  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  221727726  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  71  iterations.
+[bwa_index]  61.66  seconds  elapse.
+[bwa_index]  Update  BWT...  0.61  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.59  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ... </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  2.65  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  2.65  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=791924730,  availableWord=67722660
+[BWTIncConstructFromPacked]  10  iterations  done.  99999994  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  195872586  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  281183674  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  357004378  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  424390026  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  484278522  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  537503562  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  584806074  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  626844650  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  664204634  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.83  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.83  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=222310830,  availableWord=27642504
+[BWTIncConstructFromPacked]  10  iterations  done.  45597454  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  84237262  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  118576398  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  149093070  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  176212318  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  200311966  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  221727726  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  71  iterations.
+[bwa_index]  49.17  seconds  elapse.
+[bwa_index]  Update  BWT...  0.55  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.54  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ... </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  2.63  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  2.63  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=791924730,  availableWord=67722660
+[BWTIncConstructFromPacked]  10  iterations  done.  99999994  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  195872586  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  281183674  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  357004378  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  424390026  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  484278522  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  537503562  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  584806074  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  626844650  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  664204634  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  19.59  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  19.59  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6274909010,  availableWord=453525580
+[BWTIncConstructFromPacked]  10  iterations  done.  99999986  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999986  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999986  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999986  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999986  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999986  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999986  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999986  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999986  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999986  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.12  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.12  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[bwa_index]  11.80  seconds  elapse.
+[bwa_index]  Update  BWT...  0.08  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.07  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  5.68  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  18.190  sec;  CPU:  17.749  sec
+[bwa_aln]  17bp  reads:  max_diff  =  2
+[bwa_aln]  38bp  reads:  max_diff  =  3
+[bwa_aln]  64bp  reads:  max_diff  =  4
+[bwa_aln]  93bp  reads:  max_diff  =  5
+[bwa_aln]  124bp  reads:  max_diff  =  6
+[bwa_aln]  157bp  reads:  max_diff  =  7
+[bwa_aln]  190bp  reads:  max_diff  =  8
+[bwa_aln]  225bp  reads:  max_diff  =  9
+[bwa_aln_core]  calculate  SA  coordinate...  9.66  sec
+[bwa_aln_core]  write  to  the  disk...  0.06  sec
+[bwa_aln_core]  262144  sequences  have  been  processed.
+[bwa_aln_core]  calculate  SA  coordinate...  9.55  sec
+[bwa_aln_core]  write  to  the  disk...  0.0</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  24.90  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  24.90  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6199501436,  availableWord=448219384
+[BWTIncConstructFromPacked]  10  iterations  done.  99999996  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999996  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999996  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999996  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999996  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999996  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999996  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999996  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999996  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999996  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.01  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.01  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=746491038,  availableWord=64525548
+[BWTIncConstructFromPacked]  10  iterations  done.  99453054  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  190433566  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  271293326  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  343157678  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  407026894  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  463789982  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  514237134  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  559070702  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  598914846  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  634324430  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.18  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.18  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[bwa_index]  3.12  seconds  elapse.
+[bwa_index]  Update  BWT...  0.04  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.04  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  0.71  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  5.242  sec;  CPU:  4.099  sec
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FF...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (1508,  4066,  7116)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and  std.dev:  (1,  18332)
+[M::mem_pestat]  mean  and  std.dev:  (4396.44,  3008.25)
+[M::mem_pestat]  low  and  high  boundaries  for  proper  pairs:  (1,  23940)
+[M::mem_pestat]  analyzing  insert  size  distribution  for  orientation  FR...
+[M::mem_pestat]  (25,  50,  75)  percentile:  (298,  332,  1124)
+[M::mem_pestat]  low  and  high  boundaries  for  computing  mean  and</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  19.21  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  19.21  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6274909010,  availableWord=453525580
+[BWTIncConstructFromPacked]  10  iterations  done.  99999986  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999986  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999986  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999986  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999986  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999986  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999986  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999986  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999986  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999986  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  14.13  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  14.13  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=1096873292,  availableWord=89179728
+[BWTIncConstructFromPacked]  10  iterations  done.  99999996  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999996  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999996  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999996  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  496329932  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  582152556  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  658427932  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  726217676  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  786465356  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  840009644  c</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  1.73  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  1.73  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=290277272,  availableWord=32424980
+[BWTIncConstructFromPacked]  10  iterations  done.  53486632  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  98812504  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  139094200  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  174892696  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  206706456  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  234978552  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  260102840  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  282429336  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  84  iterations.
+[bwa_index]  125.89  seconds  elapse.
+[bwa_index]  Update  BWT...  0.89  sec
+[bwa_index]  Pack</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  1.52  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  1.52  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=290277272,  availableWord=32424980
+[BWTIncConstructFromPacked]  10  iterations  done.  53486632  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  98812504  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  139094200  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  174892696  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  206706456  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  234978552  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  260102840  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  282429336  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  84  iterations.
+[bwa_index]  156.91  seconds  elapse.
+[bwa_index]  Update  BWT...  0.92  sec
+[bwa_index]  Pack</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[gzread]  &lt;fd:3&gt;:  invalid  distance  too  far  back</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  1.74  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  1.74  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=222310830,  availableWord=27642504
+[BWTIncConstructFromPacked]  10  iterations  done.  45597454  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  84237262  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  118576398  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  149093070  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  176212318  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  200311966  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  221727726  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  71  iterations.
+[bwa_index]  129.73  seconds  elapse.
+[bwa_index]  Update  BWT...  0.71  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.79  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  1.37  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  1.37  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=290277272,  availableWord=32424980
+[BWTIncConstructFromPacked]  10  iterations  done.  53486632  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  98812504  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  139094200  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  174892696  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  206706456  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  234978552  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  260102840  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  282429336  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  84  iterations.
+[bwa_index]  121.72  seconds  elapse.
+[bwa_index]  Update  BWT...  0.85  sec
+[bwa_index]  Pack</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  1.27  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  1.27  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=292728044,  availableWord=32597292
+[BWTIncConstructFromPacked]  10  iterations  done.  53770876  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  99337660  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  139833516  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  175822284  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  207805164  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  236227612  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  261485516  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  283930748  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  85  iterations.
+[bwa_index]  91.86  seconds  elapse.
+[bwa_index]  Update  BWT...  0.84  sec
+[bwa_index]  Pack </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.74  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.74  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=292728044,  availableWord=32597292
+[BWTIncConstructFromPacked]  10  iterations  done.  53770876  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  99337660  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  139833516  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  175822284  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  207805164  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  236227612  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  261485516  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  283930748  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  85  iterations.
+[bwa_index]  51.35  seconds  elapse.
+[bwa_index]  Update  BWT...  0.50  sec
+[bwa_index]  Pack </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.78  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.78  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=292728044,  availableWord=32597292
+[BWTIncConstructFromPacked]  10  iterations  done.  53770876  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  99337660  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  139833516  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  175822284  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  207805164  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  236227612  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  261485516  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  283930748  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  85  iterations.
+[bwa_index]  53.63  seconds  elapse.
+[bwa_index]  Update  BWT...  0.50  sec
+[bwa_index]  Pack </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.69  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.69  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=83313600,  availableWord=17862092
+[BWTIncConstructFromPacked]  10  iterations  done.  29463680  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  54430112  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  76616304  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  34  iterations.
+[bwa_index]  44.43  seconds  elapse.
+[bwa_index]  Update  BWT...  0.48  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.39  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  22.52  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  -a  bwtsw  localref.fa
+[main]  Real  time:  73.721  sec;  CPU:  68.516  sec
+[W::bseq_read]  the  2nd  file  has  fewer  sequences.
+[W::bseq_read]  the  2nd  file  has  fewer  sequences.
+[M::mem_pestat]  skip  orientation  FF  as  there  are  not  enough  pairs
+[M::mem_pestat] </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.16  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.16  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=802896412,  availableWord=68494632
+[BWTIncConstructFromPacked]  10  iterations  done.  99999996  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  196854492  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  283277228  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  360085980  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  428349772  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  489018812  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  542937580  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  590856716  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  633443340  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  671290412  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.46  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.46  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=703433258,  availableWord=61496008
+[BWTIncConstructFromPacked]  10  iterations  done.  96894122  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  183368106  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  260222362  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  328526618  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  389231642  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  443182410  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  491129946  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  533741802  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  571611322  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  605265834  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  27.00  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  27.00  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  28.12  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  28.12  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  33.58  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  33.58  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  28.82  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  28.82  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  28.64  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  28.64  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  30.50  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  30.50  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  31.29  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  31.29  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  27.89  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  27.89  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  27.92  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  27.92  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  24.34  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  24.34  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  26.01  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  26.01  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  27.18  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  27.18  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  27.34  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  27.34  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  26.45  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  26.45  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  28.55  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  28.55  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.96  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.96  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=238326492,  availableWord=28769112
+[BWTIncConstructFromPacked]  10  iterations  done.  47455916  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  87670748  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  123409772  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  155170684  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  183395852  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  208478428  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  230767836  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  74  iterations.
+[bwa_index]  64.57  seconds  elapse.
+[bwa_index]  Update  BWT...  0.62  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.60  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ... </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  [fwrite]  Disk  quota  exceeded</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  26.48  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  26.48  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  2.93  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  2.93  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=703435538,  availableWord=61496172
+[BWTIncConstructFromPacked]  10  iterations  done.  96894306  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  183368498  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  260223026  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  328527522  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  389232706  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  443183602  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  491131282  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  533743282  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  571612898  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  605267506  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  26.84  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  26.84  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  26.98  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  26.98  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=6203953124,  availableWord=448532900
+[BWTIncConstructFromPacked]  10  iterations  done.  99999988  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  199999988  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  299999988  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  399999988  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  499999988  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  599999988  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  699999988  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  799999988  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  899999988  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  999999988  </span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.20  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.20  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=746491038,  availableWord=64525548
+[BWTIncConstructFromPacked]  10  iterations  done.  99453054  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  190433566  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  271293326  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  343157678  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  407026894  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  463789982  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  514237134  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  559070702  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  598914846  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  634324430  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.79  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.79  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=802896866,  availableWord=68494652
+[BWTIncConstructFromPacked]  10  iterations  done.  99999986  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  196854482  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  283277218  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  360086018  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  428349842  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  489018914  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  542937714  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  590856866  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  633443506  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  671290578  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  3.25  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  3.25  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=703433916,  availableWord=61496044
+[BWTIncConstructFromPacked]  10  iterations  done.  96894140  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  183368172  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  260222524  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  328526876  characters  processed.
+[BWTIncConstructFromPacked]  50  iterations  done.  389231932  characters  processed.
+[BWTIncConstructFromPacked]  60  iterations  done.  443182700  characters  processed.
+[BWTIncConstructFromPacked]  70  iterations  done.  491130252  characters  processed.
+[BWTIncConstructFromPacked]  80  iterations  done.  533742188  characters  processed.
+[BWTIncConstructFromPacked]  90  iterations  done.  571611740  characters  processed.
+[BWTIncConstructFromPacked]  100  iterations  done.  605266252  cha</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">[bwa_index]  Pack  FASTA...  0.43  sec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[bwa_index]  Pack  FASTA...  0.43  sec
+[bwa_index]  Construct  BWT  for  the  packed  sequence...
+[BWTIncCreate]  textLength=103288614,  availableWord=19267620
+[BWTIncConstructFromPacked]  10  iterations  done.  31782262  characters  processed.
+[BWTIncConstructFromPacked]  20  iterations  done.  58713670  characters  processed.
+[BWTIncConstructFromPacked]  30  iterations  done.  82646342  characters  processed.
+[BWTIncConstructFromPacked]  40  iterations  done.  103288614  characters  processed.
+[bwt_gen]  Finished  constructing  BWT  in  40  iterations.
+[bwa_index]  41.33  seconds  elapse.
+[bwa_index]  Update  BWT...  0.31  sec
+[bwa_index]  Pack  forward-only  FASTA...  0.28  sec
+[bwa_index]  Construct  SA  from  BWT  and  Occ...  18.97  sec
+[main]  Version:  0.7.19-r1273
+[main]  CMD:  bwa  index  localref.fa
+[main]  Real  time:  62.656  sec;  CPU:  61.323  sec
+[bwa_aln]  17bp  reads:  max_diff  =  2
+[bwa_aln]  38bp  reads:  max_diff  =  3
+[bwa_aln]  64bp  reads:  max_diff  =  4
+[bwa_</span></details></td></tr>
+        </table>
+    </div>
+</body>
+</html>

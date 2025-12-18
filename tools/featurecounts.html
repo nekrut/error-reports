@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>featurecounts Errors - Galaxy Error Analysis</title>
+    <style>
+    :root { --bg: #1a1a2e; --card-bg: #16213e; --text: #eee; --text-muted: #888; --accent: #4a90d9; --border: #0f3460; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    h1 { color: var(--accent); margin-bottom: 10px; }
+    .back { color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 20px; }
+    .back:hover { text-decoration: underline; }
+    .stats { display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap; }
+    .stat { background: var(--card-bg); padding: 15px 25px; border-radius: 8px; border: 1px solid var(--border); }
+    .stat-value { font-size: 1.5em; font-weight: bold; color: var(--accent); }
+    .stat-label { color: var(--text-muted); font-size: 0.85em; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: rgba(74, 144, 217, 0.2); color: var(--accent); }
+    tr:hover { background: rgba(255,255,255,0.05); }
+    .error-msg { font-family: monospace; font-size: 0.85em; white-space: pre-wrap; word-break: break-all; background: rgba(0,0,0,0.3); padding: 8px; border-radius: 4px; display: block; margin: 5px 0; }
+</style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back">&larr; Back to Dashboard</a>
+        <h1>featurecounts</h1>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">4,999</div>
+                <div class="stat-label">Total Errors</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">84</div>
+                <div class="stat-label">Unique Error Types</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">466</div>
+                <div class="stat-label">Affected Users</div>
+            </div>
+        </div>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">Exit Codes</h2>
+        <table>
+            <tr><th>Exit Code</th><th>Count</th></tr>
+            <tr><td>255</td><td>4,741</td></tr>
+            <tr><td>139</td><td>144</td></tr>
+            <tr><td>2</td><td>3</td></tr>
+        </table>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">Destinations</h2>
+        <table>
+            <tr><th>Destination</th><th>Count</th></tr>
+            <tr><td>cyclone_small</td><td>4,131</td></tr>
+            <tr><td>jetstream2</td><td>851</td></tr>
+        </table>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">All Unique Error Messages</h2>
+        <table>
+            <tr><th style="width: 80px;">Count</th><th>Error Message</th></tr>
+            <tr><td>4,422</td><td><span class="error-msg">v2.1.1</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">==========          _____  _        _  ____    _____    ______                    _____    
+                =====                  /  ____|  |    |  |    _  \|    __  \|    ____|      /\      |    __  \  
+                    =====            |  (___  |  |    |  |  |_)  |  |__)  |  |__          /    \    |  |    |  |
+                        ====            \___  \|  |    |  |    _  &lt;|    _    /|    __|      /  /\  \  |  |    |  |
+                            ====        ____)  |  |__|  |  |_)  |  |  \  \|  |____  /  ____  \|  |__|  |
+                ==========      |_____/  \____/|____/|_|    \_\______/_/        \_\_____/
+	    v2.1.1
+
+//==========================  featureCounts  setting  ===========================\\
+||                                                                                                                                                        ||
+||                          Input  files  :  1  BAM  file                                                             </span></details></td></tr>
+            <tr><td>104</td><td><span class="error-msg">featureCounts:  unrecognized  option  '--checkFragLength'</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">featureCounts:  unrecognized  option  '--checkFragLength'
+
+Version  2.1.1
+
+Usage:  featureCounts  [options]  -a  &lt;annotation_file&gt;  -o  &lt;output_file&gt;  input_file1  [input_file2]  ...  
+
+##  Mandatory  arguments:
+
+    -a  &lt;string&gt;                  Name  of  an  annotation  file.  GTF/GFF  format  by  default.  See
+                                            -F  option  for  more  format  information.  Inbuilt  annotations
+                                            (SAF  format)  is  available  in  'annotation'  directory  of  the
+                                            package.  Gzipped  file  is  also  accepted.
+
+    -o  &lt;string&gt;                  Name  of  output  file  including  read  counts.  A  separate  file
+                                            including  summary  statistics  of  counting  results  is  also
+                                            included  in  the  output  ('&lt;string&gt;.summary').  Both  files
+                                            are  in  tab  </span></details></td></tr>
+            <tr><td>87</td><td><span class="error-msg">v2.0.3</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">==========          _____  _        _  ____    _____    ______                    _____    
+                =====                  /  ____|  |    |  |    _  \|    __  \|    ____|      /\      |    __  \  
+                    =====            |  (___  |  |    |  |  |_)  |  |__)  |  |__          /    \    |  |    |  |
+                        ====            \___  \|  |    |  |    _  &lt;|    _    /|    __|      /  /\  \  |  |    |  |
+                            ====        ____)  |  |__|  |  |_)  |  |  \  \|  |____  /  ____  \|  |__|  |
+                ==========      |_____/  \____/|____/|_|    \_\______/_/        \_\_____/
+	    v2.0.3
+
+//==========================  featureCounts  setting  ===========================\\
+||                                                                                                                                                        ||
+||                          Input  files  :  1  BAM  file                                                             </span></details></td></tr>
+            <tr><td>52</td><td><span class="error-msg">v2.0.1</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">==========          _____  _        _  ____    _____    ______                    _____    
+                =====                  /  ____|  |    |  |    _  \|    __  \|    ____|      /\      |    __  \  
+                    =====            |  (___  |  |    |  |  |_)  |  |__)  |  |__          /    \    |  |    |  |
+                        ====            \___  \|  |    |  |    _  &lt;|    _    /|    __|      /  /\  \  |  |    |  |
+                            ====        ____)  |  |__|  |  |_)  |  |  \  \|  |____  /  ____  \|  |__|  |
+                ==========      |_____/  \____/|____/|_|    \_\______/_/        \_\_____/
+	    v2.0.1
+
+//==========================  featureCounts  setting  ===========================\\
+||                                                                                                                                                        ||
+||                          Input  files  :  1  BAM  file                                                             </span></details></td></tr>
+            <tr><td>28</td><td><span class="error-msg">v2.0.8</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">==========          _____  _        _  ____    _____    ______                    _____    
+                =====                  /  ____|  |    |  |    _  \|    __  \|    ____|      /\      |    __  \  
+                    =====            |  (___  |  |    |  |  |_)  |  |__)  |  |__          /    \    |  |    |  |
+                        ====            \___  \|  |    |  |    _  &lt;|    _    /|    __|      /  /\  \  |  |    |  |
+                            ====        ____)  |  |__|  |  |_)  |  |  \  \|  |____  /  ____  \|  |__|  |
+                ==========      |_____/  \____/|____/|_|    \_\______/_/        \_\_____/
+	    v2.0.8
+
+//==========================  featureCounts  setting  ===========================\\
+||                                                                                                                                                        ||
+||                          Input  files  :  1  BAM  file                                                             </span></details></td></tr>
+            <tr><td>24</td><td><span class="error-msg">v1.6.2</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">==========          _____  _        _  ____    _____    ______                    _____    
+                =====                  /  ____|  |    |  |    _  \|    __  \|    ____|      /\      |    __  \  
+                    =====            |  (___  |  |    |  |  |_)  |  |__)  |  |__          /    \    |  |    |  |
+                        ====            \___  \|  |    |  |    _  &lt;|    _    /|    __|      /  /\  \  |  |    |  |
+                            ====        ____)  |  |__|  |  |_)  |  |  \  \|  |____  /  ____  \|  |__|  |
+                ==========      |_____/  \____/|____/|_|    \_\______/_/        \_\_____/
+	    v1.6.2
+
+//==========================  featureCounts  setting  ===========================\\
+||                                                                                                                                                        ||
+||                          Input  files  :  1  BAM  file                                                             </span></details></td></tr>
+            <tr><td>14</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/f/5/7/dataset_f57b4045-3d0e-4638-8d65-a2251da732</span></td></tr>
+            <tr><td>13</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/4/0/0/dataset_4008871d-c22e-4e79-b394-d5a1c8e5fd</span></td></tr>
+            <tr><td>12</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/9/c/5/dataset_9c563a16-c25b-4a11-9bd5-c7dada1770</span></td></tr>
+            <tr><td>10</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/8/8/f/dataset_88f4f99a-f565-4d5c-b3ec-4d55d06ea2</span></td></tr>
+            <tr><td>10</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/a/2/f/dataset_a2fea6f2-cd68-4bab-80ff-c779c3520d</span></td></tr>
+            <tr><td>9</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/d/3/0/dataset_d306481d-b4e4-429b-b12d-cfa436fe68</span></td></tr>
+            <tr><td>6</td><td><span class="error-msg">v1.4.6-p5</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">==========          _____  _        _  ____    _____    ______                    _____    
+                =====                  /  ____|  |    |  |    _  \|    __  \|    ____|      /\      |    __  \  
+                    =====            |  (___  |  |    |  |  |_)  |  |__)  |  |__          /    \    |  |    |  |
+                        ====            \___  \|  |    |  |    _  &lt;|    _    /|    __|      /  /\  \  |  |    |  |
+                            ====        ____)  |  |__|  |  |_)  |  |  \  \|  |____  /  ____  \|  |__|  |
+                ==========      |_____/  \____/|____/|_|    \_\______/_/        \_\_____/
+	v1.4.6-p5
+
+//==========================  featureCounts  setting  ===========================\\
+||                                                                                                                                                        ||
+||                          Input  files  :  1  unknown  file                                                          </span></details></td></tr>
+            <tr><td>6</td><td><span class="error-msg">v2.0.6</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">==========          _____  _        _  ____    _____    ______                    _____    
+                =====                  /  ____|  |    |  |    _  \|    __  \|    ____|      /\      |    __  \  
+                    =====            |  (___  |  |    |  |  |_)  |  |__)  |  |__          /    \    |  |    |  |
+                        ====            \___  \|  |    |  |    _  &lt;|    _    /|    __|      /  /\  \  |  |    |  |
+                            ====        ____)  |  |__|  |  |_)  |  |  \  \|  |____  /  ____  \|  |__|  |
+                ==========      |_____/  \____/|____/|_|    \_\______/_/        \_\_____/
+	    v2.0.6
+
+//==========================  featureCounts  setting  ===========================\\
+||                                                                                                                                                        ||
+||                          Input  files  :  1  BAM  file                                                             </span></details></td></tr>
+            <tr><td>6</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/f/8/6/dataset_f8621125-a8c6-4f71-baaa-9bdc0066af</span></td></tr>
+            <tr><td>6</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/a/0/b/dataset_a0b02f6e-298e-44ad-9e96-1ae39bf413</span></td></tr>
+            <tr><td>5</td><td><span class="error-msg">Error:  The  strand  mode  list  has  a  wrong  format.</span></td></tr>
+            <tr><td>5</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/d/c/f/dataset_dcf686a6-ec4f-42e8-b486-ac1123abf4</span></td></tr>
+            <tr><td>3</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/3/9/b/dataset_39b1dea7-4802-4be2-b7cf-f4850a7a9e</span></td></tr>
+            <tr><td>3</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/5/0/c/dataset_50cad2a2-f5c8-4d29-8642-aefabff661</span></td></tr>
+            <tr><td>3</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/4/7/7/dataset_47761184-c6bb-48f0-87db-698b7d701a</span></td></tr>
+            <tr><td>3</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/b/c/e/dataset_bce0bcae-0a69-41f7-a3a5-cea246d64d</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/2/3/5/dataset_2358491b-d423-450a-bf19-7afecd30fd</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/a/2/8/dataset_a28664b5-f498-4b1d-83fc-c85e14945d</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/4/c/2/dataset_4c21a2c5-ad27-4f74-92e4-77ab7ba9c4</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/b/7/f/dataset_b7fb1968-51f1-4a44-904f-1fe9ddc6ed</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72180107/inputs/dataset_a2fea6f2-cd68-4b</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72180107/inputs/dataset_a2fea6f2-cd68-4bab-80ff-c779c3520d6a.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72180109/inputs/dataset_88f4f99a-f565-4d</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72180109/inputs/dataset_88f4f99a-f565-4d5c-b3ec-4d55d06ea2a3.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72180112/inputs/dataset_d306481d-b4e4-42</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72180112/inputs/dataset_d306481d-b4e4-429b-b12d-cfa436fe68d2.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72180121/inputs/dataset_a2fea6f2-cd68-4b</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72180121/inputs/dataset_a2fea6f2-cd68-4bab-80ff-c779c3520d6a.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72180126/inputs/dataset_d306481d-b4e4-42</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72180126/inputs/dataset_d306481d-b4e4-429b-b12d-cfa436fe68d2.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72180155/inputs/dataset_9c563a16-c25b-4a</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72180155/inputs/dataset_9c563a16-c25b-4a11-9bd5-c7dada1770d2.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72180156/inputs/dataset_d306481d-b4e4-42</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72180156/inputs/dataset_d306481d-b4e4-429b-b12d-cfa436fe68d2.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188264/inputs/dataset_4008871d-c22e-4e</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188264/inputs/dataset_4008871d-c22e-4e79-b394-d5a1c8e5fd74.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188278/inputs/dataset_4008871d-c22e-4e</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188278/inputs/dataset_4008871d-c22e-4e79-b394-d5a1c8e5fd74.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188279/inputs/dataset_88f4f99a-f565-4d</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188279/inputs/dataset_88f4f99a-f565-4d5c-b3ec-4d55d06ea2a3.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188282/inputs/dataset_d306481d-b4e4-42</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188282/inputs/dataset_d306481d-b4e4-429b-b12d-cfa436fe68d2.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188289/inputs/dataset_9c563a16-c25b-4a</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188289/inputs/dataset_9c563a16-c25b-4a11-9bd5-c7dada1770d2.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188315/inputs/dataset_4008871d-c22e-4e</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188315/inputs/dataset_4008871d-c22e-4e79-b394-d5a1c8e5fd74.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188323/inputs/dataset_4008871d-c22e-4e</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188323/inputs/dataset_4008871d-c22e-4e79-b394-d5a1c8e5fd74.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188324/inputs/dataset_88f4f99a-f565-4d</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188324/inputs/dataset_88f4f99a-f565-4d5c-b3ec-4d55d06ea2a3.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188327/inputs/dataset_d306481d-b4e4-42</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188327/inputs/dataset_d306481d-b4e4-429b-b12d-cfa436fe68d2.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188344/inputs/dataset_a2fea6f2-cd68-4b</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188344/inputs/dataset_a2fea6f2-cd68-4bab-80ff-c779c3520d6a.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188346/inputs/dataset_88f4f99a-f565-4d</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188346/inputs/dataset_88f4f99a-f565-4d5c-b3ec-4d55d06ea2a3.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188347/inputs/dataset_f57b4045-3d0e-46</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188347/inputs/dataset_f57b4045-3d0e-4638-8d65-a2251da7325d.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188358/inputs/dataset_9c563a16-c25b-4a</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188358/inputs/dataset_9c563a16-c25b-4a11-9bd5-c7dada1770d2.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188359/inputs/dataset_d306481d-b4e4-42</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188359/inputs/dataset_d306481d-b4e4-429b-b12d-cfa436fe68d2.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188363/inputs/dataset_a2fea6f2-cd68-4b</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188363/inputs/dataset_a2fea6f2-cd68-4bab-80ff-c779c3520d6a.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188366/inputs/dataset_f57b4045-3d0e-46</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188366/inputs/dataset_f57b4045-3d0e-4638-8d65-a2251da7325d.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188388/inputs/dataset_a2fea6f2-cd68-4b</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188388/inputs/dataset_a2fea6f2-cd68-4bab-80ff-c779c3520d6a.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188390/inputs/dataset_88f4f99a-f565-4d</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188390/inputs/dataset_88f4f99a-f565-4d5c-b3ec-4d55d06ea2a3.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188409/inputs/dataset_a2fea6f2-cd68-4b</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188409/inputs/dataset_a2fea6f2-cd68-4bab-80ff-c779c3520d6a.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188413/inputs/dataset_9c563a16-c25b-4a</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188413/inputs/dataset_9c563a16-c25b-4a11-9bd5-c7dada1770d2.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188414/inputs/dataset_d306481d-b4e4-42</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188414/inputs/dataset_d306481d-b4e4-429b-b12d-cfa436fe68d2.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188430/inputs/dataset_a2fea6f2-cd68-4b</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188430/inputs/dataset_a2fea6f2-cd68-4bab-80ff-c779c3520d6a.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188432/inputs/dataset_88f4f99a-f565-4d</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188432/inputs/dataset_88f4f99a-f565-4d5c-b3ec-4d55d06ea2a3.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188434/inputs/dataset_9c563a16-c25b-4a</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188434/inputs/dataset_9c563a16-c25b-4a11-9bd5-c7dada1770d2.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188435/inputs/dataset_d306481d-b4e4-42</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188435/inputs/dataset_d306481d-b4e4-429b-b12d-cfa436fe68d2.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188456/inputs/dataset_f57b4045-3d0e-46</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188456/inputs/dataset_f57b4045-3d0e-4638-8d65-a2251da7325d.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188467/inputs/dataset_88f4f99a-f565-4d</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188467/inputs/dataset_88f4f99a-f565-4d5c-b3ec-4d55d06ea2a3.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188469/inputs/dataset_9c563a16-c25b-4a</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72188469/inputs/dataset_9c563a16-c25b-4a11-9bd5-c7dada1770d2.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72189571/inputs/dataset_4c21a2c5-ad27-4f</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72189571/inputs/dataset_4c21a2c5-ad27-4f74-92e4-77ab7ba9c43b.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72189591/inputs/dataset_2358491b-d423-45</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72189591/inputs/dataset_2358491b-d423-450a-bf19-7afecd30fd6b.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72189592/inputs/dataset_a28664b5-f498-4b</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72189592/inputs/dataset_a28664b5-f498-4b1d-83fc-c85e14945d9e.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/5/a/9/dataset_5a950801-6ab2-45ff-a6f7-7f66857153</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/a/7/8/dataset_a780a004-56e4-4479-86fb-d7a63328d9</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/1/7/3/dataset_173df051-10a7-4cca-b590-3a209e873d</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/8/a/4/dataset_8a47921c-754e-40e3-8b85-bb751aaf1f</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/0/a/5/dataset_0a59a60e-ad4b-4c4a-a3b5-4b8ccbd4f9</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/jetstream2/scratch/main/jobs/72198867/tool_script.sh:  line  1:  html:  No  such  file  or  directo</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/jetstream2/scratch/main/jobs/72198867/tool_script.sh:  line  1:  html:  No  such  file  or  directory
+/jetstream2/scratch/main/jobs/72198867/tool_script.sh:  line  2:  syntax  error  near  unexpected  token  `&lt;'
+/jetstream2/scratch/main/jobs/72198867/tool_script.sh:  line  2:  `&lt;head&gt;&lt;title&gt;502  Bad  Gateway&lt;/title&gt;&lt;/head&gt;'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/jetstream2/scratch/main/jobs/72198868/tool_script.sh:  line  1:  html:  No  such  file  or  directo</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/jetstream2/scratch/main/jobs/72198868/tool_script.sh:  line  1:  html:  No  such  file  or  directory
+/jetstream2/scratch/main/jobs/72198868/tool_script.sh:  line  2:  syntax  error  near  unexpected  token  `&lt;'
+/jetstream2/scratch/main/jobs/72198868/tool_script.sh:  line  2:  `&lt;head&gt;&lt;title&gt;502  Bad  Gateway&lt;/title&gt;&lt;/head&gt;'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/jetstream2/scratch/main/jobs/72200676/tool_script.sh:  line  1:  html:  No  such  file  or  directo</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/jetstream2/scratch/main/jobs/72200676/tool_script.sh:  line  1:  html:  No  such  file  or  directory
+/jetstream2/scratch/main/jobs/72200676/tool_script.sh:  line  2:  syntax  error  near  unexpected  token  `&lt;'
+/jetstream2/scratch/main/jobs/72200676/tool_script.sh:  line  2:  `&lt;head&gt;&lt;title&gt;502  Bad  Gateway&lt;/title&gt;&lt;/head&gt;'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/c/9/6/dataset_c962174e-76e8-47eb-abe6-9d548537a7</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/1/9/b/dataset_19be68e6-f7a1-41f5-8e36-717d9185a9</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/corral4/main/jobs/072/633/72633065/tool_script.sh:  line  24:        20  Segmentation  fault       </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/corral4/main/jobs/072/633/72633065/tool_script.sh:  line  24:        20  Segmentation  fault            (core  dumped)  featureCounts  -a  '/corral4/main/objects/3/5/3/dataset_35377553-be77-43a1-b025-d8371ad95260.dat'  -F  "GTF"  -o  "output"  -T  ${GALAXY_SLOTS:-2}  -s  0  -Q  0  -t  'exon'  -g  'gene_id'  --minOverlap  1  --fracOverlap  0  --fracOverlapFeature  0  '/corral4/main/objects/f/0/5/dataset_f05b6b21-5594-44f8-aca6-9d0c0c900e90.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/corral4/main/jobs/072/633/72633422/tool_script.sh:  line  24:        21  Segmentation  fault       </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/corral4/main/jobs/072/633/72633422/tool_script.sh:  line  24:        21  Segmentation  fault            (core  dumped)  featureCounts  -a  '/corral4/main/objects/3/5/3/dataset_35377553-be77-43a1-b025-d8371ad95260.dat'  -F  "GTF"  -o  "output"  -T  ${GALAXY_SLOTS:-2}  -s  0  -Q  0  -t  'exon'  -g  'gene_id'  --minOverlap  1  --fracOverlap  0  --fracOverlapFeature  0  '/corral4/main/objects/f/0/5/dataset_f05b6b21-5594-44f8-aca6-9d0c0c900e90.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/corral4/main/jobs/072/633/72633560/tool_script.sh:  line  24:        22  Segmentation  fault       </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/corral4/main/jobs/072/633/72633560/tool_script.sh:  line  24:        22  Segmentation  fault            (core  dumped)  featureCounts  -a  '/corral4/main/objects/3/5/3/dataset_35377553-be77-43a1-b025-d8371ad95260.dat'  -F  "GTF"  -o  "output"  -T  ${GALAXY_SLOTS:-2}  -s  0  -Q  0  -t  'exon'  -g  'ID'  --minOverlap  1  --fracOverlap  0  --fracOverlapFeature  0  '/corral4/main/objects/f/0/5/dataset_f05b6b21-5594-44f8-aca6-9d0c0c900e90.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72969679/inputs/dataset_bce0bcae-0a69-41</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72969679/inputs/dataset_bce0bcae-0a69-41f7-a3a5-cea246d64d8b.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72975931/inputs/dataset_dcf686a6-ec4f-42</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/72975931/inputs/dataset_dcf686a6-ec4f-42e8-b486-ac1123abf42a.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/73023491/inputs/dataset_b7fb1968-51f1-4a</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/73023491/inputs/dataset_b7fb1968-51f1-4a44-904f-1fe9ddc6eda3.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/73023969/inputs/dataset_042af6f0-2baf-47</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/73023969/inputs/dataset_042af6f0-2baf-4718-9e08-4ba383c6e3aa.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/0/4/2/dataset_042af6f0-2baf-4718-9e08-4ba383c6e3</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/73100016/inputs/dataset_21f19929-cd7b-4a</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ERROR:  invalid  parameter:  '/jetstream2/scratch/main/jobs/73100016/inputs/dataset_21f19929-cd7b-4a1f-a1e4-3bd550751f96.dat'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">v1.6.4</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">==========          _____  _        _  ____    _____    ______                    _____    
+                =====                  /  ____|  |    |  |    _  \|    __  \|    ____|      /\      |    __  \  
+                    =====            |  (___  |  |    |  |  |_)  |  |__)  |  |__          /    \    |  |    |  |
+                        ====            \___  \|  |    |  |    _  &lt;|    _    /|    __|      /  /\  \  |  |    |  |
+                            ====        ____)  |  |__|  |  |_)  |  |  \  \|  |____  /  ____  \|  |__|  |
+                ==========      |_____/  \____/|____/|_|    \_\______/_/        \_\_____/
+	    v1.6.4
+
+//==========================  featureCounts  setting  ===========================\\
+||                                                                                                                                                        ||
+||                          Input  files  :  1  BAM  file                                                             </span></details></td></tr>
+        </table>
+    </div>
+</body>
+</html>

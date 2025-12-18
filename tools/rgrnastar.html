@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rgrnastar Errors - Galaxy Error Analysis</title>
+    <style>
+    :root { --bg: #1a1a2e; --card-bg: #16213e; --text: #eee; --text-muted: #888; --accent: #4a90d9; --border: #0f3460; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    h1 { color: var(--accent); margin-bottom: 10px; }
+    .back { color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 20px; }
+    .back:hover { text-decoration: underline; }
+    .stats { display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap; }
+    .stat { background: var(--card-bg); padding: 15px 25px; border-radius: 8px; border: 1px solid var(--border); }
+    .stat-value { font-size: 1.5em; font-weight: bold; color: var(--accent); }
+    .stat-label { color: var(--text-muted); font-size: 0.85em; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: rgba(74, 144, 217, 0.2); color: var(--accent); }
+    tr:hover { background: rgba(255,255,255,0.05); }
+    .error-msg { font-family: monospace; font-size: 0.85em; white-space: pre-wrap; word-break: break-all; background: rgba(0,0,0,0.3); padding: 8px; border-radius: 4px; display: block; margin: 5px 0; }
+</style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back">&larr; Back to Dashboard</a>
+        <h1>rgrnastar</h1>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">2,039</div>
+                <div class="stat-label">Total Errors</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">113</div>
+                <div class="stat-label">Unique Error Types</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">264</div>
+                <div class="stat-label">Affected Users</div>
+            </div>
+        </div>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">Exit Codes</h2>
+        <table>
+            <tr><th>Exit Code</th><th>Count</th></tr>
+            <tr><td>104</td><td>1,467</td></tr>
+            <tr><td>109</td><td>73</td></tr>
+            <tr><td>102</td><td>25</td></tr>
+            <tr><td>139</td><td>7</td></tr>
+            <tr><td>1</td><td>5</td></tr>
+        </table>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">Destinations</h2>
+        <table>
+            <tr><th>Destination</th><th>Count</th></tr>
+            <tr><td>bridges2</td><td>745</td></tr>
+            <tr><td>expanse</td><td>505</td></tr>
+            <tr><td>jetstream2</td><td>479</td></tr>
+            <tr><td>anvil</td><td>241</td></tr>
+        </table>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">All Unique Error Messages</h2>
+        <table>
+            <tr><th style="width: 80px;">Count</th><th>Error Message</th></tr>
+            <tr><td>352</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  valid  exon  lines  in  the  GTF  file:  /ocean/projects/mcb140028p/</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  valid  exon  lines  in  the  GTF  file:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72134812/inputs/dataset_ee8fb7ed-5a07-4fd1-8a3b-2488d0c9e285.dat
+Solution:  check  the  formatting  of  the  GTF  file.  One  likely  cause  is  the  difference  in  chromosome  naming  between  GTF  and  FASTA  file.
+
+Nov  02  07:56:14  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>195</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  valid  exon  lines  in  the  GTF  file:  /expanse/lustre/scratch/xga</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  valid  exon  lines  in  the  GTF  file:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72123643/inputs/dataset_8911a200-16d1-4692-9594-b2b05a7b6717.dat
+Solution:  check  the  formatting  of  the  GTF  file.  One  likely  cause  is  the  difference  in  chromosome  naming  between  GTF  and  FASTA  file.
+
+Nov  01  16:45:24  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>186</td><td><span class="error-msg">EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@A00551:44:HCTV5DSXX:3:1101:17309:2722
+GAACTCCATTATGAGCCTCAAGAGTCCTCCTTAAGGTATTCAGCTGGTGACTTCAGTCTGACCACTAGCCACCTGCATAGTTCCATAGCCCTTCTTGGCATCTCGATGGGCAGTCATGGTGCCTTGCCATGTAGGGCACATAGCCTGCTT
+
+SOLUTION:  fix  your  fastq  file
+
+Oct  31  21:19:30  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>151</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  valid  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jo</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  valid  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72135484/inputs/dataset_19ed8a75-b4a0-4b22-82da-af600113768c.dat
+Solution:  check  the  formatting  of  the  GTF  file.  One  likely  cause  is  the  difference  in  chromosome  naming  between  GTF  and  FASTA  file.
+
+Nov  02  14:15:01  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>106</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  valid  exon  lines  in  the  GTF  file:  /anvil/scratch/x-xcgalaxy/m</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  valid  exon  lines  in  the  GTF  file:  /anvil/scratch/x-xcgalaxy/main/staging/72134892/inputs/dataset_ee8fb7ed-5a07-4fd1-8a3b-2488d0c9e285.dat
+Solution:  check  the  formatting  of  the  GTF  file.  One  likely  cause  is  the  difference  in  chromosome  naming  between  GTF  and  FASTA  file.
+
+Nov  02  08:04:40  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>71</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /ocean/projects/mcb140028p/xcgalax</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72200269/inputs/dataset_d85849d7-097d-4cea-98d0-e7027a8b49db.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  04  12:07:10  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>70</td><td><span class="error-msg">Transcriptome.cpp:14:Transcriptome:  exiting  because  of  *INPUT  FILE*  error:  could  not  open  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Transcriptome.cpp:14:Transcriptome:  exiting  because  of  *INPUT  FILE*  error:  could  not  open  input  file  /cvmfs/data.galaxyproject.org/managed/rnastar/2.7.4a/sacCer3/sacCer3/dataset_ee6db620-7c48-4da0-8451-017d274c97ca_files//geneInfo.tab
+Solution:  check  that  the  file  exists  and  you  have  read  permission  for  this  file
+                    SOLUTION:  utilize  --sjdbGTFfile  /path/to/annotations.gtf  option  at  the  genome  generation  step  or  mapping  step
+
+Nov  12  21:44:43  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>60</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=801812098,  which</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=801812098,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  13
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR12002099.19629798/1
++
+TGCCTTGCAAATGCCTATGTTGAATTAGATGGTTATGTAGCGTATGTATCTTAGTGGAATGCTGCTTTATA
+SOLUTION:  fix  your  fastq  file
+
+Dec  16  04:44:24  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>53</td><td><span class="error-msg">EXITING  because  of  FATAL  PARAMETER  ERROR:  limitGenomeGenerateRAM=59392000000is  too  small  fo</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">EXITING  because  of  FATAL  PARAMETER  ERROR:  limitGenomeGenerateRAM=59392000000is  too  small  for  your  genome
+SOLUTION:  please  specify  --limitGenomeGenerateRAM  not  less  than  307524971445  and  make  that  much  RAM  available  
+
+Nov  02  10:39:31  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>42</td><td><span class="error-msg">EXITING  because  of  FATAL  PARAMETER  ERROR:  limitGenomeGenerateRAM=58000000000is  too  small  fo</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">EXITING  because  of  FATAL  PARAMETER  ERROR:  limitGenomeGenerateRAM=58000000000is  too  small  for  your  genome
+SOLUTION:  please  specify  --limitGenomeGenerateRAM  not  less  than  307524971445  and  make  that  much  RAM  available  
+
+Nov  02  13:43:14  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>35</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /anvil/scratch/x-xcgalaxy/main/sta</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /anvil/scratch/x-xcgalaxy/main/staging/72127735/inputs/dataset_39803382-f9f1-4d7f-ad15-f45f86858ca9.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  02  01:03:23  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>26</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=639586700,  which</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=639586700,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  13
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR13313987.25724438/1
++
+E/E
+SOLUTION:  fix  your  fastq  file
+
+Nov  18  10:16:23  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>23</td><td><span class="error-msg">EXITING:  FATAL  INPUT  ERROR:  empty  value  for  parameter  "sjdbGTFfeatureExon"  in  input  "Comm</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">EXITING:  FATAL  INPUT  ERROR:  empty  value  for  parameter  "sjdbGTFfeatureExon"  in  input  "Command-Line"
+SOLUTION:  use  non-empty  value  for  this  parameter
+
+Nov  18  12:58:02  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>22</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /expanse/lustre/scratch/xgalaxy/te</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72127734/inputs/dataset_39803382-f9f1-4d7f-ad15-f45f86858ca9.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  01  22:16:35  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>18</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=373245519,  which</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=373245519,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  13
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR10914869.26027869/1
++
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFF,FFFFFFFFFFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFF
+SOLUTION:  fix  your  fastq  file
+
+Dec  02  15:03:16  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>14</td><td><span class="error-msg">ReadAlignChunk_processChunks.cpp:204:processChunks  EXITING  because  of  FATAL  ERROR  in  input  r</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">ReadAlignChunk_processChunks.cpp:204:processChunks  EXITING  because  of  FATAL  ERROR  in  input  reads:  wrong  read  ID  line  format:  the  read  ID  lines  should  start  with  @  or  &gt;  
+Offending  line  for  read  #  1
+N_unmapped  	90658	90658	90658
+SOLUTION:  verify  and  correct  the  input  read  files
+
+Nov  07  14:25:05  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>12</td><td><span class="error-msg">zcat:  unexpected  end  of  file</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">zcat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR21445044.62159
+CGATTGCCATCAAACCAGTCTTTGAGAGATTTTCTTCCGTTATTATCACTTCAGGGACCATATCACCATTAGACATGTATCCAAGAATGTTAAACTTTAAAACTGTTTTACAAAAATCATATGCCATGACCTTAGCCAAAAAATCATTTC
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:FFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+SOLUTION:  fix  your  fastq  file
+
+Nov  12  08:01:14  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>10</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7290</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72905138/inputs/dataset_503096e4-4770-408a-a532-87b0d4d1a962.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  26  20:17:31  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>7</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7266</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72668143/inputs/dataset_5cea4f30-f749-4511-bcf1-81d74cbf878f.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  19  12:48:36  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>6</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=978491270,  which</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=978491270,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  13
+
+Genome_genomeGenerate.cpp:285:genomeGenerate:  exiting  because  of  *OUTPUT  FILE*  error:  could  not  create  output  file  tempstargenomedir//SA_26
+SOLUTION:  check  that  the  path  exists  and  you  have  write  permission  for  this  file.  Also  check  ulimit  -n  and  increase  it  to  allow  more  open  files.
+
+Nov  24  17:18:37  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>6</td><td><span class="error-msg">Genome_genomeGenerate.cpp:285:genomeGenerate:  exiting  because  of  *OUTPUT  FILE*  error:  could  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Genome_genomeGenerate.cpp:285:genomeGenerate:  exiting  because  of  *OUTPUT  FILE*  error:  could  not  create  output  file  tempstargenomedir//SA_35
+SOLUTION:  check  that  the  path  exists  and  you  have  write  permission  for  this  file.  Also  check  ulimit  -n  and  increase  it  to  allow  more  open  files.
+
+Dec  05  16:54:10  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>6</td><td><span class="error-msg">EXITING  because  of  FATAL  ERROR  in  reads  input:  Lread  of  the  pair  =  1299      while  DEF</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">EXITING  because  of  FATAL  ERROR  in  reads  input:  Lread  of  the  pair  =  1299      while  DEF_readSeqLengthMax=650
+Read  Name=&gt;NC_045512.2
+SOLUTION:  increase  DEF_readSeqLengthMax  in  IncludeDefine.h  and  re-compile  STAR
+
+Dec  16  18:44:42  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7264</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72640776/inputs/dataset_5cea4f30-f749-4511-bcf1-81d74cbf878f.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  18  20:12:43  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=119667750,  which</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=119667750,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  12
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR20984853.NB551305:363:HNFWJAFX2:3:21607:13551:11425/1
++
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  20  10:54:24  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7278</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72780926/inputs/dataset_3664de14-8834-4310-807c-30de9b4c6514.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  22  12:26:54  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">EXITING  because  of  INPUT  ERROR:  the  file  format  of  the  genomeFastaFile:  refgenome.fa  is </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">EXITING  because  of  INPUT  ERROR:  the  file  format  of  the  genomeFastaFile:  refgenome.fa  is  not  fasta:  the  first  character  is  '#'  (35),  not  '&gt;'.
+  Solution:  check  formatting  of  the  fasta  file.  Make  sure  the  file  is  uncompressed  (unzipped).
+
+Dec  02  10:34:39  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>5</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=27450724,  which </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=27450724,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  11
+
+gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/73027614/inputs/dataset_de27038e-e5ca-4a61-824b-93a8a8c17d54.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR20723567.23293593
+ATACTTTCGGTTACCATCGTTCAAACGATGCCAATCTGCTACGACAAATTTATTTTTCTCTCAAGACCAGGCCCAACCATTCAAAAATGGAAGCCGTCCTGGCATTCTGTAGACGGCGGTCGCCTTCTACTCTGCTCTAAACATACAC
+
+SOLUTION:  fix  your  fastq  file
+
+Dec  02  08:25:57  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>4</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7336</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/73369400/inputs/dataset_b2ef32b6-be15-43d1-9f84-f83b898ed02d.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Dec  16  11:41:38  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7261</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72612757/inputs/dataset_aab3f1e6-293f-47eb-9dc5-631ef63b7078.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  18  11:59:15  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=50818468,  which </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=50818468,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  11
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@K00193:38:H3MYFBBXX:4:2120:11941:31080/1
++
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  18  10:05:52  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">EXITING  because  of  FATAL  ERROR:  read  files  are  not  consistent,  reached  the  end  of  the </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">EXITING  because  of  FATAL  ERROR:  read  files  are  not  consistent,  reached  the  end  of  the  one  before  the  other  one
+SOLUTION:  Check  you  your  input  files:  they  may  be  corrupted
+
+Nov  22  10:59:53  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=143733109,  which</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=143733109,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  12</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=579042118,  which</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=579042118,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  13
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@LH00746:255:235GYTLT4:7:2462:18005:2962
++
+9IIIIII9IIII*99III9IIIIIIIIII
+SOLUTION:  fix  your  fastq  file
+
+Nov  04  17:45:43  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">!!!!!  WARNING:  while  processing  sjdbGTFfile=/expanse/lustre/scratch/xgalaxy/temp_project/main/st</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  while  processing  sjdbGTFfile=/expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72341251/inputs/dataset_19a9cd3c-dc67-461e-a3d5-76de7f0f3ae3.dat,  line:
+chrM	FlyBase	exon	14917	19524	.	+	.	gene_id  "FBgn0013687";  gene_name  "mt:ori";  gene_source  "FlyBase";  gene_biotype  "pseudogene";  transcript_id  "FBgn0013687_df_pt";  transcript_source  "FlyBase";  transcript_biotype  "pseudogene";  tag  "Ensembl_canonical";  exon_number  "1";  exon_id  "FBgn0013687_df_pt-E1";
+  exon  end  =  19524  is  larger  than  the  chromosome  chrM  length  =  16343  ,  will  skip  this  exon
+
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR031725.3955915
+TTCGCATCATAGAAGGTATCCGCCGGCACTTTGTAGA
+IIIIIIIIIII6II;IIIIIIIII
+SOLUTION:  fix  your  fastq  file
+
+Nov  08  18:09:46  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=741585035,  which</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=741585035,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  13
+
+EXITING  because  of  FATAL  ERROR:  number  of  bytes  expected  from  the  BAM  bin  does  not  agree  with  the  actual  size  on  disk:  Expected  bin  size=172333388  ;  size  on  disk=170383157  ;  bin  number=85
+
+Nov  16  22:22:06  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">[E::bgzf_close]  File  write  failed</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">[E::bgzf_close]  File  write  failed
+
+EXITING  because  of  FATAL  ERROR:  number  of  bytes  expected  from  the  BAM  bin  does  not  agree  with  the  actual  size  on  disk:  Expected  bin  size=28633026  ;  size  on  disk=27323943  ;  bin  number=26
+
+Nov  18  20:43:28  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">EXITING  because  of  FATAL  ERROR:  could  not  open  genome  file  /cvmfs/brc.galaxyproject.org/da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">EXITING  because  of  FATAL  ERROR:  could  not  open  genome  file  /cvmfs/brc.galaxyproject.org/data/genomes/GCF_016699485.2/rnastar_index/v2.7.4a/GCF_016699485.2,/cvmfs/vgp.galaxyproject.org/data/genomes/GCF_016699485.2/rnastar_index/v2.7.4a/GCF_016699485.2//genomeParameters.txt
+SOLUTION:  check  that  the  path  to  genome  files,  specified  in  --genomeDir  is  correct  and  the  files  are  present,  and  have  user  read  permsissions
+
+Nov  22  03:18:00  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=108384165,  which</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=108384165,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  12
+
+ReadAlignChunk_processChunks.cpp:204:processChunks  EXITING  because  of  FATAL  ERROR  in  input  reads:  wrong  read  ID  line  format:  the  read  ID  lines  should  start  with  @  or  &gt;  
+Offending  line  for  read  #  32210340
+*9GTGAGGTGITCTGGII9IIICCGGCTAC99IIIIIIIIITGTGIGGIIIIIIIIIITCATCIIIIIIIIIII*IIII9IGITCCIIIIIIIII:29IIIIIIIIIII5923    1:N:0:GGTAGAATTAIIIACCTAACIACCTACCTAACIACCTACCTAACIACIIACCTAACIA5923  1:N:0:*AAGGIIIIG5+TTAIIIITGTIIIIICIII4006446AGT937TTGTGCTTGGCGTAGGCGTTGAAGCAGTCI9IIIIIIIGTGAIIGTTH00004IIIIIITGGIIII9IIIIG04ITIIIIIIIG0I9IIIIGTGTGAIIIIIIIITGIIIGTGITTGTGI9IGCTGGIIIIIIIIIIIIII3  1:N:0::N:0::N:0::N:0::N:0::N:0::N:0:IIACCTAACIACCTAACIACCTAACIACCTAACIACCTAACIACCTAACIACCTAGGIIIIG5+TTAIIIITGTIIIIICIII40085TTTTC937TTGTGCTTGGCGTAGGCGTTGAAGCAGTCI</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72121307/inputs/dataset_862401a3-1b</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72121307/inputs/dataset_862401a3-1b40-40d5-80ae-a0ca8dd55f0e.dat:  not  in  gzip  format
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR25618627.E00497:316:H3MTJCCX2:3:1101:9151:1309/1
++
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  01  17:03:07  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /jetstream2/scratch/main/jobs/72123631/inputs/dataset_a4e8ab7e-308b-4470-804a-25d9f2f25cf0.da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /jetstream2/scratch/main/jobs/72123631/inputs/dataset_a4e8ab7e-308b-4470-804a-25d9f2f25cf0.dat:  not  in  gzip  format
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@A00551:44:HCTV5DSXX:3:1101:1154:1047
++
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  01  23:43:56  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72124343/inputs/datase</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72124343/inputs/dataset_1b6caed6-21d1-40dc-96f4-740d546b904e.dat,  line:
+chrM	FlyBase	exon	14917	19524	.	+	.	gene_id  "FBgn0013687";  gene_name  "mt:ori";  gene_source  "FlyBase";  gene_biotype  "pseudogene";  transcript_id  "FBgn0013687_df_pt";  transcript_source  "FlyBase";  transcript_biotype  "pseudogene";  tag  "Ensembl_canonical";  exon_number  "1";  exon_id  "FBgn0013687_df_pt-E1";
+  exon  end  =  19524  is  larger  than  the  chromosome  chrM  length  =  16343  ,  will  skip  this  exon
+
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR031725.5560362
++
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  02  00:38:45  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72139228/inputs/dataset_84c27a58-b11c-4aad-</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72139228/inputs/dataset_84c27a58-b11c-4aad-8c15-e6d546a39f0a.dat:  invalid  compressed  data--format  violated
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@LH00306:332:23CL3HLT3:6:2176:37777:3754
+CTTTCTTTCCACTGGATGATGGTACAGAGATTGCTGGCAGAATGGGACAAAGGATCCAGGCTTAGATTTCAGGGCCCAGGGGACCGTGTATTATGTTCTG
+IIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII3HLTIIIIAGAACTCC03062176:39I*I3:6:CCGTGACGGCGGAAGCGGCCTGGTCTGCGGACCGTGATCGCGT9:332:23CL3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3H9L3IIIIIIIIIIIIIIII9IIIIIIIIIIIIIIII92IIIIIIIIII92IIIIIIIIII92IIIIIIIIII923IIII98IIIIIIIITGGGGGAAIIIIGACGT666:34CCGT:34CTATA0306CGGA:332IIIICGTTIIII7
+SOLUTION:  fix  your  fastq  file
+
+Nov  02  16:21:11  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72139230/inputs/dataset_61717be9-dcc1-41e2-</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72139230/inputs/dataset_61717be9-dcc1-41e2-9937-0dee6cea2099.dat:  invalid  compressed  data--format  violated
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@LH00306:332:23CL3HLT3:6:1101:31120:13970
++
+@LH00306:332:23CL3HLT3:6:1101IIIIIIIIIIIIACACIIIIACACIIIIACACIIIIACACIIIIACACIIIIACACIIIIACACIIIIACACIIIIACACIIIIACACIIIIACACIIIIACACIIIIACAC*CACIIIIACACIIIIACAC*CACIIIIACACIIIIACAC*CACIIIIACACIIIIACAC*CACIIIIACACIIIIACAC*CACIIIIACACIIIIACAC*CACIIIIACACIIIIACAC*CACIIIIACACIIIIACAC*CACIIIIACACIIIGCGTIIAC6HLT3CIIITIIATTTT2T2T29IIIGAGCCIIIIIIIIITIIATGCAIIIICIIIGCAIIIICIIIGCAIIIICIIIGCAIIIICIIIGCAIIIICIIIGCAIIIICIIIGCAIIIICI9AAGCTIIII06:3IIIGCAIIIIIIIIIIIIIIIIIIIIIIIIIII*CACIIIIACACIIIIACAC*CACIIIIACACIIIIACAC*CACIIIIACACIIIIACAC*CACIIIACIIIIACACIIIIACAC*CACIIIACIIIIIIIIIIIIIIIIIIACAACACIIACCI9AAGCTIIII06:3IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+SOLUTION:  fix  your</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7216</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72162155/inputs/dataset_5b3d9c0b-2657-42d6-9ba2-fe9c20f06c33.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  03  14:46:20  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7220</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72200266/inputs/dataset_d85849d7-097d-4cea-98d0-e7027a8b49db.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  04  17:07:23  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=535345329,  which</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=535345329,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  13</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72286866/inputs/dataset_487ffe8d-269d-49af-</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72286866/inputs/dataset_487ffe8d-269d-49af-9826-90b4548f43b4.dat:  invalid  compressed  data--crc  error
+
+gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72286866/inputs/dataset_487ffe8d-269d-49af-9826-90b4548f43b4.dat:  invalid  compressed  data--length  error
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@LH00935:96:22Y7LVLT4:7:1243:42545:3059
+@LH0TGCCATGAGGCGGGCGCCATGCAGACGGGCATTCCCCAGGGGCTCCTCCAGCACACCAATGGTGGT
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+SOLUTION:  fix  your  fastq  file
+
+Nov  06  14:18:23  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=143725995,  which</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=143725995,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  12
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@ACB034_0143:5:2208:6608:167979#GCCAAT/1
++
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  07  11:01:31  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72322333/inputs/dataset_bae604e6-a16e-46f3-</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72322333/inputs/dataset_bae604e6-a16e-46f3-b39a-e0fba48df59c.dat:  not  in  gzip  format
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@GWNJ-1012:777:GW2206082170th:4:1101:14235:1000
++
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  07  21:20:34  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72325313/inputs/dataset_bae604e6-a1</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72325313/inputs/dataset_bae604e6-a16e-46f3-b39a-e0fba48df59c.dat:  not  in  gzip  format
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@GWNJ-1012:777:GW2206082170th:4:1101:14235:1000
++
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  07  19:45:23  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72448797/inputs/dataset_03aee6b3-df</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72448797/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR15904318.863127
+CT
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  12  04:15:49  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /jetstream2/scratch/main/jobs/72450371/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /jetstream2/scratch/main/jobs/72450371/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR15904318.863127
+CT
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  12  12:38:05  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /jetstream2/scratch/main/jobs/72451051/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /jetstream2/scratch/main/jobs/72451051/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR15904318.863127
+CT
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  12  13:04:05  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /jetstream2/scratch/main/jobs/72455970/inputs/dataset_8eb605b4-53f0-44cf-832b-a2d67b9bb603.da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /jetstream2/scratch/main/jobs/72455970/inputs/dataset_8eb605b4-53f0-44cf-832b-a2d67b9bb603.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR8460397.3894189
+GCCAAAAAAGCCTCGGCCACCTAAGACCAATTCTCTCAGCAGACCTGGCG
+CCCFFFFFHHGHHJJJIIJJJIJJJJJJJJJJJJJI
+SOLUTION:  fix  your  fastq  file
+
+Nov  12  17:28:54  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72458579/inputs/dataset_d3e47696-f5</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72458579/inputs/dataset_d3e47696-f545-4fc7-810d-4259a7ae949c.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR21445042.11406779
+TGATCAGTGTGGCAAGAGGCGAACAAGACTATTTCAACGAAGCCGGCATACCAACTGCTACAGAAGGTTGCAAAAGTAATGCATTAATG
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  12  07:45:49  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72461159/inputs/dataset_03aee6b3-df</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72461159/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR15904318.863127
+CT
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  12  08:29:21  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /jetstream2/scratch/main/jobs/72461679/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /jetstream2/scratch/main/jobs/72461679/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR15904318.863127
+CT
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  12  16:58:12  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72462512/inputs/dataset_03aee6b3-df</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72462512/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR15904318.863127
+CT
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  12  09:15:52  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72463417/inputs/dataset_03aee6b3-df2a-4abf-</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72463417/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR15904318.863127
+CT
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  12  12:54:32  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /jetstream2/scratch/main/jobs/72464206/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /jetstream2/scratch/main/jobs/72464206/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR15904318.863127
+CT
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  12  18:26:40  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /jetstream2/scratch/main/jobs/72465156/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /jetstream2/scratch/main/jobs/72465156/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR15904318.863127
+CT
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  12  19:06:14  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /jetstream2/scratch/main/jobs/72466274/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /jetstream2/scratch/main/jobs/72466274/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR15904318.863127
+CT
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  12  19:51:29  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72467110/inputs/dataset_03aee6b3-df2a-4abf-</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72467110/inputs/dataset_03aee6b3-df2a-4abf-95db-b1aa99120054.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR15904318.863127
+CT
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  12  15:20:35  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=12157105,  which </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=12157105,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  10
+
+Transcriptome.cpp:14:Transcriptome:  exiting  because  of  *INPUT  FILE*  error:  could  not  open  input  file  tempstargenomedir//geneInfo.tab
+Solution:  check  that  the  file  exists  and  you  have  read  permission  for  this  file
+                    SOLUTION:  utilize  --sjdbGTFfile  /path/to/annotations.gtf  option  at  the  genome  generation  step  or  mapping  step
+
+Nov  13  07:35:26  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7248</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72486514/inputs/dataset_d9bebb6f-4f19-4181-8d21-797be11aa01a.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  13  16:10:34  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /anvil/scratch/x-xcgalaxy/main/staging/72486979/inputs/dataset_8eb605b4-53f0-44cf-832b-a2d67b</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /anvil/scratch/x-xcgalaxy/main/staging/72486979/inputs/dataset_8eb605b4-53f0-44cf-832b-a2d67b9bb603.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR8460397.3894189
+GCCAAAAAAGCCTCGGCCACCTAAGACCAATTCTCTCAGCAGACCTGGCG
+CCCFFFFFHHGHHJJJIIJJJIJJJJJJJJJJJJJI
+SOLUTION:  fix  your  fastq  file
+
+Nov  13  14:11:12  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Transcriptome.cpp:48:Transcriptome:  exiting  because  of  *INPUT  FILE*  error:  could  not  open  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Transcriptome.cpp:48:Transcriptome:  exiting  because  of  *INPUT  FILE*  error:  could  not  open  input  file  /cvmfs/data.galaxyproject.org/managed/rnastar_index2/sacCer3/dataset_952370_files/exonGeTrInfo.tab
+Solution:  check  that  the  file  exists  and  you  have  read  permission  for  this  file
+                    SOLUTION:  utilize  --sjdbGTFfile  /path/to/annotantions.gtf  option  at  the  genome  generation  step  or  mapping  step
+
+Nov  13  20:14:23  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /jetstream2/scratch/main/jobs/72501522/inputs/dataset_a24b074f-7416-4199-9182-59e9c1a00187.da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /jetstream2/scratch/main/jobs/72501522/inputs/dataset_a24b074f-7416-4199-9182-59e9c1a00187.dat:  unexpected  end  of  file
+
+gzip:  /jetstream2/scratch/main/jobs/72501522/inputs/dataset_cd2f2fe7-6d0e-41d7-8b9c-3b1f62dba77b.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR26627749.6635162
+GTTTTGGCTAGCTATTAATATTAGTGGCAGTAATCAGGCTGTTAAAATAATTAATGGTGTGGATAGGGGGTCTGAGGAGAATATATTTGAAAAGTTTTTA
+FAEEDF:CFFFFFFFFFFFFFFFFEFBFFFEFFF
+SOLUTION:  fix  your  fastq  file
+
+Nov  14  06:18:15  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=7313,  which  may</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=7313,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  5
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@7b657b6d-93ab-442e-8faa-fed2416fbd21
+GTGTAACCTACTCGTTCAGTTATGCAAAAGCGGTGCTTAACCGATCCAACAGAGATGCCTTCAGTGGTTTTCGCATTTATCGTGAAACGCTTTCGCGTTTTTCGTGCGCCGCTTCACGATGGACCTGTAGGGCACCAACGTGACCGTTAGCTCGGGTGGAGGTGGCAGCGGAGGTGGTGGGTCAGGGGGAGGTGGATCTAGCTACGAGCTGACCCAGCCACCCAGCATGTCCGTGTCCCCCGGCCAGACTGCTTCTATCACCTGCTCTGGTGATAAACTGGGCGACAAGTACGCGTGCTGGTACCAACAGAAGCCTGGTCAGGTCCCTGTGATGGTGGTGTACGATGACCGCGACAGGTTGTCCGGTACTCCGGAACGCTTCAGTGGGAGCAACTCCGGCAACACGGCCACGCTCACCATCTCTCGTGTGGAGGCCGGGGACGAGGCGGACTATTACTGTCAAGTTTGGGACATGTCCTCCGACTACGTGGTGTTCGGCGGAGGGACCAAGCTGACAGTCTTGGGAGCCGCCGCTACAACCACACCTGCTCCCAGACCTCCTACTCCCGCCCCTACAATCGCCAGCCAGCCTCTGTCTCTGAGGCCTGAGGCCTGCAGACCTGCTGC</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72519634/inputs/dataset_f8acde13-2201-48c6-</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72519634/inputs/dataset_f8acde13-2201-48c6-9439-231f10be527d.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR21445049.5265438
+CGGCACGACGACCAAC
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  14  12:18:07  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72531240/inputs/dataset_8eb605b4-53f0-44cf-</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72531240/inputs/dataset_8eb605b4-53f0-44cf-832b-a2d67b9bb603.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR8460397.3894189
+GCCAAAAAAGCCTCGGCCACCTAAGACCAATTCTCTCAGCAGACCTGGCG
+CCCFFFFFHHGHHJJJIIJJJIJJJJJJJJJJJJJI
+SOLUTION:  fix  your  fastq  file
+
+Nov  15  02:43:36  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72536064/inputs/dataset_8eb605b4-53</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/72536064/inputs/dataset_8eb605b4-53f0-44cf-832b-a2d67b9bb603.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR8460397.3894189
+GCCAAAAAAGCCTCGGCCACCTAAGACCAATTCTCTCAGCAGACCTGGCG
+CCCFFFFFHHGHHJJJIIJJJIJJJJJJJJJJJJJI
+SOLUTION:  fix  your  fastq  file
+
+Nov  15  05:55:48  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">!!!!!  WARNING:  while  processing  sjdbGTFfile=/ocean/projects/mcb140028p/xcgalaxy/main/staging//72</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  while  processing  sjdbGTFfile=/ocean/projects/mcb140028p/xcgalaxy/main/staging//72536437/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	exon	16435	16470	.	+	.	gene_id  "Q0045";  transcript_id  "Q0045_mRNA";  exon_number  "2";  exon_id  "Q0045_mRNA.2";  gene_name  "Q0045";
+  exon  end  =  16470  is  larger  than  the  chromosome  chrM  length  =  16343  ,  will  skip  this  exon
+
+!!!!!  WARNING:  while  processing  sjdbGTFfile=/ocean/projects/mcb140028p/xcgalaxy/main/staging//72536437/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	exon	18954	18991	.	+	.	gene_id  "Q0045";  transcript_id  "Q0045_mRNA";  exon_number  "3";  exon_id  "Q0045_mRNA.3";  gene_name  "Q0045";
+  exon  end  =  18991  is  larger  than  the  chromosome  chrM  length  =  16343  ,  will  skip  this  exon
+
+!!!!!  WARNING:  while  processing  sjdbGTFfile=/ocean/projects/mcb140028p/xcgalaxy/main/staging//72536437/inputs/dataset_d680f918</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7253</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72538304/inputs/dataset_f8d63859-05e8-4e05-99eb-e1bc842ddce9.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  15  15:07:30  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72550128/inputs/datase</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72550128/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	exon	16435	16470	.	+	.	gene_id  "Q0045";  transcript_id  "Q0045_mRNA";  exon_number  "2";  exon_id  "Q0045_mRNA.2";  gene_name  "Q0045";
+  exon  end  =  16470  is  larger  than  the  chromosome  chrM  length  =  16343  ,  will  skip  this  exon
+
+!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72550128/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	exon	18954	18991	.	+	.	gene_id  "Q0045";  transcript_id  "Q0045_mRNA";  exon_number  "3";  exon_id  "Q0045_mRNA.3";  gene_name  "Q0045";
+  exon  end  =  18991  is  larger  than  the  chromosome  chrM  length  =  16343  ,  will  skip  this  exon
+
+!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72550128/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	e</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72552801/inputs/datase</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72552801/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	exon	16435	16470	.	+	.	gene_id  "Q0045";  transcript_id  "Q0045_mRNA";  exon_number  "2";  exon_id  "Q0045_mRNA.2";  gene_name  "Q0045";
+  exon  end  =  16470  is  larger  than  the  chromosome  chrM  length  =  16343  ,  will  skip  this  exon
+
+!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72552801/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	exon	18954	18991	.	+	.	gene_id  "Q0045";  transcript_id  "Q0045_mRNA";  exon_number  "3";  exon_id  "Q0045_mRNA.3";  gene_name  "Q0045";
+  exon  end  =  18991  is  larger  than  the  chromosome  chrM  length  =  16343  ,  will  skip  this  exon
+
+!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72552801/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	e</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72559018/inputs/datase</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72559018/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	exon	16435	16470	.	+	.	gene_id  "Q0045";  transcript_id  "Q0045_mRNA";  exon_number  "2";  exon_id  "Q0045_mRNA.2";  gene_name  "Q0045";
+  exon  end  =  16470  is  larger  than  the  chromosome  chrM  length  =  16343  ,  will  skip  this  exon
+
+!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72559018/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	exon	18954	18991	.	+	.	gene_id  "Q0045";  transcript_id  "Q0045_mRNA";  exon_number  "3";  exon_id  "Q0045_mRNA.3";  gene_name  "Q0045";
+  exon  end  =  18991  is  larger  than  the  chromosome  chrM  length  =  16343  ,  will  skip  this  exon
+
+!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72559018/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	e</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /jetstream2/scratch/main/jobs/72572711/inputs/dataset_334db4e2-7124-4210-b1ae-763ebcc1960a.da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /jetstream2/scratch/main/jobs/72572711/inputs/dataset_334db4e2-7124-4210-b1ae-763ebcc1960a.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR25582102.524833
++
+GGAAGAGCACACGTCTGAACTCCAGTCACTGGATCGAATCTCGTATGCCGTCTTCTGCTTGAAAAAACCCTAGAAACGAACAGTAGAGATGGAGTTTTATAAAGTATCAGAAGGCACCTTGTAGCGAGTCATGGTATTGCCAGTGAG
+SOLUTION:  fix  your  fastq  file
+
+Nov  17  06:38:06  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /jetstream2/scratch/main/jobs/72572912/inputs/dataset_6662eaca-8de2-4c03-a811-40becd1ff9e4.da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /jetstream2/scratch/main/jobs/72572912/inputs/dataset_6662eaca-8de2-4c03-a811-40becd1ff9e4.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR25582099.21974611
+CCACAGAACTAATCATATTTTATATCTTCTTCGAAACCACACTTATCCCCACCTTGGCTTTCATCACCCGATGAGGTATCCTGCCAGAATGCCTGAACGC
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  17  08:59:42  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72573320/inputs/datase</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72573320/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	exon	16435	16470	.	+	.	gene_id  "Q0045";  transcript_id  "Q0045_mRNA";  exon_number  "2";  exon_id  "Q0045_mRNA.2";  gene_name  "Q0045";
+  exon  end  =  16470  is  larger  than  the  chromosome  chrM  length  =  16343  ,  will  skip  this  exon
+
+!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72573320/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	exon	18954	18991	.	+	.	gene_id  "Q0045";  transcript_id  "Q0045_mRNA";  exon_number  "3";  exon_id  "Q0045_mRNA.3";  gene_name  "Q0045";
+  exon  end  =  18991  is  larger  than  the  chromosome  chrM  length  =  16343  ,  will  skip  this  exon
+
+!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72573320/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	e</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /jetstream2/scratch/main/jobs/72573540/inputs/dataset_334db4e2-7124-4210-b1ae-763ebcc1960a.da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /jetstream2/scratch/main/jobs/72573540/inputs/dataset_334db4e2-7124-4210-b1ae-763ebcc1960a.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR25582102.524833
++
+GGAAGAGCACACGTCTGAACTCCAGTCACTGGATCGAATCTCGTATGCCGTCTTCTGCTTGAAAAAACCCTAGAAACGAACAGTAGAGATGGAGTTTTATAAAGTATCAGAAGGCACCTTGTAGCGAGTCATGGTATTGCCAGTGAG
+SOLUTION:  fix  your  fastq  file
+
+Nov  17  07:29:44  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72580444/inputs/datase</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72580444/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	exon	16435	16470	.	+	.	gene_id  "Q0045";  transcript_id  "Q0045_mRNA";  exon_number  "2";  exon_id  "Q0045_mRNA.2";  gene_name  "Q0045";
+  exon  end  =  16470  is  larger  than  the  chromosome  chrM  length  =  16343  ,  will  skip  this  exon
+
+!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72580444/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	exon	18954	18991	.	+	.	gene_id  "Q0045";  transcript_id  "Q0045_mRNA";  exon_number  "3";  exon_id  "Q0045_mRNA.3";  gene_name  "Q0045";
+  exon  end  =  18991  is  larger  than  the  chromosome  chrM  length  =  16343  ,  will  skip  this  exon
+
+!!!!!  WARNING:  while  processing  sjdbGTFfile=/jetstream2/scratch/main/jobs/72580444/inputs/dataset_d680f918-9e9b-4347-b038-8f261238ee6e.dat,  line:
+chrM	ensGene.v101	e</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72585065/inputs/dataset_334db4e2-7124-4210-</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72585065/inputs/dataset_334db4e2-7124-4210-b1ae-763ebcc1960a.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR25582102.524833
++
+TGTTCTAATGCTTCTTGTTGGCAGCTGCCACCTGTCCGGCGATTCTGTCCAGATCTCTTTGTCCCTGAGGTGTCAGTTTGCGGCCGCCATCTTGGTCCTTTTCCACCATTTTCAGCCCCTACAGGGCTTGGAGGACCCGGCGGGCCA
+SOLUTION:  fix  your  fastq  file
+
+Nov  17  10:00:58  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72585126/inputs/dataset_a96a78a4-277b-42df-</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72585126/inputs/dataset_a96a78a4-277b-42df-9d1f-7d5e96d64ba9.dat:  unexpected  end  of  file
+
+Fatal  INPUT  FILE  error,  no  valid  exon  lines  in  the  GTF  file:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72585126/inputs/dataset_f9161857-4f8c-42e5-af69-4cc3922c90a9.dat
+Solution:  check  the  formatting  of  the  GTF  file.  One  likely  cause  is  the  difference  in  chromosome  naming  between  GTF  and  FASTA  file.
+
+Nov  17  09:40:13  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /anvil/scratch/x-xcgalaxy/main/staging/72586966/inputs/dataset_6662eaca-8de2-4c03-a811-40becd</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /anvil/scratch/x-xcgalaxy/main/staging/72586966/inputs/dataset_6662eaca-8de2-4c03-a811-40becd1ff9e4.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR25582099.21974611
+CCACAGAACTAATCATATTTTATATCTTCTTCGAAACCACACTTATCCCCACCTTGGCTTTCATCACCCGATGAGGTATCCTGCCAGAATGCCTGAACGC
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  17  11:52:01  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /jetstream2/scratch/main/jobs/72587646/inputs/dataset_63167b6c-d27d-4e7f-a290-437fa2a6df34.da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /jetstream2/scratch/main/jobs/72587646/inputs/dataset_63167b6c-d27d-4e7f-a290-437fa2a6df34.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR21445050.28199372
+CACAGTTGTACTTGGAAGCCAAAGCTTTCAAAGATGGTTCAATGATACCACCTCTCAATCTCAAGACTAAGTGCAAAGTGGATTCTTTTTGAAT
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  17  16:02:25  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72587660/inputs/dataset_63167b6c-d27d-4e7f-</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72587660/inputs/dataset_63167b6c-d27d-4e7f-a290-437fa2a6df34.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR21445050.28199372
+CACAGTTGTACTTGGAAGCCAAAGCTTTCAAAGATGGTTCAATGATACCACCTCTCAATCTCAAGACTAAGTGCAAAGTGGATTCTTTTTGAAT
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  17  11:39:59  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /anvil/scratch/x-xcgalaxy/main/staging/72590894/inputs/dataset_e7343a45-2120-44df-930d-fa6dc0</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /anvil/scratch/x-xcgalaxy/main/staging/72590894/inputs/dataset_e7343a45-2120-44df-930d-fa6dc0b1d5e7.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR25582113.6123145
+GTGATTAGGAGTAGGGTTAGGATGAGTGGGAAG
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  17  13:31:26  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /jetstream2/scratch/main/jobs/72600793/inputs/dataset_8e60e302-a3e1-4b72-9ff5-001b1646b608.da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /jetstream2/scratch/main/jobs/72600793/inputs/dataset_8e60e302-a3e1-4b72-9ff5-001b1646b608.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR25582113.10557017
+C
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  18  04:19:01  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /jetstream2/scratch/main/jobs/72603653/inputs/dataset_5a74b4c3-f453-45ea-a898-78a9a08d8733.da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /jetstream2/scratch/main/jobs/72603653/inputs/dataset_5a74b4c3-f453-45ea-a898-78a9a08d8733.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR25582097.4038142
+GAAATGGGGAATTTTAGAGCAGGGGAATTGCATCATTCAAACTTCCCTTTTGGAAGTCACTCTGACAGCAGGAAGTGCCATCTCCTCTGGCCGCCTGAAGGACTTTTCTCCTGCACTGCTATCTCTTTCTCTTC
+
+SOLUTION:  fix  your  fastq  file
+
+Nov  18  06:07:41  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7262</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72629164/inputs/dataset_0915fbf3-bd93-454e-99b5-42073d39c434.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  18  17:01:21  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7263</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72632712/inputs/dataset_b994c6b8-2785-4d09-b242-bb57169c0404.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  18  18:34:30  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Genome_genomeGenerate.cpp:286:genomeGenerate:  exiting  because  of  *OUTPUT  FILE*  error:  could  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Genome_genomeGenerate.cpp:286:genomeGenerate:  exiting  because  of  *OUTPUT  FILE*  error:  could  not  write  the  output  file  tempstargenomedir//SA_8
+fail()=1  ;  bad()=1
+Error  while  trying  to  write  chunk  #  0;  0  bytes
+File  size  full  =  916793000  bytes
+File  size  on  disk  =  23449244223144  bytes
+Solution:  check  that  you  have  enough  space  on  the  disk
+Empty  space  on  disk  =  2195814074023936  bytes
+
+Nov  19  07:08:29  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">EXITING:  FATAL  INPUT  ERROR:  empty  value  for  parameter  "outSAMattributes"  in  input  "Comman</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">EXITING:  FATAL  INPUT  ERROR:  empty  value  for  parameter  "outSAMattributes"  in  input  "Command-Line"
+SOLUTION:  use  non-empty  value  for  this  parameter
+
+Nov  19  12:25:21  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7280</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72800295/inputs/dataset_3664de14-8834-4310-807c-30de9b4c6514.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  23  13:35:53  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7281</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72815546/inputs/dataset_32796623.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  24  06:18:07  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7287</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72876000/inputs/dataset_0dfd448b-eba6-47dc-95bc-ddaffd1b4592.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  25  21:39:27  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72884859/inputs/dataset_e83782ef-7ede-4cdb-</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//72884859/inputs/dataset_e83782ef-7ede-4cdb-8fd3-d2047a673053.dat:  invalid  compressed  data--format  violated
+
+ReadAlignChunk_processChunks.cpp:204:processChunks  EXITING  because  of  FATAL  ERROR  in  input  reads:  wrong  read  ID  line  format:  the  read  ID  lines  should  start  with  @  or  &gt;  
+Offending  line  for  read  #  18467325
+GGCTTTTGTGTTGGCAGTTTGTCTTGGTCATGACTTATTCTTGCAAAACCATCTTTACAGCAAACAAATATGAAAGATATTTTCCCCAATGCAAGGAAAATAATCTGGATCAATAACAAAGTCAAAGCCA-TTTCCCCTGCTCATGCAAAAIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIICACTGAAAGCAGGGCTGAGGGGGAGCTGGGGTGACGGGCT9AIIIIIII5GGCTTAIIIIII8CIIIIIIT:34:22HWMWLT4:2:2136:26280:18846    1:NT
+SOLUTION:  verify  and  correct  the  input  read  files
+
+Nov  26  02:32:58  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /jetstream2/scratch/main/jobs/72901560/inputs/dataset_e83782ef-7ede-4cdb-8fd3-d2047a673053.da</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /jetstream2/scratch/main/jobs/72901560/inputs/dataset_e83782ef-7ede-4cdb-8fd3-d2047a673053.dat:  invalid  compressed  data--format  violated
+
+ReadAlignChunk_processChunks.cpp:204:processChunks  EXITING  because  of  FATAL  ERROR  in  input  reads:  wrong  read  ID  line  format:  the  read  ID  lines  should  start  with  @  or  &gt;  
+Offending  line  for  read  #  18467325
+GGCTTTTGTGTTGGCAGTTTGTCTTGGTCATGACTTATTCTTGCAAAACCATCTTTACAGCAAACAAATATGAAAGATATTTTCCCCAATGCAAGGAAAATAATCTGGATCAATAACAAAGTCAAAGCCA-TTTCCCCTGCTCATGCAAAAIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIICACTGAAAGCAGGGCTGAGGGGGAGCTGGGGTGACGGGCT9AIIIIIII5GGCTTAIIIIII8CIIIIIIT:34:22HWMWLT4:2:2136:26280:18846    1:NT
+SOLUTION:  verify  and  correct  the  input  read  files
+
+Nov  26  18:51:43  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7293</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72933018/inputs/dataset_b994c6b8-2785-4d09-b242-bb57169c0404.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  27  22:05:31  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7295</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/72957484/inputs/dataset_3538abaa-2da5-4b74-98be-5401dbd9f4e0.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Nov  29  04:42:20  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Genome_genomeGenerate.cpp:373:genomeGenerate:  exiting  because  of  *OUTPUT  FILE*  error:  could  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Genome_genomeGenerate.cpp:373:genomeGenerate:  exiting  because  of  *OUTPUT  FILE*  error:  could  not  create  output  file  tempstargenomedir//genomeParameters.txt
+SOLUTION:  check  that  the  path  exists  and  you  have  write  permission  for  this  file.  Also  check  ulimit  -n  and  increase  it  to  allow  more  open  files.
+
+Dec  04  06:45:21  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=4641652,  which  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=4641652,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  10
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  Lread  of  the  pair  =  1299      while  DEF_readSeqLengthMax=650
+Read  Name=&gt;NC_000913.3
+SOLUTION:  increase  DEF_readSeqLengthMax  in  IncludeDefine.h  and  re-compile  STAR
+
+Dec  02  08:33:32  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /anvil/scratch/x-xcgalaxy/main/staging/73082197/inputs/dataset_0f685e59-d395-455c-a169-9a2657</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /anvil/scratch/x-xcgalaxy/main/staging/73082197/inputs/dataset_0f685e59-d395-455c-a169-9a26572ebee1.dat:  invalid  compressed  data--format  violated
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR26253985.46169596
+CCCACC
+FCTTCCCCCGTAAG
+SOLUTION:  fix  your  fastq  file
+
+Dec  04  02:50:42  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /anvil/scratch/x-xcgalaxy/main/staging/73083403/inputs/dataset_0f685e59-d395-455c-a169-9a2657</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /anvil/scratch/x-xcgalaxy/main/staging/73083403/inputs/dataset_0f685e59-d395-455c-a169-9a26572ebee1.dat:  invalid  compressed  data--format  violated
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR26253985.46169596
+CCCACC
+FCTTCCCCCGTAAG
+SOLUTION:  fix  your  fastq  file
+
+Dec  04  03:39:40  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/73089385/inputs/dataset_0f685e59-d3</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/73089385/inputs/dataset_0f685e59-d395-455c-a169-9a26572ebee1.dat:  invalid  compressed  data--format  violated
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR26253985.46169596
+CCCACC
+FCTTCCCCCGTAAG
+SOLUTION:  fix  your  fastq  file
+
+Dec  04  05:14:28  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//73139431/inputs/dataset_0f685e59-d395-455c-</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//73139431/inputs/dataset_0f685e59-d395-455c-a169-9a26572ebee1.dat:  invalid  compressed  data--format  violated
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR26253985.46169596
+CCCACC
+FCTTCCCCCGTAAG
+SOLUTION:  fix  your  fastq  file
+
+Dec  06  10:13:14  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=101991189,  which</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">!!!!!  WARNING:  --genomeSAindexNbases  14  is  too  large  for  the  genome  size=101991189,  which  may  cause  seg-fault  at  the  mapping  step.  Re-run  genome  generation  with  recommended  --genomeSAindexNbases  12
+
+gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/73146120/inputs/dataset_899a2075-63d2-4cf8-af44-27b0d5bf5371.dat:  unexpected  end  of  file
+
+gzip:  /expanse/lustre/scratch/xgalaxy/temp_project/main/staging/73146120/inputs/dataset_899a2075-63d2-4cf8-af44-27b0d5bf5371.dat:  unexpected  end  of  file
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR8460399.173883
+CTAGTTTCTACCAAATGA
+
+SOLUTION:  fix  your  fastq  file
+
+Dec  06  13:07:56  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//73150118/inputs/dataset_0f685e59-d395-455c-</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">gzip:  /ocean/projects/mcb140028p/xcgalaxy/main/staging//73150118/inputs/dataset_0f685e59-d395-455c-a169-9a26572ebee1.dat:  invalid  compressed  data--format  violated
+
+EXITING  because  of  FATAL  ERROR  in  reads  input:  quality  string  length  is  not  equal  to  sequence  length
+@SRR26253985.46169596
+CCCACC
+FCTTCCCCCGTAAG
+SOLUTION:  fix  your  fastq  file
+
+Dec  07  03:13:59  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/7335</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Fatal  INPUT  FILE  error,  no  exon  lines  in  the  GTF  file:  /jetstream2/scratch/main/jobs/73358175/inputs/dataset_6d6df61e-8b17-45cd-8021-6a70a5722b1c.dat
+Solution:  check  the  formatting  of  the  GTF  file,  it  must  contain  some  lines  with  exon  in  the  3rd  column.
+                    Make  sure  the  GTF  file  is  unzipped.
+                    If  exons  are  marked  with  a  different  word,  use  --sjdbGTFfeatureExon  .
+
+Dec  15  23:27:13  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">EXITING  because  of  FATAL  ERROR:  could  not  open  genome  file  /cvmfs/data.galaxyproject.org/m</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">EXITING  because  of  FATAL  ERROR:  could  not  open  genome  file  /cvmfs/data.galaxyproject.org/managed/rnastar/2.7.4a/hg38/hg38/dataset_fdfceb86-2b00-45f3-a3f4-63794ea8182d_files//genomeParameters.txt
+SOLUTION:  check  that  the  path  to  genome  files,  specified  in  --genomeDir  is  correct  and  the  files  are  present,  and  have  user  read  permsissions
+
+Dec  16  11:30:15  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">EXITING  because  of  fatal  ERROR:  could  not  open  temporary  bam  file:  ./_STARtmp//BAMsort//b</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">EXITING  because  of  fatal  ERROR:  could  not  open  temporary  bam  file:  ./_STARtmp//BAMsort//b55
+SOLUTION:  check  that  the  disk  is  not  full,  increase  the  max  number  of  open  files  with  Linux  command  ulimit  -n  before  running  STAR
+Dec  17  12:27:19  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">BAMoutput.cpp:27:BAMoutput:  exiting  because  of  *OUTPUT  FILE*  error:  could  not  create  outpu</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">BAMoutput.cpp:27:BAMoutput:  exiting  because  of  *OUTPUT  FILE*  error:  could  not  create  output  file  ./_STARtmp//BAMsort/6/36
+SOLUTION:  check  that  the  path  exists  and  you  have  write  permission  for  this  file.  Also  check  ulimit  -n  and  increase  it  to  allow  more  open  files.
+
+Dec  17  12:32:48  ......  FATAL  ERROR,  exiting</span></details></td></tr>
+        </table>
+    </div>
+</body>
+</html>

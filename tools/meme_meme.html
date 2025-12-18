@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meme_meme Errors - Galaxy Error Analysis</title>
+    <style>
+    :root { --bg: #1a1a2e; --card-bg: #16213e; --text: #eee; --text-muted: #888; --accent: #4a90d9; --border: #0f3460; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    h1 { color: var(--accent); margin-bottom: 10px; }
+    .back { color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 20px; }
+    .back:hover { text-decoration: underline; }
+    .stats { display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap; }
+    .stat { background: var(--card-bg); padding: 15px 25px; border-radius: 8px; border: 1px solid var(--border); }
+    .stat-value { font-size: 1.5em; font-weight: bold; color: var(--accent); }
+    .stat-label { color: var(--text-muted); font-size: 0.85em; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: rgba(74, 144, 217, 0.2); color: var(--accent); }
+    tr:hover { background: rgba(255,255,255,0.05); }
+    .error-msg { font-family: monospace; font-size: 0.85em; white-space: pre-wrap; word-break: break-all; background: rgba(0,0,0,0.3); padding: 8px; border-radius: 4px; display: block; margin: 5px 0; }
+</style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back">&larr; Back to Dashboard</a>
+        <h1>meme_meme</h1>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">1,590</div>
+                <div class="stat-label">Total Errors</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">45</div>
+                <div class="stat-label">Unique Error Types</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">12</div>
+                <div class="stat-label">Affected Users</div>
+            </div>
+        </div>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">Exit Codes</h2>
+        <table>
+            <tr><th>Exit Code</th><th>Count</th></tr>
+            <tr><td>1</td><td>1,573</td></tr>
+            <tr><td>137</td><td>3</td></tr>
+        </table>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">Destinations</h2>
+        <table>
+            <tr><th>Destination</th><th>Count</th></tr>
+            <tr><td>cyclone_small</td><td>1,168</td></tr>
+            <tr><td>jetstream2</td><td>422</td></tr>
+        </table>
+
+        <h2 style="color: var(--accent); margin: 30px 0 15px;">All Unique Error Messages</h2>
+        <table>
+            <tr><th style="width: 80px;">Count</th><th>Error Message</th></tr>
+            <tr><td>833</td><td><span class="error-msg">The  primary  dataset  is  too  large  (5100000  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>614</td><td><span class="error-msg">The  primary  dataset  is  too  large  (1020000  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>16</td><td><span class="error-msg">The  primary  dataset  is  too  large  (51000000  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>15</td><td><span class="error-msg">Your  (primary)  dataset  must  contain  at  least  2  sequences  unless  you  choose  the'Any  Numb</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Your  (primary)  dataset  must  contain  at  least  2  sequences  unless  you  choose  the'Any  Number  of  Repetitions'  site  distribution  model'.</span></details></td></tr>
+            <tr><td>14</td><td><span class="error-msg">The  primary  dataset  is  too  large  (5099998  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>14</td><td><span class="error-msg">The  primary  dataset  is  too  large  (5099999  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>7</td><td><span class="error-msg">The  primary  dataset  is  too  large  (3710760  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>4</td><td><span class="error-msg">The  primary  dataset  is  too  large  (50999998  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>4</td><td><span class="error-msg">The  primary  dataset  is  too  large  (50999999  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Change  alphabet  or  fix  data  file.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Illegal  character  `\'  in  sequence  Gallus_gallus\.
+Change  alphabet  or  fix  data  file.</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">No  sequences  found  in  file  `/corral4/main/objects/a/a/6/dataset_aa67ca84-7053-4c5d-a375-16fb0c5</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">No  sequences  found  in  file  `/corral4/main/objects/a/a/6/dataset_aa67ca84-7053-4c5d-a375-16fb0c571fd2.dat'.    Check  file  format.</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Illegal  character  `U'  in  sequence  seq_1.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Illegal  character  `U'  in  sequence  seq_1.
+Change  alphabet  or  fix  data  file.</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Illegal  character  `-'  in  sequence  DficRefSeq2_rl-PE_transcript.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Illegal  character  `-'  in  sequence  DficRefSeq2_rl-PE_transcript.
+Change  alphabet  or  fix  data  file.</span></details></td></tr>
+            <tr><td>3</td><td><span class="error-msg">Illegal  character  `I'  in  sequence  DROSOPHILA.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Illegal  character  `I'  in  sequence  DROSOPHILA.
+Change  alphabet  or  fix  data  file.</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Illegal  character  `L'  in  sequence  HUMAN5.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Illegal  character  `L'  in  sequence  HUMAN5.
+Change  alphabet  or  fix  data  file.</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Illegal  character  `L'  in  sequence  FBpp0070849.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Illegal  character  `L'  in  sequence  FBpp0070849.
+Change  alphabet  or  fix  data  file.</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">Illegal  character  `-'  in  sequence  DficRefSeq2_rlPE_transcript.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Illegal  character  `-'  in  sequence  DficRefSeq2_rlPE_transcript.
+Change  alphabet  or  fix  data  file.</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">The  primary  dataset  is  too  large  (19010760  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">The  primary  dataset  is  too  large  (1019998  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">The  primary  dataset  is  too  large  (1019999  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">The  primary  dataset  is  too  large  (2817030  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>2</td><td><span class="error-msg">FATAL:  Background  file  "/corral4/main/objects/c/c/7/dataset_cc76180c-c7ab-4ab3-a3b7-0afadcba4cea.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">FATAL:  Background  file  "/corral4/main/objects/c/c/7/dataset_cc76180c-c7ab-4ab3-a3b7-0afadcba4cea.dat"  did  not  list  a  probability  on  the  line  listing  the  symbol  chain  "EDEEEEEEEEEEEEDEEEEEEEEEEEEE".</span></details></td></tr>
+            <tr><td>2</td><td><span class="error-msg">The  primary  dataset  is  too  large  (40088878  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Duplicate  sequence  name.  Skipping  'chr7:155341204-155341282'.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Duplicate  sequence  name.  Skipping  'chr7:155341204-155341282'.
+The  primary  dataset  is  too  large  (2175313  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">The  primary  dataset  is  too  large  (1363893  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Illegal  character  `U'  in  sequence  contig_74.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Illegal  character  `U'  in  sequence  contig_74.
+Change  alphabet  or  fix  data  file.</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Illegal  character  `F'  in  sequence  sp|G5EDF0|GRH1_CAEEL.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Illegal  character  `F'  in  sequence  sp|G5EDF0|GRH1_CAEEL.
+Change  alphabet  or  fix  data  file.</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Illegal  character  `-'  in  sequence  MOUSE.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Illegal  character  `-'  in  sequence  MOUSE.
+Change  alphabet  or  fix  data  file.</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">The  primary  dataset  is  too  large  (75464666  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Illegal  character  `P'  in  sequence  jgi|Trihar1|816376|estExt_Genemark1.C_3690002.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Illegal  character  `P'  in  sequence  jgi|Trihar1|816376|estExt_Genemark1.C_3690002.
+Change  alphabet  or  fix  data  file.</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Illegal  character  `-'  in  sequence  Gallus_gallus.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Illegal  character  `-'  in  sequence  Gallus_gallus.
+Change  alphabet  or  fix  data  file.</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Illegal  character  `-'  in  sequence  CElegans.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Illegal  character  `-'  in  sequence  CElegans.
+Change  alphabet  or  fix  data  file.</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Illegal  character  `-'  in  sequence  rlPEtranscript.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Illegal  character  `-'  in  sequence  rlPEtranscript.
+Change  alphabet  or  fix  data  file.</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">Illegal  character  `I'  in  sequence  DROSOPHLA.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Illegal  character  `I'  in  sequence  DROSOPHLA.
+Change  alphabet  or  fix  data  file.</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/jetstream2/scratch/main/jobs/72479914/tool_script.sh:  line  23:        16  Killed                 </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/jetstream2/scratch/main/jobs/72479914/tool_script.sh:  line  23:        16  Killed                                    meme  '/jetstream2/scratch/main/jobs/72479914/inputs/dataset_c643ec40-3724-488b-8e34-1f195447cfa6.dat'  -p  ${GALAXY_SLOTS:-1}  -o  '/jetstream2/scratch/main/jobs/72479914/outputs/dataset_3d999dcd-6b1a-4188-8948-3ca16c0b77e2_files'  -nostatus  -maxsize  1000000</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/jetstream2/scratch/main/jobs/72510059/tool_script.sh:  line  23:        16  Killed                 </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/jetstream2/scratch/main/jobs/72510059/tool_script.sh:  line  23:        16  Killed                                    meme  '/jetstream2/scratch/main/jobs/72510059/inputs/dataset_22e0a0c3-5961-4d89-b176-c8a300692ce2.dat'  -p  ${GALAXY_SLOTS:-1}  -o  '/jetstream2/scratch/main/jobs/72510059/outputs/dataset_800e7167-fa9e-41b6-a9dd-e9c88ecf279b_files'  -nostatus  -maxsize  1000000  -sf  'Galaxy_FASTA_Input'  -dna  -mod  'zoops'  -nmotifs  '100'  -wnsites  '0.8'  -minw  '8'  -maxw  '50'  -wg  '11'  -ws  '1'  -maxiter  '50'  -distance  '0.001'  -prior  'dirichlet'  -b  '0.01'  -spmap  'uni'  -spfuzz  '0.5'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">The  primary  dataset  is  too  large  (78234510  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">/jetstream2/scratch/main/jobs/72520948/tool_script.sh:  line  23:        16  Killed                 </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/jetstream2/scratch/main/jobs/72520948/tool_script.sh:  line  23:        16  Killed                                    meme  '/jetstream2/scratch/main/jobs/72520948/inputs/dataset_122f1ce9-f99b-46b3-ad7b-7da6e2953cf9.dat'  -p  ${GALAXY_SLOTS:-1}  -o  '/jetstream2/scratch/main/jobs/72520948/outputs/dataset_475e4462-6749-4f83-b01f-2725cc100848_files'  -nostatus  -maxsize  1000000  -sf  'Galaxy_FASTA_Input'  -dna  -mod  'zoops'  -nmotifs  '2'  -wnsites  '0.8'  -minw  '8'  -maxw  '50'  -wg  '4'  -ws  '1'  -revcomp  -pal  -maxiter  '50'  -distance  '0.001'  -prior  'dmix'  -b  '0.0'  -spmap  'uni'  -spfuzz  '0.5'</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">No  sequences  found  in  file  `/corral4/main/objects/9/7/d/dataset_97df3cf4-4e0e-4049-8f32-4541027</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">No  sequences  found  in  file  `/corral4/main/objects/9/7/d/dataset_97df3cf4-4e0e-4049-8f32-45410278c94a.dat'.    Check  file  format.</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">FATAL:  Background  file  "/corral4/main/objects/9/c/7/dataset_9c7718c6-32fa-4f19-9fc2-2dbfb7f848cd.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">FATAL:  Background  file  "/corral4/main/objects/9/c/7/dataset_9c7718c6-32fa-4f19-9fc2-2dbfb7f848cd.dat"  did  not  list  a  probability  on  the  line  listing  the  symbol  chain  "EEVEEEEEDDDEDSGAEIEDDDEEGFDD".</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">FATAL:  Background  file  "/corral4/main/objects/b/5/d/dataset_b5d69d37-509f-48cd-b11b-b2bfe9caba2b.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">FATAL:  Background  file  "/corral4/main/objects/b/5/d/dataset_b5d69d37-509f-48cd-b11b-b2bfe9caba2b.dat"  did  not  list  a  probability  on  the  line  listing  the  symbol  chain  "&gt;1".</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">FATAL:  Background  file  "/corral4/main/objects/6/8/7/dataset_6874a5ce-fbb9-4ce5-b575-1632be9044b2.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">FATAL:  Background  file  "/corral4/main/objects/6/8/7/dataset_6874a5ce-fbb9-4ce5-b575-1632be9044b2.dat"  did  not  list  a  probability  on  the  line  listing  the  symbol  chain  "AAseq".</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">FATAL:  Background  file  "/corral4/main/objects/f/2/c/dataset_f2c4369a-c32b-4125-a3ba-4c830654b0dd.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">FATAL:  Background  file  "/corral4/main/objects/f/2/c/dataset_f2c4369a-c32b-4125-a3ba-4c830654b0dd.dat"  did  not  list  a  probability  on  the  line  listing  the  symbol  chain  "AAseq".</span></details></td></tr>
+            <tr><td>1</td><td><span class="error-msg">The  primary  dataset  is  too  large  (32470614  &gt;  1000000).    Rerun  with  larger  -maxsize.</span></td></tr>
+            <tr><td>1</td><td><span class="error-msg">No  sequences  found  in  file  `/corral4/main/objects/a/e/e/dataset_aeeea4f8-f0d9-4fdc-8131-057b6f2</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">No  sequences  found  in  file  `/corral4/main/objects/a/e/e/dataset_aeeea4f8-f0d9-4fdc-8131-057b6f27a12b.dat'.    Check  file  format.</span></details></td></tr>
+        </table>
+    </div>
+</body>
+</html>
