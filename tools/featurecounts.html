@@ -71,7 +71,31 @@
 
 //==========================  featureCounts  setting  ===========================\\
 ||                                                                                                                                                        ||
-||                          Input  files  :  1  BAM  file                                                             </span></details></td></tr>
+||                          Input  files  :  1  BAM  file                                                                              ||
+||                                                                                                                                                        ||
+||                                                      dataset_324e2367-33f0-44cf-b438-b52fff8b3173.dat  ||
+||                                                                                                                                                        ||
+||                          Output  file  :  output                                                                                      ||
+||                                  Summary  :  output.summary                                                                      ||
+||                            Paired-end  :  no                                                                                              ||
+||                Count  read  pairs  :  no                                                                                              ||
+||                            Annotation  :  hg38_RefSeq_exon.txt  (SAF)                                              ||
+||            Dir  for  temp  files  :  ./                                                                                              ||
+||                                                                                                                                                        ||
+||                                  Threads  :  2                                                                                                ||
+||                                      Level  :  meta-feature  level                                                              ||
+||            Multimapping  reads  :  not  counted                                                                            ||
+||  Multi-overlapping  reads  :  not  counted                                                                            ||
+||      Min  overlapping  bases  :  1                                                                                                ||
+||                                                                                                                                                        ||
+\\============================================================================//
+
+//=================================  Running  ==================================\\
+||                                                                                                                                                        ||
+||  Load  annotation  file  hg38_RefSeq_exon.txt  ...                                                            ||
+||        Features  :  261752                                                                                                              ||
+||        Meta-features  :  28395                                                                                                      ||
+||        Chromosomes/contigs  :  5</span></details></td></tr>
             <tr><td>104</td><td><span class="error-msg">featureCounts:  unrecognized  option  '--checkFragLength'</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">featureCounts:  unrecognized  option  '--checkFragLength'
 
 Version  2.1.1
@@ -88,7 +112,49 @@ Usage:  featureCounts  [options]  -a  &lt;annotation_file&gt;  -o  &lt;output_fi
     -o  &lt;string&gt;                  Name  of  output  file  including  read  counts.  A  separate  file
                                             including  summary  statistics  of  counting  results  is  also
                                             included  in  the  output  ('&lt;string&gt;.summary').  Both  files
-                                            are  in  tab  </span></details></td></tr>
+                                            are  in  tab  delimited  format.
+
+    input_file1  [input_file2]  ...      A  list  of  SAM  or  BAM  format  files.  They  can  be
+                                            either  name  or  location  sorted.  If  no  files  provided,
+                                            &lt;stdin&gt;  input  is  expected.  Location-sorted  paired-end  reads
+                                            are  automatically  sorted  by  read  names.
+
+##  Optional  arguments:
+#  Annotation
+
+    -F  &lt;string&gt;                  Specify  format  of  the  provided  annotation  file.  Acceptable
+                                            formats  include  'GTF'  (or  compatible  GFF  format)  and
+                                            'SAF'.  'GTF'  by  default.    For  SAF  format,  please  refer  to
+                                            Users  Guide.
+
+    -t  &lt;string&gt;                  Specify  feature  type(s)  in  a  GTF  annotation.  If  multiple
+                                            types  are  provided,  they  should  be  separated  by  ','  with
+                                            no  space  in  between.  'exon'  by  default.  Rows  in  the
+                                            annotation  with  a  matched  feature  will  be  extracted  and
+                                            used  for  read  mapping.  
+
+    -g  &lt;string&gt;                  Specify  attribute  type  in  GTF  annotation.  'gene_id'  by  
+                                            default.  Meta-features  used  for  read  counting  will  be  
+                                            extracted  from  annotation  using  the  provided  value.
+
+    --extraAttributes      Extract  extra  attribute  types  from  the  provided  GTF
+                                            annotation  and  include  them  in  the  counting  output.  These
+                                            attribute  types  will  not  be  used  to  group  features.  If
+                                            more  than  one  attribute  type  is  provided  they  should  be
+                                            separated  by  comma.
+
+    -A  &lt;string&gt;                  Provide  a  chromosome  name  alias  file  to  match  chr  names  in
+                                            annotation  with  those  in  the  reads.  This  should  be  a  two-
+                                            column  comma-delimited  text  file.  Its  first  column  should
+                                            include  chr  names  in  the  annotation  and  its  second  column
+                                            should  include  chr  names  in  the  reads.  Chr  names  are  case
+                                            sensitive.  No  column  header  should  be  included  in  the
+                                            file.
+
+#  Level  of  summarization
+
+    -f                                    Perform  read  counting  at  feature  level  (eg.  counting  
+                                         </span></details></td></tr>
             <tr><td>87</td><td><span class="error-msg">v2.0.3</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">==========          _____  _        _  ____    _____    ______                    _____    
                 =====                  /  ____|  |    |  |    _  \|    __  \|    ____|      /\      |    __  \  
                     =====            |  (___  |  |    |  |  |_)  |  |__)  |  |__          /    \    |  |    |  |
@@ -99,7 +165,29 @@ Usage:  featureCounts  [options]  -a  &lt;annotation_file&gt;  -o  &lt;output_fi
 
 //==========================  featureCounts  setting  ===========================\\
 ||                                                                                                                                                        ||
-||                          Input  files  :  1  BAM  file                                                             </span></details></td></tr>
+||                          Input  files  :  1  BAM  file                                                                              ||
+||                                                                                                                                                        ||
+||                                                      dataset_035d36ed-159c-4016-9d36-a39daa8e322f  ...  ||
+||                                                                                                                                                        ||
+||                          Output  file  :  output                                                                                      ||
+||                                  Summary  :  output.summary                                                                      ||
+||                            Paired-end  :  no                                                                                              ||
+||                Count  read  pairs  :  no                                                                                              ||
+||                            Annotation  :  dataset_8ad8171b-26cd-4efa-8b55-7e2fca11d664  ...  ||
+||            Dir  for  temp  files  :  ./                                                                                              ||
+||                                                                                                                                                        ||
+||                                  Threads  :  2                                                                                                ||
+||                                      Level  :  meta-feature  level                                                              ||
+||            Multimapping  reads  :  not  counted                                                                            ||
+||  Multi-overlapping  reads  :  not  counted                                                                            ||
+||      Min  overlapping  bases  :  1                                                                                                ||
+||                                                                                                                                                        ||
+\\============================================================================//
+
+//=================================  Running  ==================================\\
+||                                                                                                                                                        ||
+||  Load  annotation  file  dataset_8ad8171b-26cd-4efa-8b55-7e2fca11d664.dat  ...    ||
+/jetstream2/scratch/main/jobs/72179854/tool_script.sh:  line  24:        22  Segmentation  fault            (core  dumped)  featureCounts  -a  '/jetstream2/scratch/main/jobs/72179854/inputs/dataset_8ad8171b-26cd-4efa-8b55-7e2fca11d664.dat'  -F  "GTF"  -o  "output"  -T  ${GALAXY_SLOTS:-2}  -s  0  -Q  0  -t  'exon'  -g  'gene_id'  --minOverlap  1  --fracOverlap  0</span></details></td></tr>
             <tr><td>52</td><td><span class="error-msg">v2.0.1</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">==========          _____  _        _  ____    _____    ______                    _____    
                 =====                  /  ____|  |    |  |    _  \|    __  \|    ____|      /\      |    __  \  
                     =====            |  (___  |  |    |  |  |_)  |  |__)  |  |__          /    \    |  |    |  |
@@ -110,7 +198,30 @@ Usage:  featureCounts  [options]  -a  &lt;annotation_file&gt;  -o  &lt;output_fi
 
 //==========================  featureCounts  setting  ===========================\\
 ||                                                                                                                                                        ||
-||                          Input  files  :  1  BAM  file                                                             </span></details></td></tr>
+||                          Input  files  :  1  BAM  file                                                                              ||
+||                                                      o  dataset_82eabf9a-d24d-4e2c-9dce-a15c750ac7  ...  ||
+||                                                                                                                                                        ||
+||                          Output  file  :  output                                                                                      ||
+||                                  Summary  :  output.summary                                                                      ||
+||                            Annotation  :  dataset_8e6ed1ed-c1f5-4448-8173-f3164fde62c0  ...  ||
+||            Dir  for  temp  files  :  ./                                                                                              ||
+||                                                                                                                                                        ||
+||                                  Threads  :  2                                                                                                ||
+||                                      Level  :  meta-feature  level                                                              ||
+||                            Paired-end  :  no                                                                                              ||
+||            Multimapping  reads  :  not  counted                                                                            ||
+||  Multi-overlapping  reads  :  not  counted                                                                            ||
+||      Min  overlapping  bases  :  1                                                                                                ||
+||                                                                                                                                                        ||
+\\============================================================================//
+
+//=================================  Running  ==================================\\
+||                                                                                                                                                        ||
+||  Load  annotation  file  dataset_8e6ed1ed-c1f5-4448-8173-f3164fde62c0.dat  ...    ||
+
+ERROR:  failed  to  find  the  gene  identifier  attribute  in  the  9th  column  of  the  provided  GTF  file.
+The  specified  gene  identifier  attribute  is  'gene_id'  
+An  example  of  attributes  included  in  your  GTF  annotation  is  'ID=exon-XM_073253752.1-1;Parent=rna-XM_073253752.1;Dbxref=GeneID:140856411,GenBank:XM_073253752.1;Note=The  sequence  of  the  model  RefSeq  transcript  was  modified  relative  to  this  genomic  sequence  to  represent  the  inferred  CDS:  added  1351  bases  not  found  in  genome  assembly;exception=annotated  by  transcript  or  proteomic  data;gbkey=mRNA;gene=LOC140856411;inference=similar  to  RNA  sequ</span></details></td></tr>
             <tr><td>28</td><td><span class="error-msg">v2.0.8</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">==========          _____  _        _  ____    _____    ______                    _____    
                 =====                  /  ____|  |    |  |    _  \|    __  \|    ____|      /\      |    __  \  
                     =====            |  (___  |  |    |  |  |_)  |  |__)  |  |__          /    \    |  |    |  |
@@ -121,7 +232,32 @@ Usage:  featureCounts  [options]  -a  &lt;annotation_file&gt;  -o  &lt;output_fi
 
 //==========================  featureCounts  setting  ===========================\\
 ||                                                                                                                                                        ||
-||                          Input  files  :  1  BAM  file                                                             </span></details></td></tr>
+||                          Input  files  :  1  BAM  file                                                                              ||
+||                                                                                                                                                        ||
+||                                                      dataset_7a247ef8-886b-4e73-bc36-cd08fef582c6.dat  ||
+||                                                                                                                                                        ||
+||                          Output  file  :  output                                                                                      ||
+||                                  Summary  :  output.summary                                                                      ||
+||                            Paired-end  :  no                                                                                              ||
+||                Count  read  pairs  :  no                                                                                              ||
+||                            Annotation  :  dataset_e7410e48-b992-46f4-8af6-6864d4a237f8  ...  ||
+||            Dir  for  temp  files  :  ./                                                                                              ||
+||                                                                                                                                                        ||
+||                                  Threads  :  2                                                                                                ||
+||                                      Level  :  feature  level                                                                        ||
+||            Multimapping  reads  :  not  counted                                                                            ||
+||  Multi-overlapping  reads  :  not  counted                                                                            ||
+||      Min  overlapping  bases  :  1                                                                                                ||
+||                                                                                                                                                        ||
+\\============================================================================//
+
+//=================================  Running  ==================================\\
+||                                                                                                                                                        ||
+||  Load  annotation  file  dataset_e7410e48-b992-46f4-8af6-6864d4a237f8.dat  ...    ||
+
+ERROR:  failed  to  find  the  gene  identifier  attribute  in  the  9th  column  of  the  provided  GTF  file.
+The  specified  gene  identifier  attribute  is  'locus_tag'  
+An  example  of  attributes  included  in  your  GTF  annotation  is  '"ID=CGGIOBHN_00006;eC_number=6.1.1.11;Name=serS;gene=serS;inference=ab  initio  prediction:Prodigal:002006,simila</span></details></td></tr>
             <tr><td>24</td><td><span class="error-msg">v1.6.2</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">==========          _____  _        _  ____    _____    ______                    _____    
                 =====                  /  ____|  |    |  |    _  \|    __  \|    ____|      /\      |    __  \  
                     =====            |  (___  |  |    |  |  |_)  |  |__)  |  |__          /    \    |  |    |  |
@@ -132,7 +268,27 @@ Usage:  featureCounts  [options]  -a  &lt;annotation_file&gt;  -o  &lt;output_fi
 
 //==========================  featureCounts  setting  ===========================\\
 ||                                                                                                                                                        ||
-||                          Input  files  :  1  BAM  file                                                             </span></details></td></tr>
+||                          Input  files  :  1  BAM  file                                                                              ||
+||                                                      P  dataset_57cb2cbf-793a-4d95-abf8-8419af5cf3  ...  ||
+||                                                                                                                                                        ||
+||                          Output  file  :  output                                                                                      ||
+||                                  Summary  :  output.summary                                                                      ||
+||                            Annotation  :  dataset_8ad8171b-26cd-4efa-8b55-7e2fca11d664  ...  ||
+||            Dir  for  temp  files  :  ./                                                                                              ||
+||                                                                                                                                                        ||
+||                                  Threads  :  2                                                                                                ||
+||                                      Level  :  meta-feature  level                                                              ||
+||                            Paired-end  :  no                                                                                              ||
+||            Multimapping  reads  :  not  counted                                                                            ||
+||  Multi-overlapping  reads  :  not  counted                                                                            ||
+||      Min  overlapping  bases  :  1                                                                                                ||
+||                                                                                                                                                        ||
+\\=====================  http://subread.sourceforge.net/  ======================//
+
+//=================================  Running  ==================================\\
+||                                                                                                                                                        ||
+||  Load  annotation  file  dataset_8ad8171b-26cd-4efa-8b55-7e2fca11d664.dat  ...    ||
+/jetstream2/scratch/main/jobs/72179509/tool_script.sh:  line  57:        32  Segmentation  fault            (core  dumped)  featureCounts  -a  '/jetstream2/scratch/main/jobs/72179509/inputs/dataset_8ad8171b-26cd-4efa-8b55-7e2fca11d664.dat'  -F  "GTF"  -o  "output"  -T  ${GALAXY_SLOTS:-2}  -s  0  -t  'exon'  -g  'gene_id'  -Q  12  --minOverlap  1  --fracOverlap  0  --fracOverlapFeature  0  -C  '/jetstream2/scratch/main/jobs/72179509/inputs/dataset_57cb2cbf-793a-4d95-abf8-8419af5cf30a.dat'</span></details></td></tr>
             <tr><td>14</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/f/5/7/dataset_f57b4045-3d0e-4638-8d65-a2251da732</span></td></tr>
             <tr><td>13</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/4/0/0/dataset_4008871d-c22e-4e79-b394-d5a1c8e5fd</span></td></tr>
             <tr><td>12</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/9/c/5/dataset_9c563a16-c25b-4a11-9bd5-c7dada1770</span></td></tr>
@@ -149,7 +305,26 @@ Usage:  featureCounts  [options]  -a  &lt;annotation_file&gt;  -o  &lt;output_fi
 
 //==========================  featureCounts  setting  ===========================\\
 ||                                                                                                                                                        ||
-||                          Input  files  :  1  unknown  file                                                          </span></details></td></tr>
+||                          Input  files  :  1  unknown  file                                                                      ||
+||                                                      ?  /jetstream2/scratch/main/jobs/72188521/inp  ...  ||
+||                                                                                                                                                        ||
+||                          Output  file  :  output                                                                                      ||
+||                          Annotations  :  /jetstream2/scratch/main/jobs/72188521/input  ...  ||
+||                                                                                                                                                        ||
+||                                  Threads  :  2                                                                                                ||
+||                                      Level  :  meta-feature  level                                                              ||
+||                            Paired-end  :  no                                                                                              ||
+||                  Strand  specific  :  no                                                                                              ||
+||            Multimapping  reads  :  not  counted                                                                            ||
+||  Multi-overlapping  reads  :  not  counted                                                                            ||
+||              Read  orientations  :  fr                                                                                              ||
+||                                                                                                                                                        ||
+\\=====================  http://subread.sourceforge.net/  ======================//
+
+//=================================  Running  ==================================\\
+||                                                                                                                                                        ||
+||  Load  annotation  file  /jetstream2/scratch/main/jobs/72188521/inputs/dat  ...  ||
+/jetstream2/scratch/main/jobs/72188521/tool_script.sh:  line  40:        27  Segmentation  fault            (core  dumped)  featureCounts  -a  "/jetstream2/scratch/main/jobs/72188521/inputs/dataset_8ad8171b-26cd-4efa-8b55-7e2fca11d664.dat"  -o  "output"  -T  ${GALAXY_SLOTS:-2}  -t  "exon"  -g  "gene_id"  -s  0  -Q  12  --minOverlap  1  -S  fr  -C  "/jetstream2/scratch/main/jobs/72188521/inputs/dataset_a2fea6f2-cd68-4bab-80ff-c779c3520d6a.dat"</span></details></td></tr>
             <tr><td>6</td><td><span class="error-msg">v2.0.6</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">==========          _____  _        _  ____    _____    ______                    _____    
                 =====                  /  ____|  |    |  |    _  \|    __  \|    ____|      /\      |    __  \  
                     =====            |  (___  |  |    |  |  |_)  |  |__)  |  |__          /    \    |  |    |  |
@@ -160,7 +335,32 @@ Usage:  featureCounts  [options]  -a  &lt;annotation_file&gt;  -o  &lt;output_fi
 
 //==========================  featureCounts  setting  ===========================\\
 ||                                                                                                                                                        ||
-||                          Input  files  :  1  BAM  file                                                             </span></details></td></tr>
+||                          Input  files  :  1  BAM  file                                                                              ||
+||                                                                                                                                                        ||
+||                                                      dataset_ee043219-c2d7-43f8-979c-e10539ffa7d0.dat  ||
+||                                                                                                                                                        ||
+||                          Output  file  :  output                                                                                      ||
+||                                  Summary  :  output.summary                                                                      ||
+||                            Paired-end  :  yes                                                                                            ||
+||                Count  read  pairs  :  yes                                                                                            ||
+||                            Annotation  :  dataset_7a4ef407-6958-460a-bae4-8d5c682b1f3c  ...  ||
+||            Dir  for  temp  files  :  ./                                                                                              ||
+||                                                                                                                                                        ||
+||                                  Threads  :  2                                                                                                ||
+||                                      Level  :  meta-feature  level                                                              ||
+||            Multimapping  reads  :  not  counted                                                                            ||
+||  Multi-overlapping  reads  :  not  counted                                                                            ||
+||      Min  overlapping  bases  :  1                                                                                                ||
+||                                                                                                                                                        ||
+\\============================================================================//
+
+//=================================  Running  ==================================\\
+||                                                                                                                                                        ||
+||  Load  annotation  file  dataset_7a4ef407-6958-460a-bae4-8d5c682b1f3c.dat  ...    ||
+
+ERROR:  failed  to  find  the  gene  identifier  attribute  in  the  9th  column  of  the  provided  GTF  file.
+The  specified  gene  identifier  attribute  is  'gene_id'  
+An  example  of  attributes  included  in  your  GTF  annotation  is  'ID=id-Vmn2r116l-ps30;Parent=gene-Vmn2r116l-ps30;Dbxref=GeneID:102552844,RGD:7551986;gbkey=exon;gene=Vmn2r116l-ps30;model_e</span></details></td></tr>
             <tr><td>6</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/f/8/6/dataset_f8621125-a8c6-4f71-baaa-9bdc0066af</span></td></tr>
             <tr><td>6</td><td><span class="error-msg">ERROR:  invalid  parameter:  '/corral4/main/objects/a/0/b/dataset_a0b02f6e-298e-44ad-9e96-1ae39bf413</span></td></tr>
             <tr><td>5</td><td><span class="error-msg">Error:  The  strand  mode  list  has  a  wrong  format.</span></td></tr>
@@ -246,7 +446,33 @@ Usage:  featureCounts  [options]  -a  &lt;annotation_file&gt;  -o  &lt;output_fi
 
 //==========================  featureCounts  setting  ===========================\\
 ||                                                                                                                                                        ||
-||                          Input  files  :  1  BAM  file                                                             </span></details></td></tr>
+||                          Input  files  :  1  BAM  file                                                                              ||
+||                                                      P  dataset_9f09f9cd-c02a-4289-863f-173c91a67c  ...  ||
+||                                                                                                                                                        ||
+||                          Output  file  :  output                                                                                      ||
+||                                  Summary  :  output.summary                                                                      ||
+||                            Annotation  :  dataset_c487fd76-d172-4e88-84e3-b702ce662a1c  ...  ||
+||            Dir  for  temp  files  :  ./                                                                                              ||
+||                                                                                                                                                        ||
+||                                  Threads  :  2                                                                                                ||
+||                                      Level  :  meta-feature  level                                                              ||
+||                            Paired-end  :  yes                                                                                            ||
+||            Multimapping  reads  :  not  counted                                                                            ||
+||  Multi-overlapping  reads  :  not  counted                                                                            ||
+||      Min  overlapping  bases  :  1                                                                                                ||
+||                                                                                                                                                        ||
+||                    Chimeric  reads  :  not  counted                                                                            ||
+||                Both  ends  mapped  :  not  required                                                                          ||
+||                                                                                                                                                        ||
+\\============================================================================//
+
+//=================================  Running  ==================================\\
+||                                                                                                                                                        ||
+||  Load  annotation  file  dataset_c487fd76-d172-4e88-84e3-b702ce662a1c.dat  ...    ||
+
+ERROR:  failed  to  find  the  gene  identifier  attribute  in  the  9th  column  of  the  provided  GTF  file.
+The  specified  gene  identifier  attribute  is  'gene_id'  
+An  example  of  attributes  included  in  your  GTF  annotation  </span></details></td></tr>
         </table>
     </div>
 </body>

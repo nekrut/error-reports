@@ -203,7 +203,7 @@ for tool in top20_tools.index:
         if key:
             all_errors[key] += 1
             if key not in full_stderrs:
-                full_stderrs[key] = stderr_str[:1000]
+                full_stderrs[key] = stderr_str[:4000]
 
     # Exit codes for this tool
     tool_exit_codes = tool_df['exit_code'].value_counts().head(5)

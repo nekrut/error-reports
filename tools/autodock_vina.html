@@ -88,7 +88,46 @@ Search  space  (required):
     --maps  arg                                  affinity  maps  for  the  autodock4.2  (ad4)  or  vina  
                                                           scoring  function
     --center_x  arg                          X  coordinate  of  the  center  (Angstrom)
-    --center_y  arg                          Y  coordinate  of  the  </span></details></td></tr>
+    --center_y  arg                          Y  coordinate  of  the  center  (Angstrom)
+    --center_z  arg                          Z  coordinate  of  the  center  (Angstrom)
+    --size_x  arg                              size  in  the  X  dimension  (Angstrom)
+    --size_y  arg                              size  in  the  Y  dimension  (Angstrom)
+    --size_z  arg                              size  in  the  Z  dimension  (Angstrom)
+    --autobox                                    set  maps  dimensions  based  on  input  ligand(s)  (for  
+                                                          --score_only  and  --local_only)
+
+Output  (optional):
+    --out  arg                                    output  models  (PDBQT),  the  default  is  chosen  based
+                                                          on  the  ligand  file  name
+    --dir  arg                                    output  directory  for  batch  mode
+    --write_maps  arg                      output  filename  (directory  +  prefix  name)  for  
+                                                          maps.  Option  --force_even_voxels  may  be  needed  to  
+                                                          comply  with  .map  format
+
+Misc  (optional):
+    --cpu  arg  (=0)                          the  number  of  CPUs  to  use  (the  default  is  to  try  
+                                                          to  detect  the  number  of  CPUs  or,  failing  that,  use
+                                                          1)
+    --seed  arg  (=0)                        explicit  random  seed
+    --exhaustiveness  arg  (=8)    exhaustiveness  of  the  global  search  (roughly  
+                                                          proportional  to  time):  1+
+    --max_evals  arg  (=0)              number  of  evaluations  in  each  MC  run  (if  zero,  
+                                                          which  is  the  default,  the  number  of  MC  steps  is  
+                                                          based  on  heuristics)
+    --num_modes  arg  (=9)              maximum  number  of  binding  modes  to  generate
+    --min_rmsd  arg  (=1)                minimum  RMSD  between  output  poses
+    --energy_range  arg  (=3)        maximum  energy  difference  between  the  best  binding
+                                                          mode  and  the  worst  one  displayed  (kcal/mol)
+    --spacing  arg  (=0.375)          grid  spacing  (Angstrom)
+    --verbosity  arg  (=1)              verbosity  (0=no  output,  1=normal,  2=verbose)
+
+Configuration  file  (optional):
+    --config  arg                              the  above  options  can  be  put  here
+
+Information  (optional):
+    --help                                          display  usage  summary
+    --help_advanced                        display  usage  summary  with  advanced  options
+    --version                                    display  program  version</span></details></td></tr>
             <tr><td>13</td><td><span class="error-msg">13  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">13  molecules  converted
 13  files  output.  The  first  is  ligand1.pdbqt
 python:  can't  open  file  '/jetstream2/scratch/main/jobs/72122584/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
@@ -97,7 +136,13 @@ python:  can't  open  file  '/jetstream2/scratch/main/jobs/72122584/tool_files/c
 python:  can't  open  file  '/jetstream2/scratch/main/jobs/72122584/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
 python:  can't  open  file  '/jetstream2/scratch/main/jobs/72122584/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
 python:  can't  open  file  '/jetstream2/scratch/main/jobs/72122584/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
-python:  can't  open  file  '/jetstre</span></details></td></tr>
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72122584/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72122584/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72122584/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72122584/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72122584/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72122584/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72122584/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory</span></details></td></tr>
             <tr><td>12</td><td><span class="error-msg">7  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">7  molecules  converted
 7  files  output.  The  first  is  ligand1.pdbqt
 
@@ -131,7 +176,89 @@ PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
 PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
   &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
 
-</span></details></td></tr>
+
+
+PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
+  &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
+  &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
+  &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
+  &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
+  &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
+  &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
+  &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
+  &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
+  &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
+  &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
+  &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
+  &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
+  &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
+  &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
+  &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0    44.93"  is  not  valid.
+  &gt;  ATOM        470    HH1A1ARG  A    79              4.140    -0.830    44.936    1.00    0.00          0.174  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0</span></details></td></tr>
             <tr><td>9</td><td><span class="error-msg">6  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">6  molecules  converted
 6  files  output.  The  first  is  ligand1.pdbqt
 
@@ -225,7 +352,46 @@ your  problem  report:
 *  flexible  side  chains  file  as  PDBQT  (if  used),
 *  output  file  as  PDBQT  (if  any),
 *  input  (if  possible),
-*  random  seed  the  program  u</span></details></td></tr>
+*  random  seed  the  program  used  (this  is  printed  when  the  program  starts).
+
+Thank  you!
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72120503/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72120503/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72120503/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72120503/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72120503/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72120503/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72120503/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72120503/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+
+
+An  internal  error  occurred  in  ../../../src/lib/tree.h(101).  
+
+Please  report  bugs  through  the  Issue  Tracker  on  GitHub  
+(https://github.com/ccsb-scripps/AutoDock-Vina/issues).,  so
+that  this  problem  can  be  resolved.  The  reproducibility  of  the
+error  may  be  vital,  so  please  remember  to  include  the  following  in
+your  problem  report:
+*  the  EXACT  error  message,
+*  your  version  of  the  program,
+*  the  type  of  computer  system  you  are  running  it  on,
+*  all  command  line  options,
+*  configuration  file  (if  used),
+*  ligand  file  as  PDBQT,
+*  receptor  file  as  PDBQT,
+*  flexible  side  chains  file  as  PDBQT  (if  used),
+*  output  file  as  PDBQT  (if  any),
+*  input  (if  possible),
+*  random  seed  the  program  used  (this  is  printed  when  the  program  starts).
+
+Thank  you!
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72120503/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72120503/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72120503/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72120503/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72120503/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72120503/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  o</span></details></td></tr>
             <tr><td>6</td><td><span class="error-msg">10  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">10  molecules  converted
 10  files  output.  The  first  is  ligand1.pdbqt
 
@@ -268,7 +434,88 @@ PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
 
 
 
-PDBQT  parsing  error:  Co</span></details></td></tr>
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "0  -22.74"  is  not  valid.
+  &gt;  ATOM      2026    HE2A1GLN  A  215          -47.025    37.710  -22.748    1.00    0.00      </span></details></td></tr>
             <tr><td>5</td><td><span class="error-msg">An  internal  error  occurred  in  ../../../src/lib/tree.h(101).</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">An  internal  error  occurred  in  ../../../src/lib/tree.h(101).  
 
 Please  report  bugs  through  the  Issue  Tracker  on  GitHub  
@@ -315,7 +562,61 @@ your  problem  report:
 Thank  you!
 ==============================
 ***  Open  Babel  Error    in  TetStereoToWedgeHash
-</span></details></td></tr>
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  av</span></details></td></tr>
             <tr><td>4</td><td><span class="error-msg">323  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">323  molecules  converted
 323  files  output.  The  first  is  ligand1.pdbqt
 
@@ -340,7 +641,29 @@ PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residu
     Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL5268751)
 
 ==============================
-***  Open  Babel  Warning    in  PerceiveBon</span></details></td></tr>
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL5268751)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL5268751)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL5268751)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL5268751)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL5268751)
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT</span></details></td></tr>
             <tr><td>4</td><td><span class="error-msg">39  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">39  molecules  converted
 39  files  output.  The  first  is  ligand1.pdbqt
 Configuration  file  parse  error:  the  options  configuration  file  contains  an  invalid  line  'Pocket  1  :'
@@ -359,7 +682,47 @@ Search  space  (required):
                                                           scoring  function
     --center_x  arg                          X  coordinate  of  the  center  (Angstrom)
     --center_y  arg                          Y  coordinate  of  the  center  (Angstrom)
-    -</span></details></td></tr>
+    --center_z  arg                          Z  coordinate  of  the  center  (Angstrom)
+    --size_x  arg                              size  in  the  X  dimension  (Angstrom)
+    --size_y  arg                              size  in  the  Y  dimension  (Angstrom)
+    --size_z  arg                              size  in  the  Z  dimension  (Angstrom)
+    --autobox                                    set  maps  dimensions  based  on  input  ligand(s)  (for  
+                                                          --score_only  and  --local_only)
+
+Output  (optional):
+    --out  arg                                    output  models  (PDBQT),  the  default  is  chosen  based
+                                                          on  the  ligand  file  name
+    --dir  arg                                    output  directory  for  batch  mode
+    --write_maps  arg                      output  filename  (directory  +  prefix  name)  for  
+                                                          maps.  Option  --force_even_voxels  may  be  needed  to  
+                                                          comply  with  .map  format
+
+Misc  (optional):
+    --cpu  arg  (=0)                          the  number  of  CPUs  to  use  (the  default  is  to  try  
+                                                          to  detect  the  number  of  CPUs  or,  failing  that,  use
+                                                          1)
+    --seed  arg  (=0)                        explicit  random  seed
+    --exhaustiveness  arg  (=8)    exhaustiveness  of  the  global  search  (roughly  
+                                                          proportional  to  time):  1+
+    --max_evals  arg  (=0)              number  of  evaluations  in  each  MC  run  (if  zero,  
+                                                          which  is  the  default,  the  number  of  MC  steps  is  
+                                                          based  on  heuristics)
+    --num_modes  arg  (=9)              maximum  number  of  binding  modes  to  generate
+    --min_rmsd  arg  (=1)                minimum  RMSD  between  output  poses
+    --energy_range  arg  (=3)        maximum  energy  difference  between  the  best  binding
+                                                          mode  and  the  worst  one  displayed  (kcal/mol)
+    --spacing  arg  (=0.375)          grid  spacing  (Angstrom)
+    --verbosity  arg  (=1)              verbosity  (0=no  output,  1=normal,  2=verbose)
+
+Configuration  file  (optional):
+    --config  arg                              the  above  options  can  be  put  here
+
+Information  (optional):
+    --help                                          display  usage  summary
+    --help_advanced                        display  usage  summary  with  advanced  options
+    --version                                    display  program  version
+
+Configuration  file  parse  error:  the  options  configuration  file  contains  an  invalid  line  '</span></details></td></tr>
             <tr><td>4</td><td><span class="error-msg">32  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">32  molecules  converted
 32  files  output.  The  first  is  ligand1.pdbqt
 
@@ -404,7 +767,18 @@ PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residu
 
 
 
-PDBQT  parsing  error:  Unknown  or  inappropriate  tag  fo</span></details></td></tr>
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT</span></details></td></tr>
             <tr><td>4</td><td><span class="error-msg">53  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">53  molecules  converted
 53  files  output.  The  first  is  ligand1.pdbqt
 
@@ -435,7 +809,65 @@ PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residu
 
 WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
 WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
-WARNING:  Search  space  </span></details></td></tr>
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+</span></details></td></tr>
             <tr><td>3</td><td><span class="error-msg">43  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">43  molecules  converted
 43  files  output.  The  first  is  ligand1.pdbqt
 python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
@@ -444,7 +876,27 @@ python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/c
 python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
 python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
 python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
-python:  can't  open  file  '/jetstre</span></details></td></tr>
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72553610/tool_file</span></details></td></tr>
             <tr><td>3</td><td><span class="error-msg">54  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">54  molecules  converted
 54  files  output.  The  first  is  ligand1.pdbqt
 python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
@@ -453,7 +905,27 @@ python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/c
 python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
 python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
 python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
-python:  can't  open  file  '/jetstre</span></details></td></tr>
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72709835/tool_file</span></details></td></tr>
             <tr><td>2</td><td><span class="error-msg">256  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">256  molecules  converted
 256  files  output.  The  first  is  ligand1.pdbqt
 
@@ -470,7 +942,28 @@ python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/c
 PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
   &gt;  ROOT
 
-python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2</span></details></td></tr>
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72118067/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+python:</span></details></td></tr>
             <tr><td>2</td><td><span class="error-msg">15  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">15  molecules  converted
 15  files  output.  The  first  is  ligand1.pdbqt
 
@@ -521,7 +1014,83 @@ PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residu
     Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1183444)
 
 ==============================
-***  Open  Babel  Warning    in  PerceiveBon</span></details></td></tr>
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1183444)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1183444)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1183444)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1183444)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1183444)
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1178921)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1178921)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1178921)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1178921)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1178921)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1178921)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1178921)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1178921)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1178921)
+
+==============================
+***  Open  Babel  Warn</span></details></td></tr>
             <tr><td>2</td><td><span class="error-msg">51  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">51  molecules  converted
 51  files  output.  The  first  is  ligand1.pdbqt
 
@@ -550,7 +1119,82 @@ Thank  you!
 
 An  internal  error  occurred  in  ../../../src/lib/tree.h(101).  
 
-Please  rep</span></details></td></tr>
+Please  report  bugs  through  the  Issue  Tracker  on  GitHub  
+(https://github.com/ccsb-scripps/AutoDock-Vina/issues).,  so
+that  this  problem  can  be  resolved.  The  reproducibility  of  the
+error  may  be  vital,  so  please  remember  to  include  the  following  in
+your  problem  report:
+*  the  EXACT  error  message,
+*  your  version  of  the  program,
+*  the  type  of  computer  system  you  are  running  it  on,
+*  all  command  line  options,
+*  configuration  file  (if  used),
+*  ligand  file  as  PDBQT,
+*  receptor  file  as  PDBQT,
+*  flexible  side  chains  file  as  PDBQT  (if  used),
+*  output  file  as  PDBQT  (if  any),
+*  input  (if  possible),
+*  random  seed  the  program  used  (this  is  printed  when  the  program  starts).
+
+Thank  you!
+
+
+An  internal  error  occurred  in  ../../../src/lib/tree.h(101).  
+
+Please  report  bugs  through  the  Issue  Tracker  on  GitHub  
+(https://github.com/ccsb-scripps/AutoDock-Vina/issues).,  so
+that  this  problem  can  be  resolved.  The  reproducibility  of  the
+error  may  be  vital,  so  please  remember  to  include  the  following  in
+your  problem  report:
+*  the  EXACT  error  message,
+*  your  version  of  the  program,
+*  the  type  of  computer  system  you  are  running  it  on,
+*  all  command  line  options,
+*  configuration  file  (if  used),
+*  ligand  file  as  PDBQT,
+*  receptor  file  as  PDBQT,
+*  flexible  side  chains  file  as  PDBQT  (if  used),
+*  output  file  as  PDBQT  (if  any),
+*  input  (if  possible),
+*  random  seed  the  program  used  (this  is  printed  when  the  program  starts).
+
+Thank  you!
+
+
+An  internal  error  occurred  in  ../../../src/lib/tree.h(101).  
+
+Please  report  bugs  through  the  Issue  Tracker  on  GitHub  
+(https://github.com/ccsb-scripps/AutoDock-Vina/issues).,  so
+that  this  problem  can  be  resolved.  The  reproducibility  of  the
+error  may  be  vital,  so  please  remember  to  include  the  following  in
+your  problem  report:
+*  the  EXACT  error  message,
+*  your  version  of  the  program,
+*  the  type  of  computer  system  you  are  running  it  on,
+*  all  command  line  options,
+*  configuration  file  (if  used),
+*  ligand  file  as  PDBQT,
+*  receptor  file  as  PDBQT,
+*  flexible  side  chains  file  as  PDBQT  (if  used),
+*  output  file  as  PDBQT  (if  any),
+*  input  (if  possible),
+*  random  seed  the  program  used  (this  is  printed  when  the  program  starts).
+
+Thank  you!
+
+
+An  internal  error  occurred  in  ../../../src/lib/tree.h(101).  
+
+Please  report  bugs  through  the  Issue  Tracker  on  GitHub  
+(https://github.com/ccsb-scripps/AutoDock-Vina/issues).,  so
+that  this  problem  can  be  resolved.  The  reproducibility  of  the
+error  may  be  vital,  so  please  remember  to  include  the  following  in
+your  problem  report:
+*  the  EXACT  error  message,
+*  your  version  of  the  program,
+*  the  type  of  computer  system  you  are  running  it  on,
+*  all  command  line  options,
+*  configuration  f</span></details></td></tr>
             <tr><td>2</td><td><span class="error-msg">9  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">9  molecules  converted
 9  files  output.  The  first  is  ligand1.pdbqt
 ==============================
@@ -570,7 +1214,75 @@ Please  rep</span></details></td></tr>
     Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
 ==============================
 ***  Open  Babel  Error    in  TetStereoToWedgeHash
-    Failed  to  set  stereoch</span></details></td></tr>
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+
+
+An  internal  error  occurred  in  ../../../src/lib/tree.h(101).  
+
+Please  report  bugs  through  the  Issue  Tracker  on  GitHub  
+(https://github.com/ccsb-scripps/AutoDock-Vina/issues).,  so
+that  this  problem  can  be  resolved.  The  reproducibility  of  the
+error  may  be  vital,  so  please  remember  to  include  the  following  in
+your  problem  report:
+*  the  EXACT  error  message,
+*  your  version  of  the  program,
+*  the  type  of  computer  system  you  are  running  it  on,
+*  all  command  line  options,
+*  configuration  file  (if  used),
+*  ligand  file  as  PDBQT,
+*  receptor  file  as  PDBQT,
+*  flexible  side  chains  file  as  PDBQT  (if  used),
+*  output  file  as  PDBQT  (if  any),
+*  input  (if  possible),
+*  random  seed  the  program  used  (this  is  printed  when  the  program  starts).
+
+Thank  you!
+
+
+An  internal  error  occurred  in  ../../../src/lib/tree.h(101).  
+
+Please  report  bugs  through  the  Issue  Tracker  on  GitHub  
+(https://github.com/ccsb-scripps/AutoDock-Vina/issues).,  so
+that  this  problem  can  be  resolved.  The  reproducibility  of  the
+error  may  be  vital,  so  please  remember  to  include  the  following  in
+your  problem  report:
+*  the  EXACT  error  message,
+*  your  version  of  the  program,
+*  the  type  of  computer  system  you  are  running  it  on,
+*  all  command  line  options,
+*  configuration  file  (if  used),
+*  ligand  file  as  PDBQT,
+*  receptor  file  as  PDBQT,
+*  flexible  side  chains  file  as  PDBQT  (if  used),
+*  output  file  as  PDBQT  (if  any),
+*  input  (if  possible),
+*  random  seed  the  program  used  (this  is  printed  when  the  program  starts).
+
+Thank  you!
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry  as  unable  to  find  an  available  bond
+==============================
+***  Open  Babel  Error    in  TetStereoToWedgeHash
+    Failed  to  set  stereochemistry </span></details></td></tr>
             <tr><td>2</td><td><span class="error-msg">3  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">3  molecules  converted
 3  files  output.  The  first  is  ligand1.pdbqt
 
@@ -615,7 +1327,88 @@ PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
 
 
 
-PDBQT  pa</span></details></td></tr>
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN  A  131            94.731    92.184    78.693    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN  A  131            94.731    92.184    78.693    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN  A  131            94.731    92.184    78.693    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN  A  131            94.731    92.184    78.693    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN  A  131            94.731    92.184    78.693    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN  A  131            94.731    92.184    78.693    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN  A  131            94.731    92.184    78.693    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN  A  131            94.731    92.184    78.693    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN  A  131            94.731    92.184    78.693    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN  A  131            94.731    92.184    78.693    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN  A  131            94.731    92.184    78.693    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN  A  131            94.731    92.184    78.693    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN  A  131            94.731    92.184    78.693    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN  A  131            94.731    92.184    78.693    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN  A  131            94.731    92.184    78.693    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN  A  131            94.731    92.184    78.693    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4    78.69"  is  not  valid.
+  &gt;  ATOM      1264    HE2A1GLN</span></details></td></tr>
             <tr><td>2</td><td><span class="error-msg">383  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">383  molecules  converted
 383  files  output.  The  first  is  ligand1.pdbqt
 ==============================
@@ -641,7 +1434,91 @@ PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residu
 
 
 
-PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex </span></details></td></tr>
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1189396)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1189396)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1189396)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL3614075)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL3614075)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL3614075)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL3614075)
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1522954)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1522954)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1522954)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1522954)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1522954)
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  </span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">***  Open  Babel  Warning    in  ReadUnimplementedBlock</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">==============================
 ***  Open  Babel  Warning    in  ReadUnimplementedBlock
     COLLECTION  blocks  are  not  currently  implemented  and  their  contents  are  ignored.
@@ -657,7 +1534,116 @@ python:  can't  open  file  '/jetstream2/scratch/main/jobs/72135355/tool_files/c
 
 
 PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
-  </span></details></td></tr>
+  &gt;  ROOT
+
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72135355/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72135355/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/72135355/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+python:  can't  open  file  '/jetstream2/scratch/main/jobs/</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">python:  can't  open  file  '/jetstream2/scratch/main/jobs/72204485/tool_files/convert_pdbqt_to_sdf.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">python:  can't  open  file  '/jetstream2/scratch/main/jobs/72204485/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">467  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">467  molecules  converted
 467  files  output.  The  first  is  ligand1.pdbqt
@@ -683,7 +1669,88 @@ PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residu
     Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1178953)
 
 ==============================
-***  Open  Babel  Warning    in  PerceiveBon</span></details></td></tr>
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1178953)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1178953)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1178953)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1178953)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1178953)
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1183444)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1183444)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1183444)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1183444)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1183444)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1183444)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1183444)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  CHEMBL1183444)
+
+======================</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">PDBQT  parsing  error:  Coordinate  "4  -10.71"  is  not  valid.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">PDBQT  parsing  error:  Coordinate  "4  -10.71"  is  not  valid.
   &gt;  ATOM        208    HZ  A1LYS  A    26            11.541      9.224  -10.715    1.00    0.00          0.274  HD</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">309  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">309  molecules  converted
@@ -715,7 +1782,88 @@ PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
 
 
 
-PDBQT  pars</span></details></td></tr>
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  A  186              7.817    29.955  -18.692    1.00    0.00          0.274  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  A  186              7.817    29.955  -18.692    1.00    0.00          0.274  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  A  186              7.817    29.955  -18.692    1.00    0.00          0.274  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  A  186              7.817    29.955  -18.692    1.00    0.00          0.274  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  A  186              7.817    29.955  -18.692    1.00    0.00          0.274  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  A  186              7.817    29.955  -18.692    1.00    0.00          0.274  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  A  186              7.817    29.955  -18.692    1.00    0.00          0.274  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  A  186              7.817    29.955  -18.692    1.00    0.00          0.274  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  A  186              7.817    29.955  -18.692    1.00    0.00          0.274  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  A  186              7.817    29.955  -18.692    1.00    0.00          0.274  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  A  186              7.817    29.955  -18.692    1.00    0.00          0.274  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  A  186              7.817    29.955  -18.692    1.00    0.00          0.274  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  A  186              7.817    29.955  -18.692    1.00    0.00          0.274  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  A  186              7.817    29.955  -18.692    1.00    0.00          0.274  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  A  186              7.817    29.955  -18.692    1.00    0.00          0.274  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  A  186              7.817    29.955  -18.692    1.00    0.00          0.274  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "5  -18.69"  is  not  valid.
+  &gt;  ATOM      1169    HZ  A1LYS  </span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">36  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">36  molecules  converted
 36  files  output.  The  first  is  ligand1.pdbqt
 WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
@@ -729,7 +1877,43 @@ WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ
 WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
 WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
 WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
-WARNING:  Search  space</span></details></td></tr>
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">2  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">2  molecules  converted
 2  files  output.  The  first  is  ligand1.pdbqt
 python:  can't  open  file  '/jetstream2/scratch/main/jobs/72339482/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory
@@ -831,7 +2015,72 @@ python:  can't  open  file  '/jetstream2/scratch/main/jobs/72339482/tool_files/c
 ***  Open  Babel  Warning    in  PerceiveBondOrders
     Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Altretamine)
 
-========</span></details></td></tr>
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Altretamine)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Altretamine)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Altretamine)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Altretamine)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  methimazole)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  methimazole)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  methimazole)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  methimazole)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  methimazole)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  methimazole)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  methimazole)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  methimazole)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  methimazole)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Sulfathiazole)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Sulfathiazole)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Sulfathiazole)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBo</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">260  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">260  molecules  converted
 260  files  output.  The  first  is  ligand1.pdbqt
 ==============================
@@ -852,7 +2101,74 @@ python:  can't  open  file  '/jetstream2/scratch/main/jobs/72339482/tool_files/c
 
 ==============================
 ***  Open  Babel  Warning    in  PerceiveBondOrders
-    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Te</span></details></td></tr>
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Tetrahydrozoline)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Tetrahydrozoline)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Tetrahydrozoline)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Tetrahydrozoline)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Tetrahydrozoline)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Clonidine)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Clonidine)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Clonidine)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Clonidine)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Clonidine)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Clonidine)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Clonidine)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Clonidine)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Clonidine)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Cyclobenzaprine)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Cyclobenzaprine)
+
+==============================
+***  Open  Babel  Warning    in  PerceiveBondOrders
+    Failed  to  kekulize  aromatic  bonds  in  OBMol::PerceiveBondOrders  (title  is  Cyclobenzaprine)
+
+==============================
+***  Open </span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">python:  can't  open  file  '/jetstream2/scratch/main/jobs/72677721/tool_files/convert_pdbqt_to_sdf.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">python:  can't  open  file  '/jetstream2/scratch/main/jobs/72677721/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">python:  can't  open  file  '/jetstream2/scratch/main/jobs/72746132/tool_files/convert_pdbqt_to_sdf.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">python:  can't  open  file  '/jetstream2/scratch/main/jobs/72746132/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">python:  can't  open  file  '/jetstream2/scratch/main/jobs/72746134/tool_files/convert_pdbqt_to_sdf.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">python:  can't  open  file  '/jetstream2/scratch/main/jobs/72746134/tool_files/convert_pdbqt_to_sdf.py':  [Errno  2]  No  such  file  or  directory</span></details></td></tr>
@@ -948,7 +2264,48 @@ Search  space  (required):
     --maps  arg                                  affinity  maps  for  the  autodock4.2  (ad4)  or  vina  
                                                           scoring  function
     --center_x  arg                          X  coordinate  of  the  center  (Angstrom)
-    --center_y  arg                          Y  coordinate  of  the  center</span></details></td></tr>
+    --center_y  arg                          Y  coordinate  of  the  center  (Angstrom)
+    --center_z  arg                          Z  coordinate  of  the  center  (Angstrom)
+    --size_x  arg                              size  in  the  X  dimension  (Angstrom)
+    --size_y  arg                              size  in  the  Y  dimension  (Angstrom)
+    --size_z  arg                              size  in  the  Z  dimension  (Angstrom)
+    --autobox                                    set  maps  dimensions  based  on  input  ligand(s)  (for  
+                                                          --score_only  and  --local_only)
+
+Output  (optional):
+    --out  arg                                    output  models  (PDBQT),  the  default  is  chosen  based
+                                                          on  the  ligand  file  name
+    --dir  arg                                    output  directory  for  batch  mode
+    --write_maps  arg                      output  filename  (directory  +  prefix  name)  for  
+                                                          maps.  Option  --force_even_voxels  may  be  needed  to  
+                                                          comply  with  .map  format
+
+Misc  (optional):
+    --cpu  arg  (=0)                          the  number  of  CPUs  to  use  (the  default  is  to  try  
+                                                          to  detect  the  number  of  CPUs  or,  failing  that,  use
+                                                          1)
+    --seed  arg  (=0)                        explicit  random  seed
+    --exhaustiveness  arg  (=8)    exhaustiveness  of  the  global  search  (roughly  
+                                                          proportional  to  time):  1+
+    --max_evals  arg  (=0)              number  of  evaluations  in  each  MC  run  (if  zero,  
+                                                          which  is  the  default,  the  number  of  MC  steps  is  
+                                                          based  on  heuristics)
+    --num_modes  arg  (=9)              maximum  number  of  binding  modes  to  generate
+    --min_rmsd  arg  (=1)                minimum  RMSD  between  output  poses
+    --energy_range  arg  (=3)        maximum  energy  difference  between  the  best  binding
+                                                          mode  and  the  worst  one  displayed  (kcal/mol)
+    --spacing  arg  (=0.375)          grid  spacing  (Angstrom)
+    --verbosity  arg  (=1)              verbosity  (0=no  output,  1=normal,  2=verbose)
+
+Configuration  file  (optional):
+    --config  arg                              the  above  options  can  be  put  here
+
+Information  (optional):
+    --help                                          display  usage  summary
+    --help_advanced                        display  usage  summary  with  advanced  options
+    --version                                    display  program  version
+
+Configuration  file  parse  error:  the  options  configuration  file  contains  an</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">parallel:  Error:  Output  is  incomplete.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">parallel:  Error:  Output  is  incomplete.
 parallel:  Error:  Cannot  append  to  buffer  file  in  /corral4/main/jobs/072/956/72956291/tmp.
 parallel:  Error:  Is  the  disk  full?
@@ -980,7 +2337,50 @@ WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ
 WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
 WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
 WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
-WARNING:  Search  space</span></details></td></tr>
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+
+
+PDBQT  parsing  error:  Unknown  or  inappropriate  tag  found  in  flex  residue  or  ligand.
+  &gt;  ROOT
+
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)
+WARNING:  Search  space  volume  is  greater  than  27000  Angstrom^3  (See  FAQ)</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">14  molecules  converted</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">14  molecules  converted
 14  files  output.  The  first  is  ligand1.pdbqt
 
@@ -1010,7 +2410,48 @@ PDBQT  parsing  error:  Coordinate  "4  -28.96"  is  not  valid.
 
 
 
-PDBQT  parsing  er</span></details></td></tr>
+PDBQT  parsing  error:  Coordinate  "4  -28.96"  is  not  valid.
+  &gt;  ATOM        663    HE2A1GLN  A  118          -13.531      0.474  -28.967    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4  -28.96"  is  not  valid.
+  &gt;  ATOM        663    HE2A1GLN  A  118          -13.531      0.474  -28.967    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4  -28.96"  is  not  valid.
+  &gt;  ATOM        663    HE2A1GLN  A  118          -13.531      0.474  -28.967    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4  -28.96"  is  not  valid.
+  &gt;  ATOM        663    HE2A1GLN  A  118          -13.531      0.474  -28.967    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4  -28.96"  is  not  valid.
+  &gt;  ATOM        663    HE2A1GLN  A  118          -13.531      0.474  -28.967    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4  -28.96"  is  not  valid.
+  &gt;  ATOM        663    HE2A1GLN  A  118          -13.531      0.474  -28.967    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4  -28.96"  is  not  valid.
+  &gt;  ATOM        663    HE2A1GLN  A  118          -13.531      0.474  -28.967    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4  -28.96"  is  not  valid.
+  &gt;  ATOM        663    HE2A1GLN  A  118          -13.531      0.474  -28.967    1.00    0.00          0.159  HD
+
+
+
+PDBQT  parsing  error:  Coordinate  "4  -28.96"  is  not  valid.
+  &gt;  ATOM        663    HE2A1GLN  A  118          -13.531      0.474  -28.967    1.00    0.00          0.159  HD</span></details></td></tr>
         </table>
     </div>
 </body>

@@ -460,7 +460,8 @@ Error  in  estimateDispersionsFit(object,  fitType  =  fitType,  quiet  =  quiet
     One  can  instead  use  the  gene-wise  estimates  as  final  estimates:
     dds  &lt;-  estimateDispersionsGeneEst(dds)
     dispersions(dds)  &lt;-  mcols(dds)$dispGeneEst
-    ...then  continue  with  testing  using  nbinomWaldTest  </span></details></td></tr>
+    ...then  continue  with  testing  using  nbinomWaldTest  or  nbinomLRT
+Calls:  DESeq  ...  estimateDispersions  -&gt;  .local  -&gt;  estimateDispersionsFit</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "NonXSmokers")  :</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error  in  `[&lt;-.data.frame`(`*tmp*`,  files,  factor_name,  value  =  "NonXSmokers")  :  
     column  name  ""  cannot  match  any  column
 Calls:  [&lt;-  -&gt;  [&lt;-.data.frame</span></details></td></tr>

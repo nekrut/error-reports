@@ -67,7 +67,41 @@ _.+_L[0-9][0-9][0-
 9]_R[12]_001\\.fastq\\.gz'
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 :(
-/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2_demux/_summarize/_visualizer.py:11:  UserWarning:  pkg_resources  is  deprecated  as  an  API.  See  https://setuptools.pypa.io/en/latest/pkg_resources.html.  The  pkg_resources  package  is  slated  for  removal  as  early  as  2025-11-30.  Refrain </span></details></td></tr>
+/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2_demux/_summarize/_visualizer.py:11:  UserWarning:  pkg_resources  is  deprecated  as  an  API.  See  https://setuptools.pypa.io/en/latest/pkg_resources.html.  The  pkg_resources  package  is  slated  for  removal  as  early  as  2025-11-30.  Refrain  from  using  this  package  or  pin  to  Setuptools&lt;81.
+    import  pkg_resources
+Traceback  (most  recent  call  last):
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/bin/q2galaxy",  line  11,  in  &lt;module&gt;
+        sys.exit(root())
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  1161,  in  __call__
+        return  self.main(*args,  **kwargs)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  1082,  in  main
+        rv  =  self.invoke(ctx)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  1697,  in  invoke
+        return  _process_result(sub_ctx.command.invoke(sub_ctx))
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  1443,  in  invoke
+        return  ctx.invoke(self.callback,  **ctx.params)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  788,  in  invoke
+        return  __callback(*args,  **kwargs)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/__main__.py",  line  96,  in  run
+        builtin_runner(action,  config)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/core/drivers/builtins.py",  line  41,  in  builtin_runner
+        tool(inputs,  stdio=stdio)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/core/drivers/builtins.py",  line  62,  in  import_data
+        artifact  =  _import_name_data(type_,  format_,  files_to_move,
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/core/drivers/stdio.py",  line  38,  in  wrapped
+        return  function(*args,  **kwargs)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/core/drivers/builtins.py",  line  168,  in  _import_name_data
+        return  qiime2.Artifact.import_data(type_,  dir_,  view_type=format_)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/qiime2/sdk/result.py",  line  524,  in  import_data
+        return  cls._from_view(type_,  view,  view_type,  provenance_capture,
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/qiime2/sdk/result.py",  line  552,  in  _from_view
+        result  =  transformation(view,  validate_level)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/qiime2/core/transform.py",  line  68,  in  transformation
+        self.validate(view,  level=validate_level)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/qiime2/core/transform.py",  line  143,  in  validate
+        view.validate(level)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/qiime2/plugin/model/directory_format.py",  line  177,  in  validate
+        getattr(self,  field)._validate_members(collected_paths,</span></details></td></tr>
             <tr><td>333</td><td><span class="error-msg">Unexpected  error  importing  data:  /cor</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Unexpected  error  importing  data:  /cor
 ral4/main/objects/3/9/5/dataset_39523
 f4f-eee0-4fc4-9258-749bd1585789.dat
@@ -96,7 +130,39 @@ https://keemei.qiime2.org
 Find  details  on  QIIME  2  metadata
 requirements  here:  https://docs.qiime
 2.org/2025.7/tutorials/metadata/
-                                      </span></details></td></tr>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+:(
+/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2_demux/_summarize/_visualizer.py:11:  UserWarning:  pkg_resources  is  deprecated  as  an  API.  See  https://setuptools.pypa.io/en/latest/pkg_resources.html.  The  pkg_resources  package  is  slated  for  removal  as  early  as  2025-11-30.  Refrain  from  using  this  package  or  pin  to  Setuptools&lt;81.
+    import  pkg_resources
+Traceback  (most  recent  call  last):
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2_types/per_sample_sequences/_formats.py",  line  41,  in  _validate_
+        md  =  qiime2.Metadata.load(str(self))
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/qiime2/metadata/metadata.py",  line  396,  in  load
+        return  MetadataReader(filepath).read(
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/qiime2/metadata/io.py",  line  73,  in  read
+        header  =  self._read_header()
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/qiime2/metadata/io.py",  line  159,  in  _read_header
+        raise  MetadataFileError(
+qiime2.metadata.io.MetadataFileError:  Found  unrecognized  ID  column  name  '@VH00364:131:AAGV75NM5:1:1101:63260:1000  1:N:0:CGATAGCG+TGTGAACT'  while  searching  for  header.  The  first  column  name  in  the  header  defines  the  ID  column,  and  must  be  one  of  these  values:
+
+Case-insensitive:  'feature  id',  'feature-id',  'featureid',  'id',  'sample  id',  'sample-id',  'sampleid'
+
+Case-sensitive:  '#OTU  ID',  '#OTUID',  '#Sample  ID',  '#SampleID',  'sample_name'
+
+NOTE:  Metadata  files  must  contain  tab-separated  values.
+
+There  may  be  more  errors  present  in  the  metadata  file.  To  get  a  full  report,  sample/feature  metadata  files  can  be  validated  with  Keemei:  https://keemei.qiime2.org
+
+Find  details  on  QIIME  2  metadata  requirements  here:  https://docs.qiime2.org/2025.7/tutorials/metadata/
+
+The  above  exception  was  the  direct  cause  of  the  following  exception:
+
+Traceback  (most  recent  call  last):
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/qiime2/plugin/model/file_format.py",  line  26,  in  validate
+        self._validate_(level)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2_types/per_sample_sequences/_formats.py",  line  43,  in  _validate_
+        raise  ValidationError(md_exc)  from  md_exc
+qiime2.core.exceptions.Validation</span></details></td></tr>
             <tr><td>168</td><td><span class="error-msg">FATAL:      Unable  to  handle  docker://quay.io/qiime2/amplicon:2025.10  uri:  while  building  SIF</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">FATAL:      Unable  to  handle  docker://quay.io/qiime2/amplicon:2025.10  uri:  while  building  SIF  from  layers:  conveyor  failed  to  get:  error  writing  layer:  unexpected  EOF</span></details></td></tr>
             <tr><td>135</td><td><span class="error-msg">Unexpected  error  importing  data:  /jet</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Unexpected  error  importing  data:  /jet
 stream2/scratch/main/jobs/72158023/wo
@@ -106,7 +172,44 @@ not  a(n)  FastqGzFormat  file:
 File  is  uncompressed
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 :(
-/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2_demux/_summarize/_visualizer.py:11:  UserWarning:  pkg_resources  is  deprecated  as  an  API.  See  https://setuptools.pypa.io/en/latest/pkg_resources.html.  The  pkg_resources  package  is  slated  for  removal  as  early  as</span></details></td></tr>
+/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2_demux/_summarize/_visualizer.py:11:  UserWarning:  pkg_resources  is  deprecated  as  an  API.  See  https://setuptools.pypa.io/en/latest/pkg_resources.html.  The  pkg_resources  package  is  slated  for  removal  as  early  as  2025-11-30.  Refrain  from  using  this  package  or  pin  to  Setuptools&lt;81.
+    import  pkg_resources
+Traceback  (most  recent  call  last):
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/qiime2/plugin/model/file_format.py",  line  26,  in  validate
+        self._validate_(level)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2_types/_util.py",  line  96,  in  _validate_
+        raise  ValidationError('File  is  uncompressed')
+qiime2.core.exceptions.ValidationError:  File  is  uncompressed
+
+The  above  exception  was  the  direct  cause  of  the  following  exception:
+
+Traceback  (most  recent  call  last):
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/bin/q2galaxy",  line  11,  in  &lt;module&gt;
+        sys.exit(root())
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  1161,  in  __call__
+        return  self.main(*args,  **kwargs)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  1082,  in  main
+        rv  =  self.invoke(ctx)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  1697,  in  invoke
+        return  _process_result(sub_ctx.command.invoke(sub_ctx))
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  1443,  in  invoke
+        return  ctx.invoke(self.callback,  **ctx.params)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  788,  in  invoke
+        return  __callback(*args,  **kwargs)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/__main__.py",  line  96,  in  run
+        builtin_runner(action,  config)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/core/drivers/builtins.py",  line  41,  in  builtin_runner
+        tool(inputs,  stdio=stdio)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/core/drivers/builtins.py",  line  62,  in  import_data
+        artifact  =  _import_name_data(type_,  format_,  files_to_move,
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/core/drivers/stdio.py",  line  38,  in  wrapped
+        return  function(*args,  **kwargs)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/core/drivers/builtins.py",  line  168,  in  _import_name_data
+        return  qiime2.Artifact.import_data(type_,  dir_,  view_type=format_)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/qiime2/sdk/result.py",  line  524,  in  import_data
+        return  cls._from_view(type_,  view,  view_type,  provenance_capture,
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/qiime2/sdk/result.py",  line  552,  in  _from_view
+        result  =  transformation(view,  validate_level</span></details></td></tr>
             <tr><td>33</td><td><span class="error-msg">Unexpected  error  collecting</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Unexpected  error  collecting
 arguments:  Unknown  expression:  &lt;class
 'ast.Constant'&gt;
@@ -117,7 +220,31 @@ Traceback  (most  recent  call  last):
         sys.exit(root())
     File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  1161,  in  __call__
         return  self.main(*args,  **kwargs)
-    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/</span></details></td></tr>
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  1082,  in  main
+        rv  =  self.invoke(ctx)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  1697,  in  invoke
+        return  _process_result(sub_ctx.command.invoke(sub_ctx))
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  1443,  in  invoke
+        return  ctx.invoke(self.callback,  **ctx.params)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  788,  in  invoke
+        return  __callback(*args,  **kwargs)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/__main__.py",  line  96,  in  run
+        builtin_runner(action,  config)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/core/drivers/builtins.py",  line  41,  in  builtin_runner
+        tool(inputs,  stdio=stdio)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/core/drivers/builtins.py",  line  60,  in  import_data
+        type_,  format_,  files_to_move  =  _import_get_args(inputs,
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/core/drivers/stdio.py",  line  38,  in  wrapped
+        return  function(*args,  **kwargs)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/core/drivers/builtins.py",  line  134,  in  _import_get_args
+        type_  =  qiime2.sdk.parse_type(inputs.pop('type'))
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/qiime2/sdk/util.py",  line  89,  in  parse_type
+        type_expr  =  _parse.ast_to_type(_parse.string_to_ast(string))
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/qiime2/core/type/parse.py",  line  32,  in  string_to_ast
+        return  _expr(expr.value)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/qiime2/core/type/parse.py",  line  71,  in  _expr
+        raise  ValueError("Unknown  expression:  %r"  %  node)
+ValueError:  Unknown  expression:  &lt;class  'ast.Constant'&gt;</span></details></td></tr>
             <tr><td>13</td><td><span class="error-msg">FATAL:      Unable  to  handle  docker://quay.io/qiime2/amplicon:2025.7  uri:  while  building  SIF </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">FATAL:      Unable  to  handle  docker://quay.io/qiime2/amplicon:2025.7  uri:  while  building  SIF  from  layers:  conveyor  failed  to  get:  error  writing  layer:  unexpected  EOF</span></details></td></tr>
             <tr><td>6</td><td><span class="error-msg">Unexpected  error  importing  data:  Path</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Unexpected  error  importing  data:  Path
 '/corral4/main/objects/f/e/f/dataset_
@@ -125,7 +252,34 @@ fef41e4a-9313-4682-ba2a-
 99cec04d8f77.dat'  does  not  exist.
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 :(
-/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2_demux/_summarize/_visualizer.py:11:  UserWarning:  pkg_resources  is  deprecated  as  an  API.  See  https://setuptools.pypa.io/en/latest/pkg_resources.html.  The  pkg_resources  package  is  slated  for  removal  as  early  as  2025-11-30.  Refrain  from  using  this  pac</span></details></td></tr>
+/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2_demux/_summarize/_visualizer.py:11:  UserWarning:  pkg_resources  is  deprecated  as  an  API.  See  https://setuptools.pypa.io/en/latest/pkg_resources.html.  The  pkg_resources  package  is  slated  for  removal  as  early  as  2025-11-30.  Refrain  from  using  this  package  or  pin  to  Setuptools&lt;81.
+    import  pkg_resources
+Traceback  (most  recent  call  last):
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/bin/q2galaxy",  line  11,  in  &lt;module&gt;
+        sys.exit(root())
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  1161,  in  __call__
+        return  self.main(*args,  **kwargs)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  1082,  in  main
+        rv  =  self.invoke(ctx)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  1697,  in  invoke
+        return  _process_result(sub_ctx.command.invoke(sub_ctx))
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  1443,  in  invoke
+        return  ctx.invoke(self.callback,  **ctx.params)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/click/core.py",  line  788,  in  invoke
+        return  __callback(*args,  **kwargs)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/__main__.py",  line  96,  in  run
+        builtin_runner(action,  config)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/core/drivers/builtins.py",  line  41,  in  builtin_runner
+        tool(inputs,  stdio=stdio)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/core/drivers/builtins.py",  line  62,  in  import_data
+        artifact  =  _import_name_data(type_,  format_,  files_to_move,
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/core/drivers/stdio.py",  line  38,  in  wrapped
+        return  function(*args,  **kwargs)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/q2galaxy/core/drivers/builtins.py",  line  162,  in  _import_name_data
+        return  qiime2.Artifact.import_data(type_,  path,  view_type=format_)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.7/lib/python3.10/site-packages/qiime2/sdk/result.py",  line  519,  in  import_data
+        raise  qiime2.plugin.ValidationError(
+qiime2.core.exceptions.ValidationError:  Path  '/corral4/main/objects/f/e/f/dataset_fef41e4a-9313-4682-ba2a-99cec04d8f77.dat'  does  not  exist.</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">FATAL:      Unable  to  handle  docker://quay.io/qiime2/amplicon:2024.10  uri:  while  building  SIF</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">FATAL:      Unable  to  handle  docker://quay.io/qiime2/amplicon:2024.10  uri:  while  building  SIF  from  layers:  conveyor  failed  to  get:  error  writing  layer:  unexpected  EOF</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Unexpected  error  importing  data:  Not</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Unexpected  error  importing  data:  Not
 a  gzipped  file  (b'@M')
@@ -133,7 +287,40 @@ a  gzipped  file  (b'@M')
 :(
 /opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/unifrac/__init__.py:9:  UserWarning:  pkg_resources  is  deprecated  as  an  API.  See  https://setuptools.pypa.io/en/latest/pkg_resources.html.  The  pkg_resources  package  is  slated  for  removal  as  early  as  2025-11-30.  Refrain  from  using  this  package  or  pin  to  Setuptools&lt;81.
     import  pkg_resources
-Traceback  (most  recent  call</span></details></td></tr>
+Traceback  (most  recent  call  last):
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/bin/q2galaxy",  line  11,  in  &lt;module&gt;
+        sys.exit(root())
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/click/core.py",  line  1161,  in  __call__
+        return  self.main(*args,  **kwargs)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/click/core.py",  line  1082,  in  main
+        rv  =  self.invoke(ctx)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/click/core.py",  line  1697,  in  invoke
+        return  _process_result(sub_ctx.command.invoke(sub_ctx))
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/click/core.py",  line  1443,  in  invoke
+        return  ctx.invoke(self.callback,  **ctx.params)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/click/core.py",  line  788,  in  invoke
+        return  __callback(*args,  **kwargs)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/q2galaxy/__main__.py",  line  96,  in  run
+        builtin_runner(action,  config)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/q2galaxy/core/drivers/builtins.py",  line  41,  in  builtin_runner
+        tool(inputs,  stdio=stdio)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/q2galaxy/core/drivers/builtins.py",  line  62,  in  import_data
+        artifact  =  _import_name_data(type_,  format_,  files_to_move,
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/q2galaxy/core/drivers/stdio.py",  line  38,  in  wrapped
+        return  function(*args,  **kwargs)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/q2galaxy/core/drivers/builtins.py",  line  162,  in  _import_name_data
+        return  qiime2.Artifact.import_data(type_,  path,  view_type=format_)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/qiime2/sdk/result.py",  line  672,  in  import_data
+        return  cls._from_view(type_,  view,  view_type,  provenance_capture,
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/qiime2/sdk/result.py",  line  700,  in  _from_view
+        result  =  transformation(view,  validate_level)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/qiime2/core/transform.py",  line  68,  in  transformation
+        self.validate(view,  level=validate_level)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/qiime2/core/transform.py",  line  143,  in  validate
+        view.validate(level)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/qiime2/plugin/model/file_format.py",  line  26,  in  validate
+        self._validate_(level)
+    File  "/opt/conda/envs/qiime2-amplicon-2025.10/lib/python3.10/site-packages/q2_types/per_sample_sequences/_formats.py",  line  119, </span></details></td></tr>
         </table>
     </div>
 </body>

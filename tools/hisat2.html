@@ -94,7 +94,59 @@ Joining  reference  sequences
     Time  to  join  reference  sequences:  00:00:00
     Time  to  read  SNPs  and  splice  sites:  00:00:00
 Using  parameters  --bmax  2676465  --dcv  1024
-    Doing  ahead-of-time  memo</span></details></td></tr>
+    Doing  ahead-of-time  memory  usage  test
+    Passed!    Constructing  with  these  parameters:  --bmax  2676465  --dcv  1024
+Constructing  suffix-array  element  generator
+Converting  suffix-array  elements  to  index  image
+Allocating  ftab,  absorbFtab
+Entering  GFM  loop
+Exited  GFM  loop
+fchr[A]:  0
+fchr[C]:  4751512
+fchr[G]:  7139972
+fchr[T]:  9527119
+fchr[$]:  14274480
+Exiting  GFM::buildToDisk()
+Returning  from  initFromVector
+Wrote  8974517  bytes  to  primary  GFM  file:  genome.1.ht2
+Wrote  3568628  bytes  to  secondary  GFM  file:  genome.2.ht2
+Re-opening  _in1  and  _in2  as  input  streams
+Returning  from  GFM  constructor
+Returning  from  initFromVector
+Wrote  6292823  bytes  to  primary  GFM  file:  genome.5.ht2
+Wrote  3632654  bytes  to  secondary  GFM  file:  genome.6.ht2
+Re-opening  _in5  and  _in5  as  input  streams
+Returning  from  HGFM  constructor
+Headers:
+        len:  14274480
+        gbwtLen:  14274481
+        nodes:  14274481
+        sz:  3568620
+        gbwtSz:  3568621
+        lineRate:  6
+        offRate:  4
+        offMask:  0xfffffff0
+        ftabChars:  10
+        eftabLen:  0
+        eftabSz:  0
+        ftabLen:  1048577
+        ftabSz:  4194308
+        offsLen:  892156
+        offsSz:  3568624
+        lineSz:  64
+        sideSz:  64
+        sideGbwtSz:  48
+        sideGbwtLen:  192
+        numSides:  74347
+        numLines:  74347
+        gbwtTotLen:  4758208
+        gbwtTotSz:  4758208
+        reverse:  0
+        linearFM:  Yes
+Total  time  for  call  to  driver()  for  forward  index:  00:00:07
+(ERR):  hisat2-align  died  with  signal  11  (SEGV)  (core  dumped)
+samtools  sort:  failed  to  read  header  from  "-"
+[main_samview]  fail  to  read  the  header  from  "-".</span></details></td></tr>
             <tr><td>275</td><td><span class="error-msg">Error,  fewer  reads  in  file  specified  with  -2  than  in  file  specified  with  -1</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error,  fewer  reads  in  file  specified  with  -2  than  in  file  specified  with  -1
 terminate  called  after  throwing  an  instance  of  'int'
 (ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)
@@ -243,7 +295,31 @@ Warning:  skipping  mate  #2  of  read  'SRR549357.100262134/1'  because  length
 Warning:  skipping  mate  #2  of  read  'SRR549357.100262134/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR549357.102514742/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR549357.102514742/1'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate  #2  of  read  'SRR549357.102767191/1'  because  length  (1)  &lt;=  #  seed  mismatches  </span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR549357.102767191/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.102767191/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.102821517/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.102821517/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.102826208/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.102826208/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.102834699/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.102834699/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.102928217/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.102928217/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.10403307/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.10403307/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.105044398/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.105044398/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.105071322/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.105071322/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.105125050/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.105125050/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.105419436/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.105419436/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.105420730/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.105420730/1'  because  it  was  &lt;  2  characters  long
+Error,  fewer  reads  in  file  specified  with  -1  than  in  file  specified  with  -2
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)</span></details></td></tr>
             <tr><td>5</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR549356.101230775/2'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR549356.101230775/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR549356.101230775/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR549355.104211909/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -252,7 +328,35 @@ Warning:  skipping  mate  #1  of  read  'SRR549355.105253161/2'  because  length
 Warning:  skipping  mate  #1  of  read  'SRR549355.105253161/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR549355.11149564/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR549355.11149564/2'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate  #1  of  read  'SRR549355.113558125/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0</span></details></td></tr>
+Warning:  skipping  mate  #1  of  read  'SRR549355.113558125/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.113558125/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.114127963/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.114127963/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.118339166/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.118339166/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.129894338/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.129894338/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.130101771/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.130101771/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.133130984/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.133130984/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.15138310/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.15138310/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.15649247/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.15649247/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.16750383/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.16750383/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.17158033/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.17158033/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.18476653/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.18476653/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.25119820/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.25119820/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.34884461/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.34884461/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.49503208/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.49503208/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  ma</span></details></td></tr>
             <tr><td>5</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR549357.100190811/1'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR549357.100190811/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR549357.100190811/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR549357.100245449/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -261,7 +365,35 @@ Warning:  skipping  mate  #1  of  read  'SRR549357.100262134/1'  because  length
 Warning:  skipping  mate  #1  of  read  'SRR549357.100262134/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR549358.41465780/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR549358.41465780/1'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate  #2  of  read  'SRR549358.45998613/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR549358.45998613/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549358.45998613/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.102514742/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.102514742/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.102767191/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.102767191/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.102821517/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.102821517/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.102826208/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.102826208/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.102834699/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.102834699/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.102928217/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.102928217/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.10403307/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.10403307/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.105044398/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.105044398/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.105071322/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.105071322/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.105125050/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.105125050/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.105419436/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.105419436/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.105420730/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.105420730/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549358.96789947/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549358.96789947/1'  because  it  was  &lt;  2  characters  long
+Error,  fewe</span></details></td></tr>
             <tr><td>4</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR044234.4406  61MA6AAXX100506:1:1:1340:6144/2'  because  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR044234.4406  61MA6AAXX100506:1:1:1340:6144/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR044234.4406  61MA6AAXX100506:1:1:1340:6144/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR044234.15460  61MA6AAXX100506:1:1:2087:4278/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -269,7 +401,28 @@ Warning:  skipping  mate  #2  of  read  'SRR044234.15460  61MA6AAXX100506:1:1:20
 Warning:  skipping  mate  #2  of  read  'SRR044234.26384  61MA6AAXX100506:1:1:2786:2010/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR044234.26384  61MA6AAXX100506:1:1:2786:2010/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR044234.35135  61MA6AAXX100506:1:1:3336:19703/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warning:  skipping  mate  #2  </span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR044234.35135  61MA6AAXX100506:1:1:3336:19703/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.37456  61MA6AAXX100506:1:1:3486:5710/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.37456  61MA6AAXX100506:1:1:3486:5710/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.38047  61MA6AAXX100506:1:1:3523:13918/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.38047  61MA6AAXX100506:1:1:3523:13918/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.41643  61MA6AAXX100506:1:1:3750:4506/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.41643  61MA6AAXX100506:1:1:3750:4506/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.47002  61MA6AAXX100506:1:1:4091:2950/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.47002  61MA6AAXX100506:1:1:4091:2950/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.62078  61MA6AAXX100506:1:1:5036:18799/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.62078  61MA6AAXX100506:1:1:5036:18799/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.83039  61MA6AAXX100506:1:1:6364:9107/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.83039  61MA6AAXX100506:1:1:6364:9107/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.103084  61MA6AAXX100506:1:1:7634:15321/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.103084  61MA6AAXX100506:1:1:7634:15321/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.111197  61MA6AAXX100506:1:1:8148:17489/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.111197  61MA6AAXX100506:1:1:8148:17489/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.128221  61MA6AAXX100506:1:1:9225:17286/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.128221  61MA6AAXX100506:1:1:9225:17286/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.154219  61MA6AAXX100506:1:1:10883:14154/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.154219  61MA6AAXX100506:1:1:10883:14154/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.155946  61MA6AAXX100506:1:1:10994:17814/2'  because  length  (1</span></details></td></tr>
             <tr><td>4</td><td><span class="error-msg">125115667  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">125115667  reads;  of  these:
     125115667  (100.00%)  were  unpaired;  of  these:
         5977222  (4.78%)  aligned  0  times
@@ -492,7 +645,28 @@ Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:
 Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:12834:41679/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:12834:41679/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:10517:56421/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-War</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:10517:56421/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:18387:58556/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:18387:58556/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:4865:84737/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:4865:84737/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1103:7908:46586/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1103:7908:46586/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1103:5837:64142/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1103:5837:64142/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1103:16107:89318/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1103:16107:89318/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1108:3578:2334/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1108:3578:2334/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1108:16240:14615/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1108:16240:14615/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1108:12954:25236/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1108:12954:25236/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1108:12656:32248/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1108:12656:32248/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1108:9340:40959/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1108:9340:40959/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read</span></details></td></tr>
             <tr><td>4</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:1491:3598/2'  becaus</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:1491:3598/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:1491:3598/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:5043:3600/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -500,7 +674,28 @@ Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:
 Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:7616:3973/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:7616:3973/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:5140:4380/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warning:  skipp</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:5140:4380/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:16895:4680/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:16895:4680/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:11931:7681/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:11931:7681/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:15079:9099/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:15079:9099/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:16993:10432/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:16993:10432/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:12654:10720/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:12654:10720/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:20791:10719/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:20791:10719/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:7006:11021/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:7006:11021/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:20958:11990/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:20958:11990/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:17921:12835/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:17921:12835/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:13330:19578/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879746.SN642:758:HM3GCBCXX:1:1107:13330:19578/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR3287</span></details></td></tr>
             <tr><td>4</td><td><span class="error-msg">Error:  Read  E250122364L1C036R00404579572/1  has  more  read  characters  than  quality  values.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  E250122364L1C036R00404579572/1  has  more  read  characters  than  quality  values.
 terminate  called  after  throwing  an  instance  of  'int'
 (ERR):  hisat2-align  died  with  signal  6  (ABRT)  
@@ -513,7 +708,25 @@ Warning:  skipping  mate  #2  of  read  'SRR549355.100996051/1'  because  length
 Warning:  skipping  mate  #2  of  read  'SRR549355.100996051/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR549355.103763407/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR549355.103763407/1'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate  #2  of  read  'SRR549355.103933084/1'  because  length  (1)  &lt;=  #  seed  mismatches  </span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR549355.103933084/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.103933084/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.103941885/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.103941885/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.104058957/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.104058957/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.104070116/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.104070116/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.104085690/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.104085690/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.104153333/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.104153333/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.104211909/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.104211909/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.105253161/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.105253161/2'  because  it  was  &lt;  2  characters  long
+Error,  fewer  reads  in  file  specified  with  -2  than  in  file  specified  with  -1
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)</span></details></td></tr>
             <tr><td>3</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR044234.1631  61MA6AAXX100506:1:1:1128:5626/2'  because  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR044234.1631  61MA6AAXX100506:1:1:1128:5626/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR044234.1631  61MA6AAXX100506:1:1:1128:5626/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR044234.1974  61MA6AAXX100506:1:1:1155:15081/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -521,7 +734,29 @@ Warning:  skipping  mate  #2  of  read  'SRR044234.1974  61MA6AAXX100506:1:1:115
 Warning:  skipping  mate  #2  of  read  'SRR044234.2047  61MA6AAXX100506:1:1:1161:1411/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR044234.2047  61MA6AAXX100506:1:1:1161:1411/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR044234.2235  61MA6AAXX100506:1:1:1174:19960/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warning:  skipping  mate  #2  of </span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR044234.2235  61MA6AAXX100506:1:1:1174:19960/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.2380  61MA6AAXX100506:1:1:1184:16106/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.2380  61MA6AAXX100506:1:1:1184:16106/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.2458  61MA6AAXX100506:1:1:1190:8519/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.2458  61MA6AAXX100506:1:1:1190:8519/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.2521  61MA6AAXX100506:1:1:1195:9466/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.2521  61MA6AAXX100506:1:1:1195:9466/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.3767  61MA6AAXX100506:1:1:1291:12348/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.3767  61MA6AAXX100506:1:1:1291:12348/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.3967  61MA6AAXX100506:1:1:1305:16563/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.3967  61MA6AAXX100506:1:1:1305:16563/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.4406  61MA6AAXX100506:1:1:1340:6144/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.4406  61MA6AAXX100506:1:1:1340:6144/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.5469  61MA6AAXX100506:1:1:1414:18769/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.5469  61MA6AAXX100506:1:1:1414:18769/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.6024  61MA6AAXX100506:1:1:1454:4008/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.6024  61MA6AAXX100506:1:1:1454:4008/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.6746  61MA6AAXX100506:1:1:1505:2408/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.6746  61MA6AAXX100506:1:1:1505:2408/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.7416  61MA6AAXX100506:1:1:1552:15678/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.7416  61MA6AAXX100506:1:1:1552:15678/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.7629  61MA6AAXX100506:1:1:1566:7132/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:</span></details></td></tr>
             <tr><td>3</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR044234.4406  61MA6AAXX100506:1:1:1340:6144/2'  because  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR044234.4406  61MA6AAXX100506:1:1:1340:6144/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR044234.4406  61MA6AAXX100506:1:1:1340:6144/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR044234.15460  61MA6AAXX100506:1:1:2087:4278/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -529,7 +764,28 @@ Warning:  skipping  mate  #1  of  read  'SRR044234.15460  61MA6AAXX100506:1:1:20
 Warning:  skipping  mate  #1  of  read  'SRR044234.26384  61MA6AAXX100506:1:1:2786:2010/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR044234.26384  61MA6AAXX100506:1:1:2786:2010/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR044234.35135  61MA6AAXX100506:1:1:3336:19703/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warning:  skipping  mate  #1  </span></details></td></tr>
+Warning:  skipping  mate  #1  of  read  'SRR044234.35135  61MA6AAXX100506:1:1:3336:19703/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR044234.37456  61MA6AAXX100506:1:1:3486:5710/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR044234.37456  61MA6AAXX100506:1:1:3486:5710/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR044234.38047  61MA6AAXX100506:1:1:3523:13918/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR044234.38047  61MA6AAXX100506:1:1:3523:13918/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR044234.41643  61MA6AAXX100506:1:1:3750:4506/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR044234.41643  61MA6AAXX100506:1:1:3750:4506/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR044234.47002  61MA6AAXX100506:1:1:4091:2950/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR044234.47002  61MA6AAXX100506:1:1:4091:2950/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR044234.62078  61MA6AAXX100506:1:1:5036:18799/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR044234.62078  61MA6AAXX100506:1:1:5036:18799/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR044234.83039  61MA6AAXX100506:1:1:6364:9107/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR044234.83039  61MA6AAXX100506:1:1:6364:9107/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR044234.103084  61MA6AAXX100506:1:1:7634:15321/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR044234.103084  61MA6AAXX100506:1:1:7634:15321/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR044234.111197  61MA6AAXX100506:1:1:8148:17489/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR044234.111197  61MA6AAXX100506:1:1:8148:17489/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR044234.128221  61MA6AAXX100506:1:1:9225:17286/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR044234.128221  61MA6AAXX100506:1:1:9225:17286/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR044234.154219  61MA6AAXX100506:1:1:10883:14154/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR044234.154219  61MA6AAXX100506:1:1:10883:14154/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR044234.155946  61MA6AAXX100506:1:1:10994:17814/2'  because  length  (1</span></details></td></tr>
             <tr><td>3</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR549358.41465780/1'  because  length  (1)  &lt;=  #  seed  m</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR549358.41465780/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR549358.41465780/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR549358.45998613/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -539,7 +795,8 @@ Warning:  skipping  mate  #2  of  read  'SRR549357.104417617/2'  because  it  wa
 Warning:  skipping  mate  #1  of  read  'SRR549358.96789947/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR549358.96789947/1'  because  it  was  &lt;  2  characters  long
 Error,  fewer  reads  in  file  specified  with  -1  than  in  file  specified  with  -2
-terminate  called  after  thr</span></details></td></tr>
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)</span></details></td></tr>
             <tr><td>3</td><td><span class="error-msg">89435963  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">89435963  reads;  of  these:
     89435963  (100.00%)  were  unpaired;  of  these:
         6854649  (7.66%)  aligned  0  times
@@ -664,7 +921,25 @@ Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1101:8675:14920_A
 Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1101:8675:14920_AACTAATGA  3:N:0:AAGGACAC+CCACAACA'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1101:26096:31970_CACTATCAA  3:N:0:AAGGACAC+CCACAACA'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1101:26096:31970_CACTATCAA  3:N:0:AAGGACAC+CCACAACA'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1102:29333:11741_CCTCACCGT  3:N:0:AAGGACAC+CCACAACA'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1102:29333:11741_CCTCACCGT  3:N:0:AAGGACAC+CCACAACA'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1102:26096:19382_AAAACGGCA  3:N:0:AAGGACAC+CCACAACA'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1102:26096:19382_AAAACGGCA  3:N:0:AAGGACAC+CCACAACA'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1102:32949:19382_CCACAATAC  3:N:0:AAGGACAC+CCACAACA'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1102:32949:19382_CCACAATAC  3:N:0:AAGGACAC+CCACAACA'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1102:27923:21887_CATCTCACA  3:N:0:AAGGACAC+CCACAACA'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1102:27923:21887_CATCTCACA  3:N:0:AAGGACAC+CCACAACA'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1102:23104:25473_AAACAATAC  3:N:0:AAGGACAC+CCACAACA'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1102:23104:25473_AAACAATAC  3:N:0:AAGGACAC+CCACAACA'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1102:19253:26475_ACCTGCCGT  3:N:0:AAGGACAC+CCACAACA'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1102:19253:26475_ACCTGCCGT  3:N:0:AAGGACAC+CCACAACA'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1103:32524:20400_AGATAGGAG  3:N:0:AAGGACAC+CCACAACA'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1103:32524:20400_AGATAGGAG  3:N:0:AAGGACAC+CCACAACA'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1103:30147:24267_AACCGACGG  3:N:0:AAGGACAC+CCACAACA'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1103:30147:24267_AACCGACGG  3:N:0:AAGGACAC+CCACAACA'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1104:32154:17691_CCGTGCATT  3:N:0:AAGGACAC+CCACAACA'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1104:32154:17691_CCGTGCATT  3:N:0:AAGGACAC+CCACAACA'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'A00654:68:HY5NTDSX3:2:1104:18322:18756_ATACATGAA </span></details></td></tr>
             <tr><td>3</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR549357.104417617/2'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR549357.104417617/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR549357.104417617/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR549357.12411456/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -674,7 +949,20 @@ Warning:  skipping  mate  #1  of  read  'SRR549357.19286628/2'  because  it  was
 Warning:  skipping  mate  #2  of  read  'SRR549357.26002835/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR549357.26002835/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR549357.53969638/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-War</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR549357.53969638/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.54702043/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.54702043/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.58396030/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.58396030/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.6096487/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.6096487/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549357.65357119/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549357.65357119/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549357.85768994/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549357.85768994/2'  because  it  was  &lt;  2  characters  long
+Error,  fewer  reads  in  file  specified  with  -2  than  in  file  specified  with  -1
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)</span></details></td></tr>
             <tr><td>3</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR549355.100940713/1'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR549355.100940713/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR549355.100940713/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR549355.100955709/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -683,7 +971,35 @@ Warning:  skipping  mate  #2  of  read  'SRR549355.100996051/1'  because  length
 Warning:  skipping  mate  #2  of  read  'SRR549355.100996051/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR549355.103763407/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR549355.103763407/1'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate  #2  of  read  'SRR549355.103933084/1'  because  length  (1)  &lt;=  #  seed  mismatches  </span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR549355.103933084/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.103933084/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.103941885/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.103941885/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.104058957/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.104058957/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.104070116/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.104070116/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.104085690/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.104085690/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.104153333/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.104153333/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.107001737/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.107001737/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.107400038/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.107400038/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.110436523/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.110436523/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.110438534/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.110438534/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.110483944/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.110483944/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.110584900/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.110584900/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.110587688/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.110587688/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.110620864/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.110620864/1'  because  it  was  &lt;  2  characters  long
+Warn</span></details></td></tr>
             <tr><td>2</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR044234.6423  61MA6AAXX100506:1:1:1484:5850/2'  because  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR044234.6423  61MA6AAXX100506:1:1:1484:5850/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR044234.6423  61MA6AAXX100506:1:1:1484:5850/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR044234.8642  61MA6AAXX100506:1:1:1635:15352/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -691,7 +1007,28 @@ Warning:  skipping  mate  #2  of  read  'SRR044234.8642  61MA6AAXX100506:1:1:163
 Warning:  skipping  mate  #2  of  read  'SRR044234.9524  61MA6AAXX100506:1:1:1695:20046/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR044234.9524  61MA6AAXX100506:1:1:1695:20046/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR044234.10902  61MA6AAXX100506:1:1:1786:13202/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warning:  skipping  mate  #2  </span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR044234.10902  61MA6AAXX100506:1:1:1786:13202/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.11810  61MA6AAXX100506:1:1:1847:17929/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.11810  61MA6AAXX100506:1:1:1847:17929/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.12244  61MA6AAXX100506:1:1:1876:6141/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.12244  61MA6AAXX100506:1:1:1876:6141/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.13255  61MA6AAXX100506:1:1:1943:11792/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.13255  61MA6AAXX100506:1:1:1943:11792/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.13533  61MA6AAXX100506:1:1:1959:19549/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.13533  61MA6AAXX100506:1:1:1959:19549/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.13581  61MA6AAXX100506:1:1:1963:11560/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.13581  61MA6AAXX100506:1:1:1963:11560/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.15309  61MA6AAXX100506:1:1:2077:4331/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.15309  61MA6AAXX100506:1:1:2077:4331/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.17092  61MA6AAXX100506:1:1:2192:18623/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.17092  61MA6AAXX100506:1:1:2192:18623/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.17760  61MA6AAXX100506:1:1:2235:16418/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.17760  61MA6AAXX100506:1:1:2235:16418/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.18880  61MA6AAXX100506:1:1:2308:3473/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.18880  61MA6AAXX100506:1:1:2308:3473/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.19378  61MA6AAXX100506:1:1:2338:6266/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.19378  61MA6AAXX100506:1:1:2338:6266/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.19855  61MA6AAXX100506:1:1:2368:8693/2'  because  length  (1)  &lt;=  #  see</span></details></td></tr>
             <tr><td>2</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR788841.5562/2'  because  length  (1)  &lt;=  #  seed  misma</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR788841.5562/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR788841.5562/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR788841.45210/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -701,7 +1038,21 @@ Warning:  skipping  mate  #1  of  read  'SRR788841.683341/2'  because  it  was  
 Warning:  skipping  mate  #1  of  read  'SRR788841.1088200/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR788841.1088200/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR788841.1237160/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warning:  skipping  mate  </span></details></td></tr>
+Warning:  skipping  mate  #1  of  read  'SRR788841.1237160/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR788841.1302978/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR788841.1302978/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR788841.1606465/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR788841.1606465/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR788841.1651388/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR788841.1651388/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR788841.1990424/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR788841.1990424/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR788841.2724456/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR788841.2724456/2'  because  it  was  &lt;  2  characters  long
+Error,  fewer  reads  in  file  specified  with  -2  than  in  file  specified  with  -1
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)
+[bam_sort_core]  merging  from  1  files  and  1  in-memory  blocks...</span></details></td></tr>
             <tr><td>2</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR788841.860920/1'  because  length  (1)  &lt;=  #  seed  mis</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR788841.860920/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR788841.860920/1'  because  it  was  &lt;  2  characters  long
 Error,  fewer  reads  in  file  specified  with  -2  than  in  file  specified  with  -1
@@ -736,7 +1087,7 @@ terminate  called  after  throwing  an  instance  of  'int'
 91.80%  overall  alignment  rate
 [bam_sort_core]  merging  from  28  files  and  1  in-memory  blocks...
 [E::hts_open_format]  Failed  to  open  file  "/jetstream2/scratch/main/jobs/72859909/working/"  :  Is  a  directory
-samtools  view:  failed  to  open  "/jetstr</span></details></td></tr>
+samtools  view:  failed  to  open  "/jetstream2/scratch/main/jobs/72859909/working/"  for  writing:  Is  a  directory</span></details></td></tr>
             <tr><td>2</td><td><span class="error-msg">Error:  Read  IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII  has  more  read  characters  than  quality  values.
 Warning:  skipping  mate  #2  of  read  'GCTTGATCTCCTATTC'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'GCTTGATCTCCTATTC'  because  it  was  &lt;  2  characters  long
@@ -777,7 +1128,35 @@ Warning:  skipping  mate  #2  of  read  'SRR549356.102745751/1'  because  length
 Warning:  skipping  mate  #2  of  read  'SRR549356.102745751/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR549356.102786876/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR549356.102786876/1'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate  #1  of  read  'SRR549356.102916477/1'  because  length  (1)  &lt;=  #  seed  mismatches  </span></details></td></tr>
+Warning:  skipping  mate  #1  of  read  'SRR549356.102916477/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549356.102916477/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.105318172/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.105318172/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549356.105502269/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549356.105502269/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549356.105522712/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549356.105522712/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.105523504/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.105523504/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.105599996/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.105599996/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549356.108357162/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549356.108357162/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549356.111226413/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549356.111226413/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549356.111244657/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549356.111244657/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.111306094/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.111306094/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549356.111326653/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549356.111326653/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.111361808/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.111361808/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.111450520/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.111450520/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.11399321/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.11399321/1'  because  it  was  &lt;  2  characters  long
+Warnin</span></details></td></tr>
             <tr><td>2</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR549356.101230775/2'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR549356.101230775/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR549356.101230775/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR549356.114127963/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -786,7 +1165,29 @@ Warning:  skipping  mate  #2  of  read  'SRR549356.118339166/2'  because  length
 Warning:  skipping  mate  #2  of  read  'SRR549356.118339166/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR549356.17158033/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR549356.17158033/2'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate  #2  of  read  'SRR549356.25119820/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR549356.25119820/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.25119820/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549356.34884461/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549356.34884461/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549356.40634805/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549356.40634805/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549356.53293808/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549356.53293808/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.5410122/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.5410122/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.73098034/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.73098034/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.80786522/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.80786522/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549356.88726568/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549356.88726568/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549356.91046284/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549356.91046284/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549356.96887991/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549356.96887991/2'  because  it  was  &lt;  2  characters  long
+Error,  fewer  reads  in  file  specified  with  -2  than  in  file  specified  with  -1
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)</span></details></td></tr>
             <tr><td>2</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR549355.104211909/2'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR549355.104211909/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR549355.104211909/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR549355.105253161/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -795,7 +1196,33 @@ Warning:  skipping  mate  #1  of  read  'SRR549355.11149564/2'  because  length 
 Warning:  skipping  mate  #1  of  read  'SRR549355.11149564/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR549355.113558125/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR549355.113558125/2'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate  #1  of  read  'SRR549355.129894338/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0</span></details></td></tr>
+Warning:  skipping  mate  #1  of  read  'SRR549355.129894338/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.129894338/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.130101771/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.130101771/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.133130984/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.133130984/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.15138310/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.15138310/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.15649247/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.15649247/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.16750383/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.16750383/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.18476653/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.18476653/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.49503208/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.49503208/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.61281561/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.61281561/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.65901323/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.65901323/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR549355.96507356/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR549355.96507356/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR549355.99776919/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR549355.99776919/2'  because  it  was  &lt;  2  characters  long
+Error,  fewer  reads  in  file  specified  with  -2  than  in  file  specified  with  -1
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">/jetstream2/scratch/main/jobs/72198858/tool_script.sh:  line  1:  html:  No  such  file  or  directo</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">/jetstream2/scratch/main/jobs/72198858/tool_script.sh:  line  1:  html:  No  such  file  or  directory
 /jetstream2/scratch/main/jobs/72198858/tool_script.sh:  line  2:  syntax  error  near  unexpected  token  `&lt;'
 /jetstream2/scratch/main/jobs/72198858/tool_script.sh:  line  2:  `&lt;head&gt;&lt;title&gt;502  Bad  Gateway&lt;/title&gt;&lt;/head&gt;'</span></details></td></tr>
@@ -812,7 +1239,28 @@ Warning:  skipping  mate  #2  of  read  'SRR044234.10846  61MA6AAXX100506:1:1:17
 Warning:  skipping  mate  #2  of  read  'SRR044234.18846  61MA6AAXX100506:1:1:2306:19596/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR044234.18846  61MA6AAXX100506:1:1:2306:19596/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR044234.23027  61MA6AAXX100506:1:1:2573:17475/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warning:  skipping  mate  </span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR044234.23027  61MA6AAXX100506:1:1:2573:17475/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.25816  61MA6AAXX100506:1:1:2749:20289/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.25816  61MA6AAXX100506:1:1:2749:20289/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.27417  61MA6AAXX100506:1:1:2850:4427/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.27417  61MA6AAXX100506:1:1:2850:4427/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.49226  61MA6AAXX100506:1:1:4232:3546/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.49226  61MA6AAXX100506:1:1:4232:3546/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.56791  61MA6AAXX100506:1:1:4710:20532/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.56791  61MA6AAXX100506:1:1:4710:20532/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.62773  61MA6AAXX100506:1:1:5084:1119/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.62773  61MA6AAXX100506:1:1:5084:1119/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.85038  61MA6AAXX100506:1:1:6490:1541/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.85038  61MA6AAXX100506:1:1:6490:1541/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.168547  61MA6AAXX100506:1:1:11797:4001/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.168547  61MA6AAXX100506:1:1:11797:4001/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.191092  61MA6AAXX100506:1:1:13236:2472/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.191092  61MA6AAXX100506:1:1:13236:2472/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.193428  61MA6AAXX100506:1:1:13385:7573/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.193428  61MA6AAXX100506:1:1:13385:7573/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.198183  61MA6AAXX100506:1:1:13688:1766/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR044234.198183  61MA6AAXX100506:1:1:13688:1766/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR044234.202328  61MA6AAXX100506:1:1:13952:9336/2'  because  length  (</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">37574288  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">37574288  reads;  of  these:
     37574288  (100.00%)  were  unpaired;  of  these:
         3088043  (8.22%)  aligned  0  times
@@ -892,7 +1340,30 @@ Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1202:2115
 Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1232:4666/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1232:4666/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1347:17220/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:13</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1347:17220/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1407:16326/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1407:16326/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1456:7532/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1456:7532/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1521:10155/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1521:10155/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1600:19102/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1600:19102/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1604:10060/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1604:10060/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1676:10425/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1676:10425/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1694:7013/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1702:16737/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1702:16737/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1696:17186/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1696:17186/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1720:4570/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1720:4570/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1694:7013/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1737:12223/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR125761.HWI-EAS216_0036:1:1:1737:12223/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR1257</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">20874107  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">20874107  reads;  of  these:
     20874107  (100.00%)  were  paired;  of  these:
         2955564  (14.16%)  aligned  concordantly  0  times
@@ -915,7 +1386,26 @@ Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LVLT4:7:1101:9263:12867 
 Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LVLT4:7:1101:9263:12867  2:N:0:CATCCTCCTG+TGTGGTTGAC'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LVLT4:7:1101:3203:25436  2:N:0:CATCCTACTG+TGTGGTTGAC'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LVLT4:7:1101:3203:25436  2:N:0:CATCCTACTG+TGTGGTTGAC'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LV</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LVLT4:7:1102:21964:8664  2:N:0:CATCCTACTG+TGTGGTTGAC'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LVLT4:7:1102:21964:8664  2:N:0:CATCCTACTG+TGTGGTTGAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LVLT4:7:1102:13065:11242  2:N:0:CATCCTACTG+TGGGGTTGAC'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LVLT4:7:1102:13065:11242  2:N:0:CATCCTACTG+TGGGGTTGAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00935:96:22Y7LVLT4:7:1102:25613:11564  1:N:0:CATCCTCCTG+TGTGGTTGAC'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00935:96:22Y7LVLT4:7:1102:25613:11564  1:N:0:CATCCTCCTG+TGTGGTTGAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00935:96:22Y7LVLT4:7:1103:19667:10821  1:N:0:CATCCTATTG+TGTGGTTGAC'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00935:96:22Y7LVLT4:7:1103:19667:10821  1:N:0:CATCCTATTG+TGTGGTTGAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00935:96:22Y7LVLT4:7:1103:35992:12979  1:N:0:CCTCCTACTG+TGTGGTTGAC'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00935:96:22Y7LVLT4:7:1103:35992:12979  1:N:0:CCTCCTACTG+TGTGGTTGAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00935:96:22Y7LVLT4:7:1104:15257:1251  1:N:0:CATCCTACTG+TGTGGTTGAC'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00935:96:22Y7LVLT4:7:1104:15257:1251  1:N:0:CATCCTACTG+TGTGGTTGAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LVLT4:7:1105:21374:1840  2:N:0:CATCCTACTG+TGTGGTTGAC'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LVLT4:7:1105:21374:1840  2:N:0:CATCCTACTG+TGTGGTTGAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00935:96:22Y7LVLT4:7:1104:35871:20392  1:N:0:CATCCTACTG+TGTGGTTGAC'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00935:96:22Y7LVLT4:7:1104:35871:20392  1:N:0:CATCCTACTG+TGTGGTTGAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LVLT4:7:1105:38306:23573  2:N:0:CATCCTACTG+TGTGGTTGAC'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'LH00935:96:22Y7LVLT4:7:1105:38306:23573  2:N:0:CATCCTACTG+TGTGGTTGAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00935:96:22Y7LVLT4:7:1104:47642:24385  1:N:0:CATCCTACTG+TATGGTTGAC'  because  length  (0)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00935:96:22Y7L</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Error:  Read  E250090592L1C004R02802464815/2  has  more  read  characters  than  quality  values.</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  E250090592L1C004R02802464815/2  has  more  read  characters  than  quality  values.
 terminate  called  after  throwing  an  instance  of  'int'
 (ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)
@@ -948,7 +1438,48 @@ Usage:
     &lt;sam&gt;            File  for  SAM  output  (default:  stdout)
 
     &lt;m1&gt;,  &lt;m2&gt;,  &lt;r&gt;  can  be  comma-separated  lists  (no  whitespace)  and  can  be
-    specified  many  times.    E.g.  '-U  file1.fq,file2.fq  -</span></details></td></tr>
+    specified  many  times.    E.g.  '-U  file1.fq,file2.fq  -U  file3.fq'.
+
+Options  (defaults  in  parentheses):
+
+  Input:
+    -q                                  query  input  files  are  FASTQ  .fq/.fastq  (default)
+    --qseq                          query  input  files  are  in  Illumina's  qseq  format
+    -f                                  query  input  files  are  (multi-)FASTA  .fa/.mfa
+    -r                                  query  input  files  are  raw  one-sequence-per-line
+    -c                                  &lt;m1&gt;,  &lt;m2&gt;,  &lt;r&gt;  are  sequences  themselves,  not  files
+    -s/--skip  &lt;int&gt;        skip  the  first  &lt;int&gt;  reads/pairs  in  the  input  (none)
+    -u/--upto  &lt;int&gt;        stop  after  first  &lt;int&gt;  reads/pairs  (no  limit)
+    -5/--trim5  &lt;int&gt;      trim  &lt;int&gt;  bases  from  5'/left  end  of  reads  (0)
+    -3/--trim3  &lt;int&gt;      trim  &lt;int&gt;  bases  from  3'/right  end  of  reads  (0)
+    --phred33                    qualities  are  Phred+33  (default)
+    --phred64                    qualities  are  Phred+64
+    --int-quals                qualities  encoded  as  space-delimited  integers
+
+  Presets:                                  Same  as:
+      --fast                                  --no-repeat-index
+      --sensitive                        --bowtie2-dp  1  -k  30  --score-min  L,0,-0.5
+      --very-sensitive              --bowtie2-dp  2  -k  50  --score-min  L,0,-1
+
+  Alignment:
+    --bowtie2-dp  &lt;int&gt;  use  Bowtie2's  dynamic  programming  alignment  algorithm  (0)  -  0:  no  dynamic  programming,  1:  conditional  dynamic  programming,  and  2:  unconditional  dynamic  programming  (slowest)
+    --n-ceil  &lt;func&gt;        func  for  max  #  non-A/C/G/Ts  permitted  in  aln  (L,0,0.15)
+    --ignore-quals          treat  all  quality  values  as  30  on  Phred  scale  (off)
+    --nofw                          do  not  align  forward  (original)  version  of  read  (off)
+    --norc                          do  not  align  reverse-complement  version  of  read  (off)
+    --no-repeat-index    do  not  use  repeat  index
+
+  Spliced  Alignment:
+    --pen-cansplice  &lt;int&gt;                            penalty  for  a  canonical  splice  site  (0)
+    --pen-noncansplice  &lt;int&gt;                      penalty  for  a  non-canonical  splice  site  (12)
+    --pen-canintronlen  &lt;func&gt;                    penalty  for  long  introns  (G,-8,1)  with  canonical  splice  sites
+    --pen-noncanintronlen  &lt;func&gt;              penalty  for  long  introns  (G,-8,1)  with  noncanonical  splice  sites
+    --min-intronlen  &lt;int&gt;                            minimum  intron  length  (20)
+    --max-intronlen  &lt;int&gt;                            maximum  intron  length  (500000)
+    --known-splicesite-infile  &lt;path&gt;      provide  a  list  of  known  splice  sites
+    --novel-splicesite-outfile  &lt;path&gt;    report  a  list  of  splice  sites
+    --novel-splicesite-infile  &lt;path&gt;      provide  a  list  of  novel  splice  sites
+    --no-temp-splicesite                              disable  the  use  of  splice  sites</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Argument  "A00783:781:H5WWVDSX2:1:2426:223"  isn't  numeric  in  bitwise  and  (&)  at  /usr/local/b</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Argument  "A00783:781:H5WWVDSX2:1:2426:223"  isn't  numeric  in  bitwise  and  (&)  at  /usr/local/bin/hisat2  line  593,  &lt;HT&gt;  line  137459074.
 Use  of  uninitialized  value  $l  in  scalar  chomp  at  /usr/local/bin/hisat2  line  607,  &lt;HT&gt;  line  137459074.
 Use  of  uninitialized  value  $l  in  substitution  (s///)  at  /usr/local/bin/hisat2  line  608,  &lt;HT&gt;  line  137459074.
@@ -977,7 +1508,28 @@ Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:
 Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:19910:26823/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:19910:26823/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:11563:3677/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warnin</span></details></td></tr>
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:11563:3677/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:13848:61418/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:13848:61418/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1106:13183:31582/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1106:13183:31582/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1106:19202:58488/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1106:19202:58488/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:7535:15539/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:7535:15539/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1106:5021:90497/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1106:5021:90497/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1108:7629:18379/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1108:7629:18379/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:16719:16878/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:16719:16878/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1108:18233:50323/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1108:18233:50323/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:13511:19306/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:13511:19306/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:5155:19963/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:5155:19963/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:5145:2158/2'  becaus</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:5145:2158/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:5145:2158/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:3434:2326/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -985,7 +1537,28 @@ Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:
 Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1105:5420:62549/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1105:5420:62549/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:2716:2539/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warning:  ski</span></details></td></tr>
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:2716:2539/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:13746:2690/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1107:13746:2690/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1102:6868:33775/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1102:6868:33775/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1103:4046:5288/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1103:4046:5288/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1103:14176:78948/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1103:14176:78948/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1101:1331:12227/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1101:1331:12227/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1101:3262:62620/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1101:3262:62620/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1101:2917:83820/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1101:2917:83820/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1101:17027:91633/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1101:17027:91633/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1112:17190:17999/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1112:17190:17999/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1112:18882:26896/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879741.SN642:759:HMC7YBCXX:1:1112:18882:26896/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879741</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:3498:2597/1'  becaus</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:3498:2597/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:3498:2597/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:8989:3847/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -993,7 +1566,28 @@ Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:
 Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:8612:4285/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:8612:4285/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:15428:4523/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warning:  skip</span></details></td></tr>
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:15428:4523/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:3721:47611/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:3721:47611/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:12676:75014/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:12676:75014/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1105:7628:14360/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1105:7628:14360/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:21210:10464/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:21210:10464/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:7553:13903/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:7553:13903/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:15468:15877/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:15468:15877/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1106:4358:63495/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1106:4358:63495/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:6494:17348/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:6494:17348/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1106:3499:97388/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1106:3499:97388/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1108:11518:6242/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1108:11518:6242/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879742</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:20445:49341/2'  beca</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:20445:49341/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:20445:49341/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:8406:66644/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -1001,7 +1595,28 @@ Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:
 Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:3036:100579/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:3036:100579/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1105:21044:85562/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-War</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1105:21044:85562/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:9407:2681/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:9407:2681/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1102:3920:39754/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1102:3920:39754/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1104:3713:52693/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1104:3713:52693/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:11187:2949/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:11187:2949/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:12204:2881/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:12204:2881/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1104:6021:91401/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1104:6021:91401/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1103:6370:34719/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1103:6370:34719/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1101:15366:98531/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:11828:3125/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:11828:3125/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1101:15366:98531/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:15712:3013/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879742.SN642:759:HMC7YBCXX:1:1107:15712:3013/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:10446:3992/1'  becau</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:10446:3992/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:10446:3992/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:17714:18715/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -1009,7 +1624,28 @@ Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:
 Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:10047:19324/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:10047:19324/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:5963:27245/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warn</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:5963:27245/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:18896:47575/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:18896:47575/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:8911:58284/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:8911:58284/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:3122:5368/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:3122:5368/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:10590:70527/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:10590:70527/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:18637:71975/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:18637:71975/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:20339:74788/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:20339:74788/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:20210:5515/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:20210:5515/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:5062:78416/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:5062:78416/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1105:14596:34119/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1105:14596:34119/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:5971:9272/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:5971:9272/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'S</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:9731:2238/2'  becaus</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:9731:2238/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:9843:2225/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:9843:2225/2'  because  it  was  &lt;  2  characters  long
@@ -1017,7 +1653,28 @@ Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:
 Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:11079:2138/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:11079:2138/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:5641:43985/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warning:  sk</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:5641:43985/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:12527:2225/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:12527:2225/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:17463:2344/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:17463:2344/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1106:4631:67360/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1106:4631:67360/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:12874:2549/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:12874:2549/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:14040:2637/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:14040:2637/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:18277:2510/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:18277:2510/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:19351:2731/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:19351:2731/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:4692:2842/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:4692:2842/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:13426:2859/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:13426:2859/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:14461:2920/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642:759:HMC7YBCXX:1:1107:14461:2920/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879743.SN642</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:18990:79059/1'  beca</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:18990:79059/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:18990:79059/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:12227:9681/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -1025,7 +1682,28 @@ Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:
 Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1108:20496:53419/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1108:20496:53419/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1108:19426:64987/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-War</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1108:19426:64987/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1105:12405:14439/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1105:12405:14439/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1105:9714:33513/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1105:9714:33513/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1104:2278:11259/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1104:2278:11259/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1104:9902:38655/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1104:9902:38655/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1104:9142:66971/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1104:9142:66971/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1101:5430:12924/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1101:5430:12924/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1101:21139:50029/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1101:21139:50029/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:20740:32094/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:20740:32094/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:20769:34290/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:20769:34290/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1106:11435:74737/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1106:11435:74737/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  re</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:7377:56132/2'  becau</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:7377:56132/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:7377:56132/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:20220:2181/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -1033,7 +1711,28 @@ Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:
 Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1101:15755:6920/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1101:15755:6920/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1111:19328:34293/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warning</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1111:19328:34293/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1113:18216:64668/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1113:19754:71201/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1113:18216:64668/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1113:19754:71201/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:10896:3420/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1112:13762:6925/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1112:13762:6925/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1112:14786:11015/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1112:14786:11015/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:10896:3420/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1114:16240:24977/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1114:16240:24977/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1114:9833:66603/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1114:9833:66603/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1114:19167:96241/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1114:19167:96241/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:14671:3689/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:14671:3689/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:12734:3773/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879744.SN642:758:HM3GCBCXX:1:1107:12734:3773/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  </span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:19935:29007/1'  beca</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:19935:29007/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:19935:29007/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:17727:26719/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -1041,7 +1740,28 @@ Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:
 Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:8918:26897/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:8918:26897/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1111:1091:42684/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warn</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1111:1091:42684/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1111:2344:88840/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1111:2344:88840/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1115:1733:24095/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1115:1733:24095/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1115:12954:82686/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1115:12954:82686/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1115:15696:90931/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1115:15696:90931/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1110:4290:34434/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1110:4290:34434/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:2735:45379/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:2735:45379/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1113:14168:4350/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1113:14168:4350/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1113:11906:41537/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1113:11906:41537/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:8990:51262/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:8990:51262/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1109:7570:9093/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1109:7570:9093/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:6360:78849/2'  becau</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:6360:78849/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:6360:78849/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1105:19924:10800/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -1049,7 +1769,28 @@ Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1105:
 Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1115:8525:69463/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1115:8525:69463/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:16049:2930/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warnin</span></details></td></tr>
+Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:16049:2930/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:5742:3363/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:5742:3363/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1116:4188:97517/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1116:4188:97517/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1204:18105:24292/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1204:18105:24292/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1205:11463:33200/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1205:11463:33200/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1207:6081:18387/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1207:6081:18387/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1208:2559:30999/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1208:2559:30999/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1211:14797:25569/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1211:14797:25569/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1211:20488:99975/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1211:20488:99975/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1214:14949:5814/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1214:14949:5814/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:10582:4599/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR32879745.SN642:758:HM3GCBCXX:1:1107:10582:4599/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR9036345.114  114/2'  because  length  (1)  &lt;=  #  seed  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR9036345.114  114/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR9036345.114  114/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR9036345.487  487/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -1058,7 +1799,34 @@ Warning:  skipping  mate  #1  of  read  'SRR9036345.1069  1069/1'  because  leng
 Warning:  skipping  mate  #1  of  read  'SRR9036345.1069  1069/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR9036345.1537  1537/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR9036345.1537  1537/2'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate  #2  of  read  'SRR9036345.1898  1898/2'  because  length  (1)  &lt;=  #  seed  mi</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR9036345.1898  1898/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036345.1898  1898/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR9036345.4009  4009/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR9036345.4009  4009/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036345.3943  3943/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036345.3943  3943/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036345.4001  4001/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036345.4001  4001/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036345.4940  4940/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036345.4940  4940/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036345.6943  6943/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036345.6943  6943/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR9036345.8193  8193/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR9036345.8193  8193/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036345.9981  9981/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036345.9981  9981/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR9036345.12171  12171/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR9036345.12171  12171/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR9036345.13997  13997/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR9036345.13997  13997/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR9036345.14275  14275/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR9036345.14275  14275/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036345.14095  14095/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036345.14095  14095/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036345.16090  16090/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036345.16090  16090/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR9036345.17508  17508/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  </span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR9036379.85  85/2'  because  length  (1)  &lt;=  #  seed  mi</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR9036379.85  85/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR9036379.85  85/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR9036379.2316  2316/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -1067,7 +1835,33 @@ Warning:  skipping  mate  #2  of  read  'SRR9036379.3405  3405/2'  because  leng
 Warning:  skipping  mate  #2  of  read  'SRR9036379.3405  3405/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR9036379.5716  5716/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR9036379.5716  5716/2'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate  #2  of  read  'SRR9036379.9116  9116/2'  because  length  (1)  &lt;=  #  seed  mi</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR9036379.9116  9116/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.9116  9116/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.10363  10363/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.10363  10363/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.10455  10455/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.10455  10455/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.13274  13274/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.13274  13274/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.19591  19591/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.19591  19591/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.19954  19954/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.19954  19954/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.20291  20291/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.20291  20291/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.20565  20565/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.20565  20565/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.20666  20666/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.20666  20666/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.21776  21776/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.21776  21776/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.24515  24515/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.24515  24515/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.24905  24905/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.24905  24905/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.25489  25489/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR9036379.25489  25489/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR9036379.30607  30607/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">27956757  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">27956757  reads;  of  these:
     27956757  (100.00%)  were  paired;  of  these:
         6430981  (23.00%)  aligned  concordantly  0  times
@@ -1092,7 +1886,29 @@ Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:7827:11
 Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:13725:11674/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:13725:11674/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:12218:16436/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warning:  skipping  mate  #2  of  read  'HWI-ST908R:</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:12218:16436/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:15816:20725/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:15816:20725/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:14815:25055/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:14815:25055/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:3245:25752/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:3245:25752/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:3839:27998/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:3839:27998/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:14647:27844/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:14647:27844/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:1502:28812/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:1502:28812/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:12736:29341/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:12736:29341/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:5752:31794/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:5752:31794/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:10129:33869/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:10129:33869/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:12531:44574/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:12531:44574/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:19224:44601/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'HWI-ST908R:117:C19ATACXX:1:1101:19224:44601/2'  b</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  Invalid  file  format</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  Invalid  file  format
 Error:  reads  file  does  not  look  like  a  FASTQ  file
 terminate  called  after  throwing  an  instance  of  'int'
@@ -1266,7 +2082,16 @@ Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C002R05205491
 Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C004R0030185482_reverse/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C004R0030185482_reverse/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C005R0151013592_reverse/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warning:</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C005R0151013592_reverse/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C005R0151390874_reverse/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C005R0151390874_reverse/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C006R0271241642_reverse/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C006R0271241642_reverse/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C006R0521146708_reverse/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR22437342.V350045142_AL1C006R0521146708_reverse/2'  because  it  was  &lt;  2  characters  long
+Error,  fewer  reads  in  file  specified  with  -2  than  in  file  specified  with  -1
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C003R0571054237/2'  because  leng</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C003R0571054237/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C003R0571054237/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C003R0621294129/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
@@ -1274,7 +2099,14 @@ Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C003R06212941
 Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C004R0250485423/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C004R0250485423/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C005R0151286969/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
-Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_</span></details></td></tr>
+Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C005R0151286969/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C005R0151400529/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C005R0151400529/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C005R0361347415/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR22437345.V350045142_AL1C005R0361347415/2'  because  it  was  &lt;  2  characters  long
+Error,  fewer  reads  in  file  specified  with  -2  than  in  file  specified  with  -1
+terminate  called  after  throwing  an  instance  of  'int'
+(ERR):  hisat2-align  died  with  signal  6  (ABRT)  (core  dumped)</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Error:  Read  NB501830:463:HGTN7AFXY:2:21109:17982:16988  1:N:0:ACAGTG  has  more  quality  values  </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Error:  Read  NB501830:463:HGTN7AFXY:2:21109:17982:16988  1:N:0:ACAGTG  has  more  quality  values  than  read  characters.
 terminate  called  after  throwing  an  instance  of  'int'
 (ERR):  hisat2-align  died  with  signal  6  (ABRT)  
@@ -1337,35 +2169,139 @@ Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:26257:1320
 Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:26257:1320  1:N:0:CCACAACA+TGTGGTAC'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:21829:1336  1:N:0:CCACAACA+TGTGGTAC'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:21829:1336  1:N:0:CCACAACA+TGTGGTAC'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:37610:</span></details></td></tr>
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:37610:1384  1:N:0:CCACAACC+TGTGGTAC'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:37610:1384  1:N:0:CCACAACC+TGTGGTAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:29475:1416  1:N:0:CCACAACA+TGTGGTAC'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:29475:1416  1:N:0:CCACAACA+TGTGGTAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:37592:1769  1:N:0:CCACAACA+TGTGGTAC'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:37592:1769  1:N:0:CCACAACA+TGTGGTAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:2488:1785  1:N:0:CCACAACA+TGTGGTAC'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:2488:1785  1:N:0:CCACAACA+TGTGGTAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:3801:1881  1:N:0:CCACAACA+TGTGGTAC'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:3801:1881  1:N:0:CCACAACA+TGTGGTAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:19176:2057  1:N:0:CCACAACA+TGTGGTAC'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:19176:2057  1:N:0:CCACAACA+TGTGGTAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:44331:2105  1:N:0:CCACAACA+TGTGGTAC'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:44331:2105  1:N:0:CCACAACA+TGTGGTAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:19148:2393  1:N:0:CCACAACA+TGTGGTAC'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:19148:2393  1:N:0:CCACAACA+TGTGGTAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:50341:2425  1:N:0:CCACAACA+TGTGGTAC'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:50341:2425  1:N:0:CCACAACA+TGTGGTAC'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:50581:2457  1:N:0:CCACAACA+TGTGGTAC'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'LH00293:196:2372CHLT3:7:1101:50581:2457  1:N:0:CCACAACA+TGTGGTAC'  because  it  was  &lt;  2  characters  long
+</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:4409:2248/1'  bec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:4409:2248/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:4409:2248/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:12717:2399/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:12717:2399/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:8174:2927/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:8174:2927/2'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:8530:2860/1'  because  length  (1)  &lt;=  #  seed  mismatch</span></details></td></tr>
+Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:8530:2860/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:8530:2860/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:10722:2802/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:10722:2802/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:20982:2760/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:20982:2760/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:19932:3041/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:19932:3041/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:18604:3208/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:18604:3208/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:19878:3085/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:19878:3085/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:7453:3360/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:7453:3360/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:9989:3439/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:9989:3439/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:3750:3864/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:3750:3864/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:4796:3998/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:4796:3998/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:6393:3991/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:6393:3991/1'  because  it  was  &lt;  2  c</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:5262:2492/1'  bec</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:5262:2492/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:5262:2492/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:8180:2307/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:8180:2307/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:17121:2493/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:17121:2493/2'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:7624:2561/1'  because  length  (1)  &lt;=  #  seed  mismatch</span></details></td></tr>
+Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:7624:2561/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:7624:2561/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:17000:2515/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:17000:2515/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:19068:2801/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:19068:2801/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:12185:2991/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:12185:2991/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:10271:3210/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:10271:3210/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:11555:3043/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:11555:3043/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:5941:3042/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:5941:3042/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:3559:3312/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:3559:3312/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:15554:3626/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:15554:3626/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:18433:3324/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:18433:3324/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:19445:3792/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422919.HWI-D0101:255:C5LEGANXX:1:1101:19445:3792/1'  because  it  was  &lt;</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:16101:2583/1'  be</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:16101:2583/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:16101:2583/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:8710:2882/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:8710:2882/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:9017:2965/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:9017:2965/1'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:13097:2836/1'  because  length  (1)  &lt;=  #  seed  mismatc</span></details></td></tr>
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:13097:2836/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:13097:2836/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:13577:3195/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:13577:3195/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:3865:3450/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:3865:3450/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:14106:3731/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:14106:3731/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:15777:3253/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:15777:3253/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:8574:3957/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:8574:3957/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:9676:3918/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:9676:3918/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:10218:3714/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:10218:3714/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:17655:3890/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:17655:3890/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:6775:3851/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:6775:3851/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:8450:3757/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422928.HWI-D0101:255:C5LEGANXX:1:1101:8450:3757/1'  because  it  was  &lt;  2 </span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:19761:2236/1'  be</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:19761:2236/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:19761:2236/1'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:6890:2359/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:6890:2359/2'  because  it  was  &lt;  2  characters  long
 Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:15943:2319/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
 Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:15943:2319/1'  because  it  was  &lt;  2  characters  long
-Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:1865:2655/1'  because  length  (1)  &lt;=  #  seed  mismat</span></details></td></tr>
+Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:1865:2655/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:1865:2655/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:1941:3049/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:1941:3049/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:21214:3462/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:21214:3462/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:3305:3659/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:3305:3659/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:13795:3767/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:13795:3767/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:2063:4116/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:2063:4116/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:2368:4002/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:2368:4002/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:4696:4222/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:4696:4222/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:11938:4285/2'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #2  of  read  'SRR2422927.HWI-D0101:255:C5LEGANXX:1:1101:11938:4285/2'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:18001:4358/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:18001:4358/1'  because  it  was  &lt;  2  characters  long
+Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:5052:4581/1'  because  length  (1)  &lt;=  #  seed  mismatches  (0)
+Warning:  skipping  mate  #1  of  read  'SRR2422920.HWI-D0101:255:C5LEGANXX:1:1101:5052:4581/1'  because  it  was  &lt;  2  c</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">FATAL:      While  checking  container  encryption:  could  not  open  image  /scratch/xgalaxy/job_4</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">FATAL:      While  checking  container  encryption:  could  not  open  image  /scratch/xgalaxy/job_45448922/.cvmfsexec/dist/cvmfs/singularity.galaxyproject.org/all/mulled-v2-b570fc8a7b25c6a733660cda7e105007b53ac501:f7f35d8f4102a5de392cc02fbba2d8fb67efcd8d-0:  failed  to  retrieve  path  for  /scratch/xgalaxy/job_45448922/.cvmfsexec/dist/cvmfs/singularity.galaxyproject.org/all/mulled-v2-b570fc8a7b25c6a733660cda7e105007b53ac501:f7f35d8f4102a5de392cc02fbba2d8fb67efcd8d-0:  lstat  /scratch/xgalaxy/job_45448922/.cvmfsexec/dist/cvmfs/singularity.galaxyproject.org/all:  no  such  file  or  directory</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">40362307  reads;  of  these:</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">40362307  reads;  of  these:
     40362307  (100.00%)  were  paired;  of  these:

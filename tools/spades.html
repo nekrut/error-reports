@@ -91,7 +91,12 @@ Call  stack:
         support.sys_call(self.to_list(),  log)
     File  "/usr/local/share/spades/spades_pipeline/support.py",  line  311,  in  sys_call
         sys_error(cmd,  log,  proc.returncode)
-    File  "/</span></details></td></tr>
+    File  "/usr/local/share/spades/spades_pipeline/support.py",  line  92,  in  sys_error
+        error(err_msg,  log,  exit_code=exit_code)
+    File  "/usr/local/share/spades/spades_pipeline/support.py",  line  49,  in  error
+        log.info("\nIn  case  you  have  troubles  running  %s,  you  can  report  an  issue  on  our  GitHub  repository  github.com/ablab/spades"  %  binary_name)
+Message:  '\nIn  case  you  have  troubles  running  SPAdes,  you  can  report  an  issue  on  our  GitHub  repository  github.com/ablab/spades'
+Arguments:  ()</span></details></td></tr>
             <tr><td>3</td><td><span class="error-msg">ln:  reads1/.fastq.gz:  File  exists</span></td></tr>
             <tr><td>3</td><td><span class="error-msg">ln:  reads1/SLGFSK-N_231335_r1_chr5_12_17.fastq.gz.fastq.gz:  File  exists</span></td></tr>
             <tr><td>3</td><td><span class="error-msg">ln:  reads1/Cutadapt_on_dataset_3_and_4.fastq.gz:  File  exists</span></td></tr>

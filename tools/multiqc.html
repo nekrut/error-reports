@@ -74,7 +74,19 @@
 │  Please  attach  a  file  that  triggers  the  error.  The  last  file  found  was:              │
 │  multiqc_WDir/fastqc_0/data_0/file_1/fastqc_data.txt                                                    │
 │                                                                                                                                                            │
-│  Traceback  (most  recent  call  last):                                                         </span></details></td></tr>
+│  Traceback  (most  recent  call  last):                                                                                      │
+│      File  "/usr/local/lib/python3.13/site-packages/multiqc/core/exec_modules.py  │
+│          these_modules:  Union[BaseMultiqcModule,  List[BaseMultiqcModule]]  =  modul  │
+│                                                                                                                                                ~~~~~  │
+│      File  "/usr/local/lib/python3.13/site-packages/multiqc/modules/fastqc/fastq  │
+│          s_name  =  self.parse_fastqc_report(f["f"],  s_name=s_name,  f=f)                        │
+│      File  "/usr/local/lib/python3.13/site-packages/multiqc/modules/fastqc/fastq  │
+│          d["measure"]:  d["value"]  for  d  in  self.fastqc_data[s_name]["basic_statis  │
+│                                                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^  │
+│  KeyError:  'basic_statistics'                                                                                                  │
+│                                                                                                                                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+                      multiqc  |  No  analysis  results  found.  Cleaning  up…</span></details></td></tr>
             <tr><td>246</td><td><span class="error-msg">///  MultiQC  🔍  v1.24.1</span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">///  MultiQC  🔍  v1.24.1
 
           version_check  |  MultiQC  Version  v1.32  now  available!
@@ -96,7 +108,19 @@ ls:  cannot  access  './report_data/':  No  such  file  or  directory</span></de
 │  Please  attach  a  file  that  triggers  the  error.  The  last  file  found  was:              │
 │  multiqc_WDir/fastqc_0/data_0/file_14/fastqc_data.txt                                                  │
 │                                                                                                                                                            │
-│  Traceback  (most  recent  call  last):                                                             </span></details></td></tr>
+│  Traceback  (most  recent  call  last):                                                                                      │
+│      File  "/usr/local/lib/python3.13/site-packages/multiqc/core/exec_modules.py  │
+│          these_modules:  Union[BaseMultiqcModule,  List[BaseMultiqcModule]]  =  modul  │
+│                                                                                                                                                ~~~~~  │
+│      File  "/usr/local/lib/python3.13/site-packages/multiqc/modules/fastqc/fastq  │
+│          s_name  =  self.parse_fastqc_report(f["f"],  s_name=s_name,  f=f)                        │
+│      File  "/usr/local/lib/python3.13/site-packages/multiqc/modules/fastqc/fastq  │
+│          d["measure"]:  d["value"]  for  d  in  self.fastqc_data[s_name]["basic_statis  │
+│                                                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^  │
+│  KeyError:  'basic_statistics'                                                                                                  │
+│                                                                                                                                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+                      multiqc  |  No  analysis  results  found.  Cleaning  up…</span></details></td></tr>
             <tr><td>5</td><td><span class="error-msg">Module  'rseqc:  'Proper-paired  reads  map  to  different  chrom:'  not  found  in  the  file  'MCL</span></td></tr>
             <tr><td>5</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'FastQC  on  dataset  4_  RawData'</span></td></tr>
             <tr><td>5</td><td><span class="error-msg">Module  'snpeff:  'SnpEff_version'  not  found  in  the  file  'SnpEff  eff_  on  dataset  39'</span></td></tr>
@@ -117,7 +141,18 @@ ls:  cannot  access  './report_data/':  No  such  file  or  directory</span></de
 │  Please  attach  a  file  that  triggers  the  error.  The  last  file  found  was:              │
 │  multiqc_WDir/fastqc_0/data_0/file_1/fastqc_data.txt                                                    │
 │                                                                                                                                                            │
-│  Traceback  (most  recent  call  last):                                          </span></details></td></tr>
+│  Traceback  (most  recent  call  last):                                                                                      │
+│      File  "/usr/local/lib/python3.9/site-packages/multiqc/multiqc.py",  line  624  │
+│          output  =  mod()                                                                                                                      │
+│      File  "/usr/local/lib/python3.9/site-packages/multiqc/modules/fastqc/fastqc  │
+│          self.parse_fastqc_report(f["f"],  s_name,  f)                                                            │
+│      File  "/usr/local/lib/python3.9/site-packages/multiqc/modules/fastqc/fastqc  │
+│          d["measure"]:  d["value"]  for  d  in  self.fastqc_data[s_name]["basic_statis  │
+│  KeyError:  'basic_statistics'                                                                                                  │
+│                                                                                                                                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+|                      multiqc  |  No  analysis  results  found.  Cleaning  up..
+|                      multiqc  |  MultiQC  complete</span></details></td></tr>
             <tr><td>3</td><td><span class="error-msg">Module  'picard:  'picard.analysis.AlignmentSummaryMetrics'  not  found  in  the  file  'tratado'</span></td></tr>
             <tr><td>3</td><td><span class="error-msg">Module  'rseqc:  'Proper-paired  reads  map  to  different  chrom:'  not  found  in  the  file  'tra</span></td></tr>
             <tr><td>3</td><td><span class="error-msg">Module  'snpeff:  'SnpEff_version'  not  found  in  the  file  'SnpEff  eff_  on  dataset  38'</span></td></tr>
@@ -223,7 +258,13 @@ Module  fastqc  raised  an  exception:  Traceback  (most  recent  call  last):
     File  "/usr/local/bin/multiqc",  line  412,  in  multiqc
         output  =  mod()
     File  "/usr/local/lib/python3.6/site-packages/multiqc/modules/fastqc/fastqc.py",  line  44,  in  __init__
-        self.parse_fastqc_report(f['f</span></details></td></tr>
+        self.parse_fastqc_report(f['f'],  s_name,  f)
+    File  "/usr/local/lib/python3.6/site-packages/multiqc/modules/fastqc/fastqc.py",  line  178,  in  parse_fastqc_report
+        self.fastqc_data[s_name]['basic_statistics']  =  {d['measure']:  d['value']  for  d  in  self.fastqc_data[s_name]['basic_statistics']}
+KeyError:  'basic_statistics'
+============================================================
+[WARNING]                  multiqc  :  No  analysis  results  found.  Cleaning  up..
+[INFO      ]                  multiqc  :  MultiQC  complete</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'DESeq2  result  file  on  dataset </span><details><summary style="color: var(--text-muted); cursor: pointer; margin-top: 5px;">Show full stderr</summary><span class="error-msg" style="margin-top: 10px;">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'DESeq2  result  file  on  dataset  125-131  _modified_'</span></details></td></tr>
             <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'Trimmomatic  on  SRR358717  uncomp</span></td></tr>
             <tr><td>1</td><td><span class="error-msg">Module  'trimmomatic:  'Trimmomatic'  not  found  in  the  file  'CTRL'</span></td></tr>
