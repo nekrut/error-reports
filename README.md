@@ -82,15 +82,8 @@ python generate_dashboard.py
 
 Query your Galaxy database for failed jobs:
 
-```sql
-SELECT
-    id, create_time, update_time, tool_id, state, exit_code,
-    tool_stderr, tool_stdout, tool_version, destination_id,
-    user_id, handler, job_stderr, job_stdout
-FROM job
-WHERE state = 'error'
-  AND create_time >= '2025-11-01'
-ORDER BY create_time;
+```bash
+gxadmin jsonquery q "select * from job where create_time > '2025-11-01' and state = 'error' order by id"
 ```
 
 Export to JSON array format.
